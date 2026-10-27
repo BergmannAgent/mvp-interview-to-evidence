@@ -1,0 +1,2435 @@
+{
+  "schemaVersion": 1,
+  "instrumentId": "kantur-iseri-say-evidence-rating",
+  "instrumentVersion": "1.0.0",
+  "classification": "derived_evidence_rating",
+  "language": "de",
+  "approvalStatus": "pilot_only",
+  "sourceScale": {
+    "kind": "self_report_likert",
+    "minimum": 1,
+    "maximum": 5,
+    "responseLabels": ["strongly_disagree", "disagree", "neutral", "agree", "strongly_agree"],
+    "sourceId": "kantur-iseri-say-2015",
+    "locator": "Journal pages 462-465; final nine items in Table 4 on page 465"
+  },
+  "evidenceScale": {
+    "kind": "interview_evidence_rating",
+    "minimum": 1,
+    "maximum": 7,
+    "referenceScores": [1, 4, 7],
+    "interpolationPolicy": "intermediate_scores_require_evidence_between_references",
+    "aggregationPolicy": "no_aggregate_score_defined"
+  },
+  "methodologicalSafeguards": {
+    "missingEvidenceIsNotLowScore": true,
+    "singleStatementIsNotOrganizationalFact": true,
+    "derivedScaleIsNotOriginalValidatedScale": true,
+    "requiresIndependentValidation": true,
+    "anchorsAreParaphrases": true
+  },
+  "workbookProvenance": {
+    "fileName": "Ankerwerte.xlsx",
+    "sha256": "85a529e2678e9a4df9008557026a030c5a79d607706f7b880ead991b9cba1055",
+    "sourceSheets": ["Full_Data", "Only_Anchor_V"],
+    "knownEmptyAnchorCells": ["E7", "E8", "E19", "E21", "E28", "E29"],
+    "excludedConflict": "Full_Data!D11_vs_I11"
+  },
+  "sourceCatalog": [
+    {
+      "sourceId": "kantur-iseri-say-2015",
+      "citation": "Kantur, D., & Iseri-Say, A. (2015). Measuring Organizational Resilience: A Scale Development. Journal of Business, Economics & Finance, 4(3), 456-472.",
+      "sourceKind": "scale_development",
+      "doi": "10.17261/Pressacademia.2015313066",
+      "verificationStatus": "local_primary_checked",
+      "verificationNote": "The original response scale, three dimensions, and final nine items were checked in the local publisher PDF.",
+      "localArtifact": {
+        "relativePath": "Literatur/Paper Project Organization Science/Literatur/PDFs/Kantur & Iseri-Say 2015- Measuring organizational resilience.pdf",
+        "sha256": "2c7b5462cd4fd33fe77f1f36c9b2b9f09edc8914d4aed51c343b1f4852e6786f"
+      }
+    },
+    {
+      "sourceId": "chen-et-al-2021",
+      "citation": "Chen, R., Xie, Y., & Liu, Y. (2021). Defining, Conceptualizing, and Measuring Organizational Resilience: A Multiple Case Study. Sustainability, 13, 2517.",
+      "sourceKind": "primary_empirical",
+      "doi": "10.3390/su13052517",
+      "verificationStatus": "local_primary_checked",
+      "verificationNote": "All selected and repaired Chen examples were checked against Tables 3 and 4 in the local PDF.",
+      "localArtifact": {
+        "relativePath": "Literatur/Paper Project Organization Science/Literatur/PDFs/Chen et al 2021- Defining, conceptualizing and measuring organizational resilience.pdf",
+        "sha256": "978b136531f64325f53ec1085bd5bcad68c7b4c19d99020a2877132d7be16205"
+      }
+    },
+    {
+      "sourceId": "mcmanus-2008",
+      "citation": "McManus, S. (2008). Organisational Resilience in New Zealand. Doctoral thesis, University of Canterbury.",
+      "sourceKind": "doctoral_thesis",
+      "doi": "10.26021/1351",
+      "url": "https://ir.canterbury.ac.nz/items/11a41130-acdc-4eb2-9ebb-57d1a0cd4b04",
+      "verificationStatus": "repository_source_checked",
+      "verificationNote": "The case-study excerpts were checked against the thesis preprint linked by ResOrgs; locators use PDF pages and Appendix C case labels."
+    },
+    {
+      "sourceId": "witmer-mellinger-2016",
+      "citation": "Witmer, H., & Mellinger, M. S. (2016). Organizational resilience: Nonprofit organizations' response to change. Work, 54, 255-265.",
+      "sourceKind": "primary_empirical",
+      "doi": "10.3233/WOR-162303",
+      "url": "https://www.diva-portal.org/smash/get/diva2:1397977/FULLTEXT01.pdf",
+      "verificationStatus": "repository_source_checked",
+      "verificationNote": "The article and selected interview excerpts were checked; the unrelated Safety Science DOI entered in workbook cells H6 and H58 was discarded."
+    },
+    {
+      "sourceId": "browder-et-al-2024",
+      "citation": "Browder, R. E., Dwyer, S. M., & Koch, H. (2024). Upgrading adaptation: How digital transformation promotes organizational resilience. Strategic Entrepreneurship Journal, 18(1), 128-164.",
+      "sourceKind": "primary_empirical",
+      "doi": "10.1002/sej.1483",
+      "url": "https://sms.onlinelibrary.wiley.com/doi/10.1002/sej.1483",
+      "verificationStatus": "publisher_source_checked",
+      "verificationNote": "Publication metadata, case design, enduring adaptations, and digital-capability findings were checked on the publisher full-text page."
+    },
+    {
+      "sourceId": "gan-korsgaard-2025",
+      "citation": "Gan, D., & Korsgaard, S. (2025). When courtships fail: The antecedents of failure in strategic alliances between startups and incumbents. The International Journal of Entrepreneurship and Innovation, 26(2), 123-136.",
+      "sourceKind": "primary_empirical",
+      "doi": "10.1177/14657503221128015",
+      "url": "https://journals.sagepub.com/doi/10.1177/14657503221128015",
+      "verificationStatus": "publisher_source_checked",
+      "verificationNote": "The official open-access full text, interview and document triangulation, Case D abandonment decision, and ceased-to-exist status were checked."
+    },
+    {
+      "sourceId": "barasa-et-al-2018",
+      "citation": "Barasa, E., Mbau, R., & Gilson, L. (2018). What Is Resilience and How Can It Be Nurtured? A Systematic Review of Empirical Literature on Organizational Resilience. International Journal of Health Policy and Management, 7(6), 491-503.",
+      "sourceKind": "systematic_review",
+      "doi": "10.15171/ijhpm.2018.06",
+      "verificationStatus": "local_primary_checked",
+      "verificationNote": "The secondary synthesis of the Cote d'Ivoire HIV-service case was checked in the local review PDF; the underlying Lembani study was not locally checked.",
+      "localArtifact": {
+        "relativePath": "Literatur/Paper Project Organization Science/Literatur/PDFs/Barasa et al 2018- What is resilience and how can it be nurtured.pdf",
+        "sha256": "3269efd5321b47d7b518a03fda62f553a911b336e815dfbc9bf90a5370257ed1"
+      }
+    },
+    {
+      "sourceId": "krsmanovic-et-al-2024",
+      "citation": "Krsmanovic, B., et al. (2024). Developing good practices and organisational resilience during the COVID-19 pandemic: A retrospective qualitative case study in a higher education institution. Safety Science, 178, 106626.",
+      "sourceKind": "primary_empirical",
+      "doi": "10.1016/j.ssci.2024.106626",
+      "url": "https://www.2imanagement.ch/?action=get_file&id=204&resource_link_id=2561",
+      "verificationStatus": "repository_source_checked",
+      "verificationNote": "The paper identity and selected higher-education excerpts were checked in the available author-hosted PDF."
+    },
+    {
+      "sourceId": "walker-et-al-2014",
+      "citation": "Walker, B., Nilakant, V., & Baird, R. (2014). Promoting Organisational Resilience through Sustaining Engagement in a Disruptive Environment. Human Resources Institute of New Zealand Research Forum.",
+      "sourceKind": "primary_empirical",
+      "url": "https://ir.canterbury.ac.nz/items/936af4a2-f2ef-4285-a8ca-8a0c7b96015b",
+      "verificationStatus": "repository_source_checked",
+      "verificationNote": "University repository metadata, the full conference paper, and the selected interview excerpts were checked."
+    },
+    {
+      "sourceId": "schwaiger-2022-dissertation",
+      "citation": "Schwaiger, K. (2022). Employer image, occupational commitment and regional quality of life - the role of destination characteristics for reducing turnover among hospitality employees in Tyrol and Bavaria. Doctoral dissertation, University of Cologne.",
+      "sourceKind": "doctoral_thesis",
+      "url": "https://kups.ub.uni-koeln.de/62233/",
+      "verificationStatus": "repository_source_checked",
+      "verificationNote": "The repository record, full dissertation, embedded accepted manuscript, and selected result excerpt were checked."
+    },
+    {
+      "sourceId": "pal-2013-dissertation",
+      "citation": "Pal, R. (2013). Organizational Resilience through Crisis Strategic Planning (Tampere University of Technology Publication 1153). Doctoral dissertation, Tampere University of Technology.",
+      "sourceKind": "doctoral_thesis",
+      "url": "https://urn.fi/URN:ISBN:978-952-15-3152-1",
+      "verificationStatus": "repository_source_checked",
+      "verificationNote": "The official repository record, full dissertation, and cross-case production-delocalization finding were checked."
+    },
+    {
+      "sourceId": "khurshid-et-al-2021",
+      "citation": "Khurshid, Z., McAuliffe, E., & De Brún, A. (2021). Exploring healthcare staff narratives to understand the role of quality improvement methods in innovative practices during COVID-19. BMC Health Services Research, 21, 1271.",
+      "sourceKind": "primary_empirical",
+      "doi": "10.1186/s12913-021-07297-0",
+      "url": "https://link.springer.com/article/10.1186/s12913-021-07297-0",
+      "verificationStatus": "publisher_source_checked",
+      "verificationNote": "The official open-access full text, qualitative sample, collective-working findings, and shared health-system goal were checked."
+    },
+    {
+      "sourceId": "nilakant-et-al-2013",
+      "citation": "Nilakant, V., Walker, B., Rochford, K., & van Heugten, K. (2013). Leading in a Post-disaster Setting: Guidance for Human Resource Practitioners. New Zealand Journal of Employment Relations, 38(1), 1-13.",
+      "sourceKind": "primary_empirical",
+      "url": "https://www.nzjournal.org/NZJER38%281%29.pdf",
+      "verificationStatus": "repository_source_checked",
+      "verificationNote": "The selected uneven-support observation was checked in the journal issue PDF."
+    },
+    {
+      "sourceId": "sydnor-et-al-2017",
+      "citation": "Sydnor, S., Niehm, L., Lee, Y., Marshall, M., & Schrank, H. (2017). Analysis of post-disaster damage and disruptive impacts on the operating status of small businesses after Hurricane Katrina. Natural Hazards, 85(3), 1637-1663.",
+      "sourceKind": "primary_empirical",
+      "doi": "10.1007/s11069-016-2652-y",
+      "url": "https://ideas.repec.org/a/spr/nathaz/v85y2017i3d10.1007_s11069-016-2652-y.html",
+      "verificationStatus": "publisher_source_checked",
+      "verificationNote": "Bibliographic metadata and the empirical sample of 371 open and 126 closed businesses were checked in the publisher-supplied abstract record."
+    },
+    {
+      "sourceId": "de-vries-hamilton-2021",
+      "citation": "de Vries, H. P., & Hamilton, R. T. (2021). Smaller businesses and the Christchurch earthquakes: A longitudinal study of individual and organizational resilience. International Journal of Disaster Risk Reduction, 56, 102125.",
+      "sourceKind": "primary_empirical",
+      "doi": "10.1016/j.ijdrr.2021.102125",
+      "url": "https://ir.canterbury.ac.nz/items/9a1a6656-97df-4586-b368-f363d5bd0a2f",
+      "verificationStatus": "repository_source_checked",
+      "verificationNote": "The full preprint, longitudinal design, and four non-surviving businesses were checked in the University of Canterbury repository."
+    }
+  ],
+  "dimensions": [
+    {
+      "dimensionId": "robustness",
+      "label": "Robustness",
+      "position": 1,
+      "items": [
+        {
+          "itemId": "rob-01",
+          "position": 1,
+          "dimensionId": "robustness",
+          "originalStatementEn": "My organization stands straight and preserves its position.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Robustness item 1"
+          },
+          "elicitationQuestionDe": "Was macht Ihre Organisation unter schwierigen Bedingungen, um ihre Position und Stabilität zu bewahren?",
+          "codingInstructionDe": "Kodiere nur beobachtbare Evidenz dazu, ob zentrale Position, Stabilität und Funktionsfähigkeit unter erheblicher Belastung erhalten bleiben. Eine spätere Erholung allein belegt den Erhalt während der Krise nicht.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Die bisherige finanzielle, strategische oder operative Position bricht unter der Belastung bis zur Existenzgefährdung ein.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-01-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Kumulierte Verluste bringen die Organisation an die Insolvenzgrenze.",
+                  "typicalEvidenceDe": "Existenzielle Krise, anhaltende Verluste oder nicht mehr tragfähige Kapital- und Strategieposition.",
+                  "empiricalEvidenceDe": "Lego kumulierte 2004 Verluste von 1,931 Milliarden DKK und geriet in eine existenzielle Krise bis nahe an die Insolvenz.",
+                  "fitRationaleDe": "Der Befund zeigt einen weitgehenden Verlust der bisherigen Stabilität; die spätere Erholung wird für diesen Negativanker nicht als Gegenbeleg gewertet.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article page 8"
+                  },
+                  "workbookProvenance": {
+                    "status": "repaired_empty_slot",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 7,
+                      "cells": {
+                        "score": "D7",
+                        "anchor": "E7",
+                        "typicalEvidence": "F7",
+                        "empiricalExample": "G7",
+                        "source": "H7",
+                        "rationale": "I7"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 7,
+                      "cells": {
+                        "score": "D7",
+                        "anchor": "E7"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-01-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Das bestehende Geschäftsmodell trägt die Position nicht mehr.",
+                  "typicalEvidenceDe": "Drohender Zusammenbruch oder drohende Insolvenz vor einer grundlegenden Neuausrichtung.",
+                  "empiricalEvidenceDe": "Starbucks stand 2008 kurz vor der Insolvenz und musste das Geschäftsmodell grundlegend neu gestalten, um die Krise zu verlassen.",
+                  "fitRationaleDe": "Der Krisenzustand zeigt, dass die bisherige Position nicht bewahrt wurde; der spätere Turnaround ist zeitlich getrennt.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 3, article page 7"
+                  },
+                  "workbookProvenance": {
+                    "status": "repaired_empty_slot",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 8,
+                      "cells": {
+                        "score": "D8",
+                        "anchor": "E8",
+                        "typicalEvidence": "F8",
+                        "empiricalExample": "G8",
+                        "source": "H8",
+                        "rationale": "I8"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 8,
+                      "cells": {
+                        "score": "D8",
+                        "anchor": "E8"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Einzelne Funktionen oder Stabilitätsfaktoren bleiben erhalten, aber die Kontinuität ist begrenzt oder nicht organisationsweit integriert.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-01-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Operative Prioritäten sind nur in Teilen der Organisation abgesichert.",
+                  "typicalEvidenceDe": "Lokale Kontinuitätsfähigkeit bei erkennbaren Integrationslücken.",
+                  "empiricalEvidenceDe": "CS5 hatte in einzelnen Bereichen klare operative Prioritäten, diese waren jedoch nicht organisationsweit integriert.",
+                  "fitRationaleDe": "Die Fallorganisation bewahrt Teilfunktionen, erreicht aber keinen vollständigen Stabilitätserhalt.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.5.1, CS5, PDF page 186 (printed C-14)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 5,
+                      "cells": {
+                        "score": "D5",
+                        "anchor": "E5",
+                        "typicalEvidence": "F5",
+                        "empiricalExample": "G5",
+                        "source": "H5",
+                        "rationale": "I5"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 5,
+                      "cells": {
+                        "score": "D5",
+                        "anchor": "E5"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-01-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Diversifikation reduziert eine einzelne Abhängigkeit, ohne vollständige Stabilität nachzuweisen.",
+                  "typicalEvidenceDe": "Fortlaufende Diversifikation von Programmen oder Erlösquellen.",
+                  "empiricalEvidenceDe": "Eine Nonprofit-Organisation diversifizierte ihre Programme weiter, um nicht von nur einer Einnahmequelle abhängig zu sein.",
+                  "fitRationaleDe": "Die Maßnahme stützt Robustheit, belegt aber weder organisationsweite Stabilität noch Bewährung in einer schweren Krise.",
+                  "sourceReference": {
+                    "sourceId": "witmer-mellinger-2016",
+                    "locator": "Results and Table 2, journal pages 259-260"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 6,
+                      "cells": {
+                        "score": "D6",
+                        "anchor": "E6",
+                        "typicalEvidence": "F6",
+                        "empiricalExample": "G6",
+                        "source": "H6",
+                        "rationale": "I6"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 6,
+                      "cells": {
+                        "score": "D6",
+                        "anchor": "E6"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Die Organisation erhält Position, zentrale Funktionen und Stabilität auch unter schwerer Belastung nachweislich.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-01-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Finanzielle Stabilität und Wachstum bleiben selbst in einer schweren Branchenkrise erhalten.",
+                  "typicalEvidenceDe": "Stabile Liquidität, verbesserte Solvenz, fortgesetzter Betrieb und nachhaltiges Wachstum.",
+                  "empiricalEvidenceDe": "Southwest hielt während der Ölkrise soliden Cashflow, verbesserte die Solvenz und wies selbst in den schwierigsten Jahren belastbare Liquiditätskennzahlen auf.",
+                  "fitRationaleDe": "Mehrere Ergebnisindikatoren belegen unmittelbar den Erhalt der Position unter starker Belastung.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article page 8"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 3,
+                      "cells": {
+                        "score": "D3",
+                        "anchor": "E3",
+                        "typicalEvidence": "F3",
+                        "empiricalExample": "G3",
+                        "source": "H3",
+                        "rationale": "I3"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 3,
+                      "cells": {
+                        "score": "D3",
+                        "anchor": "E3"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-01-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Ein zentral überwachter Kerndienst bleibt auch unter schwerer Belastung auf dem festgelegten Qualitätsniveau.",
+                  "typicalEvidenceDe": "Servicequalität als Kernindikator und keine Absenkung der Servicestandards in schweren Krisenzeiten.",
+                  "empiricalEvidenceDe": "Southwest führte Servicequalität als zentralen Betriebsindikator und hielt seine Servicestandards laut Fallcodierung selbst in den schwierigsten Krisenzeiten aufrecht.",
+                  "fitRationaleDe": "Die Quelle belegt die während der Belastung erhaltene zentrale Betriebsfunktion; anders als Wachstum oder spätere Erholung ist dies kein bloßer Ergebnisanker.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article page 9, customer-service evidence"
+                  },
+                  "workbookProvenance": {
+                    "status": "replaced_invalid_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 4,
+                      "cells": {
+                        "score": "D4",
+                        "anchor": "E4",
+                        "typicalEvidence": "F4",
+                        "empiricalExample": "G4",
+                        "source": "H4",
+                        "rationale": "I4"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 4,
+                      "cells": {
+                        "score": "D4",
+                        "anchor": "E4"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "itemId": "rob-02",
+          "position": 2,
+          "dimensionId": "robustness",
+          "originalStatementEn": "My organization is successful in generating diverse solutions.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Robustness item 2"
+          },
+          "elicitationQuestionDe": "Wie entwickelt Ihre Organisation unterschiedliche Lösungen, wenn sie mit schwierigen Herausforderungen konfrontiert ist?",
+          "codingInstructionDe": "Kodiere Breite, Unterschiedlichkeit und tatsächliche Nutzbarkeit von Lösungen. Einzelne Reaktionen oder vorhandene, aber nicht anwendbare Pläne rechtfertigen keinen hohen Wert.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Es fehlen tragfähige Alternativen und ein gemeinsamer organisationsweiter Lösungsraum.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-02-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Bei Verlust kritischer Einrichtungen bestehen keine organisationsweiten Alternativen.",
+                  "typicalEvidenceDe": "Keine Ersatzstandorte, Ersatzstrukturen oder integrierten Notfalloptionen.",
+                  "empiricalEvidenceDe": "CS5 hatte keine organisationsweite Planung für alternative Standorte, Gebäude oder Strukturen bei Verlust wichtiger Einrichtungen.",
+                  "fitRationaleDe": "Das explizite Fehlen von Alternativen ist ein direkter Gegenanker zur Lösungsgenerierung.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.5.1, CS5, PDF page 186 (printed C-14)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 14,
+                      "cells": {
+                        "score": "D14",
+                        "anchor": "E14",
+                        "typicalEvidence": "F14",
+                        "empiricalExample": "G14",
+                        "source": "H14",
+                        "rationale": "I14"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 14,
+                      "cells": {
+                        "score": "D14",
+                        "anchor": "E14"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-02-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Silos verhindern ein gemeinsames Verständnis möglicher Krisenreaktionen.",
+                  "typicalEvidenceDe": "Abteilungen arbeiten isoliert und kennen erwartete Reaktionen anderer Bereiche nicht.",
+                  "empiricalEvidenceDe": "In einer Fallorganisation gab es kaum Personalbewegung zwischen Abteilungen und kein organisationsweites Verständnis dafür, wie andere Bereiche in einer Krise handeln würden.",
+                  "fitRationaleDe": "Fragmentierung begrenzt die organisationsweite Entwicklung unterschiedlicher Lösungen grundlegend.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.1.1, CS1, PDF page 173 (printed C-1)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 15,
+                      "cells": {
+                        "score": "D15",
+                        "anchor": "E15",
+                        "typicalEvidence": "F15",
+                        "empiricalExample": "G15",
+                        "source": "H15",
+                        "rationale": "I15"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 15,
+                      "cells": {
+                        "score": "D15",
+                        "anchor": "E15"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Einzelne Lösungen oder Pläne bestehen, sind aber reaktiv, unkoordiniert oder schwer auf konkrete Krisen übertragbar.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-02-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Probleme werden einzeln statt über ein koordiniertes Lösungsportfolio bearbeitet.",
+                  "typicalEvidenceDe": "Fire-fighting und operative Einzelmaßnahmen ohne langfristige Recovery-Strategie.",
+                  "empiricalEvidenceDe": "CS4 bearbeitete auftretende Probleme jeweils einzeln, statt sie strategisch zu priorisieren und an einer langfristigen Wiederherstellungsstrategie auszurichten.",
+                  "fitRationaleDe": "Lösungen entstehen, ihre Vielfalt und Koordination bleiben jedoch begrenzt.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.4.1, CS4, PDF page 183 (printed C-11)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 12,
+                      "cells": {
+                        "score": "D12",
+                        "anchor": "E12",
+                        "typicalEvidence": "F12",
+                        "empiricalExample": "G12",
+                        "source": "H12",
+                        "rationale": "I12"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 12,
+                      "cells": {
+                        "score": "D12",
+                        "anchor": "E12"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-02-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Vorhandene Pläne lassen sich nur schwer auf die konkrete Krise anwenden.",
+                  "typicalEvidenceDe": "Guter Planzugriff bei schwacher situativer Anpassung.",
+                  "empiricalEvidenceDe": "CS8 wusste, wo einschlägige Pläne lagen, hatte aber Schwierigkeiten mit ihrer praktischen Anwendung auf eine konkrete Krise.",
+                  "fitRationaleDe": "Ein Lösungsbestand ist vorhanden, wird aber nicht flexibel und zuverlässig nutzbar gemacht.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.8.1, CS8, PDF page 195 (printed C-23)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 13,
+                      "cells": {
+                        "score": "D13",
+                        "anchor": "E13",
+                        "typicalEvidence": "F13",
+                        "empiricalExample": "G13",
+                        "source": "H13",
+                        "rationale": "I13"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 13,
+                      "cells": {
+                        "score": "D13",
+                        "anchor": "E13"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Die Organisation erzeugt und kombiniert nachweislich mehrere unterschiedliche finanzielle, operative, technologische oder organisatorische Lösungen.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-02-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Mehrere Lösungstypen werden parallel eingesetzt.",
+                  "typicalEvidenceDe": "Alternative Finanzierung, Schuldentilgung, Effizienzmaßnahmen, Prozessänderungen und Personalbeiträge.",
+                  "empiricalEvidenceDe": "Southwest kombinierte Aktienemissionen, Schuldentilgung, höhere Flugzeugnutzung, kurze Bodenzeiten, Flottenstandardisierung und freiwillige Lohnbeiträge.",
+                  "fitRationaleDe": "Die Fallanalyse dokumentiert ein breites, tatsächlich eingesetztes Lösungsportfolio.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article pages 8-9"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 9,
+                      "cells": {
+                        "score": "D9",
+                        "anchor": "E9",
+                        "typicalEvidence": "F9",
+                        "empiricalExample": "G9",
+                        "source": "H9",
+                        "rationale": "I9"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 9,
+                      "cells": {
+                        "score": "D9",
+                        "anchor": "E9"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-02-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die Organisation setzt gleichzeitig unterschiedliche technische, operative und soziale Lösungen ein.",
+                  "typicalEvidenceDe": "Mehrere konkret umgesetzte Maßnahmen über unterschiedliche Arbeitsbereiche hinweg.",
+                  "empiricalEvidenceDe": "Die untersuchte Hochschule setzte mehr als hundert Maßnahmen um, darunter wechselnde Lehrformate, Telearbeit sowie Schutz- und Hygieneregeln; interprofessionelle Teams entwickelten zusätzlich zahlreiche kreative Lehrlösungen.",
+                  "fitRationaleDe": "Die dokumentierten Maßnahmen sind tatsächlich umgesetzt und decken mehrere voneinander verschiedene Lösungsbereiche ab.",
+                  "sourceReference": {
+                    "sourceId": "krsmanovic-et-al-2024",
+                    "locator": "Results, sections 4.2.2 and 4.2.2(a), journal pages 5-6"
+                  },
+                  "workbookProvenance": {
+                    "status": "replaced_invalid_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 10,
+                      "cells": {
+                        "score": "D10",
+                        "anchor": "E10",
+                        "typicalEvidence": "F10",
+                        "empiricalExample": "G10",
+                        "source": "H10",
+                        "rationale": "I10"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 10,
+                      "cells": {
+                        "score": "D10",
+                        "anchor": "E10"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "itemId": "rob-03",
+          "position": 3,
+          "dimensionId": "robustness",
+          "originalStatementEn": "My organization shows resistance to the end in order not to lose.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Robustness item 3"
+          },
+          "elicitationQuestionDe": "Wie verhält sich Ihre Organisation, wenn sie Gefahr läuft, etwas Wesentliches zu verlieren?",
+          "codingInstructionDe": "Kodiere fortgesetzte, konkrete Anstrengungen zum Schutz von Überleben, Kernfunktionen, Beschäftigung oder zentralen Zielen. Ein bloßer Krisenzustand ohne beobachtetes Verhalten reicht nicht für einen hohen Wert.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Die Organisation beendet den Widerstand früh oder betroffene Organisationen scheitern unter der Belastung.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-03-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die erste Reaktion ist Betriebsaufgabe statt Fortsetzungsstrategie.",
+                  "typicalEvidenceDe": "Shutdown-Impuls ohne eigenständig entwickelte Alternative.",
+                  "empiricalEvidenceDe": "Bei einer simulierten Erdbebenkrise mit Ausfall aller Telekommunikation wollten zentrale Entscheider von CS10 zunächst schließen und nach Hause gehen.",
+                  "fitRationaleDe": "Der unmittelbare Aufgabeimpuls ist ein direkter Verhaltensgegenanker zu anhaltendem Widerstand.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.10.1, CS10, PDF page 200 (printed C-28)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 20,
+                      "cells": {
+                        "score": "D20",
+                        "anchor": "E20",
+                        "typicalEvidence": "F20",
+                        "empiricalExample": "G20",
+                        "source": "H20",
+                        "rationale": "I20"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 20,
+                      "cells": {
+                        "score": "D20",
+                        "anchor": "E20"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-03-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Der verantwortliche Gründer beendet die Turnaround-Bemühungen und gibt das Unternehmen auf.",
+                  "typicalEvidenceDe": "Explizite Aufgabe nach erfolgloser Wende; die Organisation besteht anschließend nicht fort.",
+                  "empiricalEvidenceDe": "Im Fall Startup D gelang der Turnaround nicht; der Gründer gab das Startup ausdrücklich auf, und die Fallübersicht dokumentiert es anschließend als nicht mehr existent.",
+                  "fitRationaleDe": "Die Quelle belegt sowohl die ausdrückliche Aufgabehandlung als auch das Ende der Organisation. Der Niedriganker folgt damit weder aus einem bloßen Krisenzustand noch aus einer unterstellten Ursache.",
+                  "sourceReference": {
+                    "sourceId": "gan-korsgaard-2025",
+                    "locator": "Case descriptions, Case D, journal page 125; Table 1, startup status, journal page 124"
+                  },
+                  "workbookProvenance": {
+                    "status": "repaired_empty_slot",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 21,
+                      "cells": {
+                        "score": "D21",
+                        "anchor": "E21",
+                        "typicalEvidence": "F21",
+                        "empiricalExample": "G21",
+                        "source": "H21",
+                        "rationale": "I21"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 21,
+                      "cells": {
+                        "score": "D21",
+                        "anchor": "E21"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Die Organisation schützt einzelne Funktionen, Arbeitsplätze oder Dienste aktiv, der Nachweis bleibt jedoch begrenzt oder auf Wiederherstellung gerichtet.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-03-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Betrieb und Beschäftigung werden durch konkrete, begrenzte Anpassungen geschützt.",
+                  "typicalEvidenceDe": "Wiederherstellung gestörter Funktionen und temporäre Personalmaßnahmen.",
+                  "empiricalEvidenceDe": "SupplyCo stellte gestörte Funktionen wieder her, verlieh Beschäftigte an andere Einheiten oder Wettbewerber und änderte HR-Regeln zur Arbeitsplatzsicherung.",
+                  "fitRationaleDe": "Die Organisation leistet konkreten Widerstand, der Befund zeigt jedoch vor allem Wiederherstellung statt durchgängiger Unversehrtheit.",
+                  "sourceReference": {
+                    "sourceId": "browder-et-al-2024",
+                    "locator": "Section 4.2.1 'Adaptation to crisis-driven adversity', article page 138 (SupplyCo 2-6); Appendix B, SupplyCo adaptations 2-6, page 161, and benefits adaptation 19, page 162"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 18,
+                      "cells": {
+                        "score": "D18",
+                        "anchor": "E18",
+                        "typicalEvidence": "F18",
+                        "empiricalExample": "G18",
+                        "source": "H18",
+                        "rationale": "I18"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 18,
+                      "cells": {
+                        "score": "D18",
+                        "anchor": "E18"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-03-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Ein kritischer Dienst wird trotz erheblicher Belastung weitergetragen.",
+                  "typicalEvidenceDe": "Dienstkontinuität trotz Gehaltsverzug und Sicherheitsrisiken, begrenzt auf ein Programm.",
+                  "empiricalEvidenceDe": "Beschäftigte eines HIV-Programms in Côte d'Ivoire kamen trotz verspäteter Gehälter und Sicherheitsbedenken weiter zur Arbeit und hielten den Dienst aufrecht.",
+                  "fitRationaleDe": "Die sekundär synthetisierte Fallbeobachtung zeigt Ausdauer, bleibt aber auf einen Dienst und eine Reviewquelle begrenzt.",
+                  "sourceReference": {
+                    "sourceId": "barasa-et-al-2018",
+                    "locator": "Human Capital section, journal page 499"
+                  },
+                  "workbookProvenance": {
+                    "status": "repaired_empty_slot",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 19,
+                      "cells": {
+                        "score": "D19",
+                        "anchor": "E19",
+                        "typicalEvidence": "F19",
+                        "empiricalExample": "G19",
+                        "source": "H19",
+                        "rationale": "I19"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 19,
+                      "cells": {
+                        "score": "D19",
+                        "anchor": "E19"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Die Organisation kämpft unter schwerem Druck anhaltend weiter und sichert Überleben oder zentrale Ziele nachweislich.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-03-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Anhaltender Einsatz verhindert Niederlage und ermöglicht weiteres Wachstum.",
+                  "typicalEvidenceDe": "Fortgesetzter Kampf, Überleben und Wachstum trotz erheblicher Widrigkeit.",
+                  "empiricalEvidenceDe": "Das Southwest-Team hielt dem Druck stand, wurde nicht besiegt und erreichte trotz Widrigkeiten weiteres Wachstum.",
+                  "fitRationaleDe": "Die Fallbeschreibung entspricht dem Item besonders direkt und verbindet Widerstand mit einem beobachteten Ergebnis.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article page 9"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 16,
+                      "cells": {
+                        "score": "D16",
+                        "anchor": "E16",
+                        "typicalEvidence": "F16",
+                        "empiricalExample": "G16",
+                        "source": "H16",
+                        "rationale": "I16"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 16,
+                      "cells": {
+                        "score": "D16",
+                        "anchor": "E16"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-03-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Krisenentwickelte Fähigkeiten werden dauerhaft in den Betrieb übernommen.",
+                  "typicalEvidenceDe": "Enduring adaptations und über die Krise hinaus genutzte Fähigkeiten.",
+                  "empiricalEvidenceDe": "Bei GroceryCo und SupplyCo wurden digital gestützte Krisenanpassungen zu integralen Fähigkeiten, die beide Unternehmen auch nach der Krise nutzten.",
+                  "fitRationaleDe": "Dauerhafte Nutzung belegt anhaltende Bewältigung, ist aber weniger direkt auf Verlustvermeidung bezogen als der erste Hochanker.",
+                  "sourceReference": {
+                    "sourceId": "browder-et-al-2024",
+                    "locator": "Table 7, article pages 141-142; section 4.3 'Phase 3: Postcrisis', pages 145-146, especially page 146"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 17,
+                      "cells": {
+                        "score": "D17",
+                        "anchor": "E17",
+                        "typicalEvidence": "F17",
+                        "empiricalExample": "G17",
+                        "source": "H17",
+                        "rationale": "I17"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 17,
+                      "cells": {
+                        "score": "D17",
+                        "anchor": "E17"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "itemId": "rob-04",
+          "position": 4,
+          "dimensionId": "robustness",
+          "originalStatementEn": "My organization does not give up and continues its path.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Robustness item 4"
+          },
+          "elicitationQuestionDe": "Wie geht Ihre Organisation mit Rückschlägen und Schwierigkeiten um, wenn der bisherige Weg gefährdet ist?",
+          "codingInstructionDe": "Kodiere beobachtete Fortführung von Betrieb, Kernmission oder bewusstem strategischem Pfad. Unkritische Pfadstarre ist nicht automatisch resilient; zulässige Anpassung kann zur Fortführung der Kernmission gehören.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Die Organisation oder ein klar definierter Fallbetrieb wird nach der Belastung beendet und der Pfad nicht fortgeführt.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-04-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Betriebe öffnen nicht dauerhaft wieder oder schließen nach zunächst erfolgter Wiederöffnung.",
+                  "typicalEvidenceDe": "Langfristige Geschäftsschließung nach einer Naturkatastrophe.",
+                  "empiricalEvidenceDe": "In einer Zufallsstichprobe zu Hurricane Katrina wurden 371 weiter betriebene und 126 geschlossene Unternehmen untersucht; ein Teil öffnete zunächst wieder und schloss später nach einer Kaskade weiterer Belastungen.",
+                  "fitRationaleDe": "Die beobachtete Schließung ist ein empirischer Endpunkt fehlender Fortführung; Ursachen werden nicht pauschal dem Management zugeschrieben.",
+                  "sourceReference": {
+                    "sourceId": "sydnor-et-al-2017",
+                    "locator": "Abstract; Natural Hazards 85, pages 1637-1663"
+                  },
+                  "workbookProvenance": {
+                    "status": "repaired_empty_slot",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 28,
+                      "cells": {
+                        "score": "D28",
+                        "anchor": "E28",
+                        "typicalEvidence": "F28",
+                        "empiricalExample": "G28",
+                        "source": "H28",
+                        "rationale": "I28"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 28,
+                      "cells": {
+                        "score": "D28",
+                        "anchor": "E28"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-04-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Ein nicht anpassbarer Geschäftsmodellpfad endet nach dem Schock.",
+                  "typicalEvidenceDe": "Liquidation, Verkauf oder Schließung im langfristigen Nachbeobachtungszeitraum.",
+                  "empiricalEvidenceDe": "In einer siebenjährigen Längsschnittstudie nach den Christchurch-Erdbeben überlebten vier von zehn Kleinbetrieben nicht bis 2018; zwei wurden liquidiert, einer verkauft und einer geschlossen.",
+                  "fitRationaleDe": "Die vier Exit-Verläufe dokumentieren ausbleibende Fortführung über einen klaren Zeitraum und stammen aus einer Primärstudie.",
+                  "sourceReference": {
+                    "sourceId": "de-vries-hamilton-2021",
+                    "locator": "Abstract and Findings, article pages 1 and 8-9"
+                  },
+                  "workbookProvenance": {
+                    "status": "repaired_empty_slot",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 29,
+                      "cells": {
+                        "score": "D29",
+                        "anchor": "E29",
+                        "typicalEvidence": "F29",
+                        "empiricalExample": "G29",
+                        "source": "H29",
+                        "rationale": "I29"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 29,
+                      "cells": {
+                        "score": "D29",
+                        "anchor": "E29"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Die Organisation hält bei einem Rückschlag durch und arbeitet weiter, der Erfolg bleibt jedoch partiell oder die Leistung fällt zunächst deutlich ab.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-04-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die Organisation hält trotz deutlichem Engagementverlust durch.",
+                  "typicalEvidenceDe": "Fortgesetzter Einsatz bei vorübergehend schlechteren Kennzahlen und späterer Teilerholung.",
+                  "empiricalEvidenceDe": "Nach dem Erdbeben hielt eine Organisation bei 53 bis 54 Prozent Engagement durch und erreichte später wieder etwa 66 bis 67 Prozent.",
+                  "fitRationaleDe": "Der Verlauf zeigt Fortführung, aber auch einen erheblichen Rückgang und keine vollständige Spitzenleistung.",
+                  "sourceReference": {
+                    "sourceId": "walker-et-al-2014",
+                    "locator": "Results, Middle Manager, Organisation Y, PDF page 16, engagement increase from 53/54 to 66/67 percent"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 26,
+                      "cells": {
+                        "score": "D26",
+                        "anchor": "E26",
+                        "typicalEvidence": "F26",
+                        "empiricalExample": "G26",
+                        "source": "H26",
+                        "rationale": "I26"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 26,
+                      "cells": {
+                        "score": "D26",
+                        "anchor": "E26"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-04-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Arbeit und Lernen werden nach der Krise weitergeführt.",
+                  "typicalEvidenceDe": "Fortgesetzte Verbesserungs- und Lernaktivitäten ohne vollständigen Outcome-Nachweis.",
+                  "empiricalEvidenceDe": "Eine Fallorganisation arbeitete weiter an der Mitarbeitendenunterstützung und lernte fortlaufend aus der Erdbebenphase.",
+                  "fitRationaleDe": "Fortsetzung ist explizit, ihre Reichweite und Wirkung bleiben jedoch offen.",
+                  "sourceReference": {
+                    "sourceId": "walker-et-al-2014",
+                    "locator": "Results, HR Manager, Organisation Y, PDF page 16, continued work and staff-support finding"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 27,
+                      "cells": {
+                        "score": "D27",
+                        "anchor": "E27",
+                        "typicalEvidence": "F27",
+                        "empiricalExample": "G27",
+                        "source": "H27",
+                        "rationale": "I27"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 27,
+                      "cells": {
+                        "score": "D27",
+                        "anchor": "E27"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Die Organisation führt Betrieb oder Kernmission trotz schwerer Krise konsequent fort und richtet Entscheidungen daran aus.",
+              "approvedExamples": [
+                {
+                  "exampleId": "rob-04-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Beschäftigte nehmen den Betrieb rasch wieder auf und halten an Kernprinzipien fest.",
+                  "typicalEvidenceDe": "Rückkehr zu Aufgaben, Replanung des Betriebs und explizite Pfadtreue.",
+                  "empiricalEvidenceDe": "Southwest-Beschäftigte kehrten trotz Trauer zu ihren Aufgaben zurück, planten Flüge neu und hielten auch unter Schwierigkeiten an zentralen Prinzipien fest.",
+                  "fitRationaleDe": "Der Befund verbindet tatsächliche Betriebsfortführung mit expliziter Orientierung am gewählten Pfad.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article page 9"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 22,
+                      "cells": {
+                        "score": "D22",
+                        "anchor": "E22",
+                        "typicalEvidence": "F22",
+                        "empiricalExample": "G22",
+                        "source": "H22",
+                        "rationale": "I22"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 22,
+                      "cells": {
+                        "score": "D22",
+                        "anchor": "E22"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "rob-04-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die Kernmission bleibt über die Krise hinweg leitend.",
+                  "typicalEvidenceDe": "Alle wesentlichen Entscheidungen priorisieren die zentrale Mission über einen längeren Krisenzeitraum.",
+                  "empiricalEvidenceDe": "In der untersuchten Hochschule wurde die Erfüllung der Lehrmission über zwei Jahre zur maßgeblichen Priorität der Managemententscheidungen.",
+                  "fitRationaleDe": "Die zeitlich anhaltende, entscheidungsleitende Missionserfüllung ist ein starker Fortführungsanker.",
+                  "sourceReference": {
+                    "sourceId": "krsmanovic-et-al-2024",
+                    "locator": "Results, section 4.2.2(a), journal page 5"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 24,
+                      "cells": {
+                        "score": "D24",
+                        "anchor": "E24",
+                        "typicalEvidence": "F24",
+                        "empiricalExample": "G24",
+                        "source": "H24",
+                        "rationale": "I24"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 24,
+                      "cells": {
+                        "score": "D24",
+                        "anchor": "E24"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimensionId": "agility",
+      "label": "Agility",
+      "position": 2,
+      "items": [
+        {
+          "itemId": "agi-01",
+          "position": 5,
+          "dimensionId": "agility",
+          "originalStatementEn": "My organization rapidly takes action.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Agility item 1"
+          },
+          "elicitationQuestionDe": "Wie handelt Ihre Organisation, wenn schnelles Handeln erforderlich ist?",
+          "codingInstructionDe": "Kodiere nachgewiesene Reaktions- und Umsetzungszeit. Absicht, bloße Problemerkennung oder späteres Handeln ohne zeitliche Evidenz sind nicht als schnell zu bewerten.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Entscheidungen und Reaktionen sind deutlich verzögert oder nachweislich zu langsam.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-01-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die Befehlskette verzögert Entscheidungen bis zu einer Woche.",
+                  "typicalEvidenceDe": "Langsame Freigaben und verspätete Kommunikation.",
+                  "empiricalEvidenceDe": "In der untersuchten Hochschule reagierte die Befehlskette langsam; Entscheidungen und Bestätigungen dauerten teilweise bis zu einer Woche.",
+                  "fitRationaleDe": "Die explizite Verzögerungsdauer ist ein direkter Gegenanker zu raschem Handeln.",
+                  "sourceReference": {
+                    "sourceId": "krsmanovic-et-al-2024",
+                    "locator": "Results, section 4.2.2(a), journal page 6"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 39,
+                      "cells": {
+                        "score": "D39",
+                        "anchor": "E39",
+                        "typicalEvidence": "F39",
+                        "empiricalExample": "G39",
+                        "source": "H39",
+                        "rationale": "I39"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 39,
+                      "cells": {
+                        "score": "D39",
+                        "anchor": "E39"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-01-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die Organisation ist langsam und ändert sich erst unter äußerstem Druck.",
+                  "typicalEvidenceDe": "Ausgeprägte Veränderungszurückhaltung mit Gefahr einer zu späten Reaktion.",
+                  "empiricalEvidenceDe": "Bei CS1 beschrieben Entscheider die Organisation als langsam und widerwillig gegenüber Veränderungen, bis ein Eingreifen möglicherweise zu spät wäre.",
+                  "fitRationaleDe": "Die Fallbeobachtung belegt geringe Reaktionsgeschwindigkeit, ohne einen fehlerhaften DOI aus Workbook-Zeile 40 zu übernehmen.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.1.1, CS1, PDF page 175 (printed C-3)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 38,
+                      "cells": {
+                        "score": "D38",
+                        "anchor": "E38",
+                        "typicalEvidence": "F38",
+                        "empiricalExample": "G38",
+                        "source": "H38",
+                        "rationale": "I38"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 38,
+                      "cells": {
+                        "score": "D38",
+                        "anchor": "E38"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Die Organisation reagiert und handelt, aber erst nach Eintritt oder nach einer anfänglichen Verzögerung.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-01-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Erforderliche Tätigkeiten werden erst nach Eintritt der Störung in den Fernbetrieb überführt.",
+                  "typicalEvidenceDe": "Reaktive Reorganisation nach dem Präsenzverbot; die ersten Wochen bleiben herausfordernd.",
+                  "empiricalEvidenceDe": "Nach dem Verbot des Präsenzunterrichts reorganisierten Beschäftigte der Hochschule Kurse, Besprechungen und weitere Aktivitäten für den Fernbetrieb; besonders die ersten Wochen wurden als herausfordernd beschrieben.",
+                  "fitRationaleDe": "Die Quelle belegt konkrete Handlung nach Ereigniseintritt, aber weder antizipatives noch ausdrücklich schnelles Umsetzen; damit passt sie zum mittleren Referenzwert.",
+                  "sourceReference": {
+                    "sourceId": "krsmanovic-et-al-2024",
+                    "locator": "Results, section 4.2.2(a), teaching-format measures, journal page 5"
+                  },
+                  "workbookProvenance": {
+                    "status": "replaced_invalid_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 34,
+                      "cells": {
+                        "score": "D34",
+                        "anchor": "E34",
+                        "typicalEvidence": "F34",
+                        "empiricalExample": "G34",
+                        "source": "H34",
+                        "rationale": "I34"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 34,
+                      "cells": {
+                        "score": "D34",
+                        "anchor": "E34"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-01-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Nach einer anfänglichen Lähmung beginnt intensive Problemlösung.",
+                  "typicalEvidenceDe": "Verzögerter Start, danach zügige und intensive Reaktion durch Eigentümer.",
+                  "empiricalEvidenceDe": "In den untersuchten Gastgewerbe-Familienbetrieben folgte auf eine erste Krisenlähmung eine rasch eingeleitete intensive Problemlösung durch Eigentümer.",
+                  "fitRationaleDe": "Die Reaktion ist sichtbar und vergleichsweise schnell, aber nicht unmittelbar und nicht sicher organisationsweit.",
+                  "sourceReference": {
+                    "sourceId": "schwaiger-2022-dissertation",
+                    "locator": "Chapter 6, section 6.4.2 'Personal traits', Participant 3, dissertation PDF page 129 (printed page 115)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 36,
+                      "cells": {
+                        "score": "D36",
+                        "anchor": "E36",
+                        "typicalEvidence": "F36",
+                        "empiricalExample": "G36",
+                        "source": "H36",
+                        "rationale": "I36"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 36,
+                      "cells": {
+                        "score": "D36",
+                        "anchor": "E36"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Die Organisation trifft notwendige Entscheidungen und setzt Maßnahmen unter Zeitdruck nachweislich schnell um.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-01-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Neue Anforderungen werden schnell gelernt und operativ umgesetzt.",
+                  "typicalEvidenceDe": "Schnelle Regelaufnahme, Rückkehr zu Aufgaben und unmittelbare Replanung.",
+                  "empiricalEvidenceDe": "Southwest-Beschäftigte lernten neue Sicherheitsregeln und Verfahren schnell, kehrten rasch an ihre Arbeitsplätze zurück und planten Flüge neu.",
+                  "fitRationaleDe": "Mehrere konkrete Tätigkeiten werden mit expliziter zeitlicher Schnelligkeit beschrieben.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article pages 9-10"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 30,
+                      "cells": {
+                        "score": "D30",
+                        "anchor": "E30",
+                        "typicalEvidence": "F30",
+                        "empiricalExample": "G30",
+                        "source": "H30",
+                        "rationale": "I30"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 30,
+                      "cells": {
+                        "score": "D30",
+                        "anchor": "E30"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-01-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Kurze Wege zu Schlüsselentscheidern ermöglichen schnelle Entscheidungen.",
+                  "typicalEvidenceDe": "Direkte Erreichbarkeit der maßgeblichen Entscheider.",
+                  "empiricalEvidenceDe": "In einer familiengeprägten Fallorganisation waren Schlüsselentscheider räumlich und organisatorisch nahe, wodurch Entscheidungen schnell getroffen werden konnten.",
+                  "fitRationaleDe": "Der Fall verbindet eine konkrete Struktur unmittelbar mit schneller Entscheidungsausführung.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.10.1, CS10, PDF page 200 (printed C-28)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 33,
+                      "cells": {
+                        "score": "D33",
+                        "anchor": "E33",
+                        "typicalEvidence": "F33",
+                        "empiricalExample": "G33",
+                        "source": "H33",
+                        "rationale": "I33"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 33,
+                      "cells": {
+                        "score": "D33",
+                        "anchor": "E33"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "itemId": "agi-02",
+          "position": 6,
+          "dimensionId": "agility",
+          "originalStatementEn": "My organization develops alternatives in order to benefit from negative circumstances.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Agility item 2"
+          },
+          "elicitationQuestionDe": "Wie entwickelt und nutzt Ihre Organisation Alternativen, um aus negativen Umständen handlungsfähig oder stärker hervorzugehen?",
+          "codingInstructionDe": "Kodiere nur Alternativen, die tatsächlich entwickelt oder eingesetzt werden und einen erkennbaren Nutzen aus der negativen Situation schaffen. Reine Fehlerkorrektur ohne Alternative oder Vorteil reicht nicht für einen hohen Wert.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Die Organisation erkennt oder bereitet keine tragfähigen Alternativen vor.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-02-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Entscheider sehen nach der Krise keinen anderen Weg.",
+                  "typicalEvidenceDe": "Starke Pfadfixierung und geringe Fähigkeit, alternative Handlungsoptionen zu erkennen.",
+                  "empiricalEvidenceDe": "Zentrale Entscheider von CS1 hatten nach einer Krise erhebliche Schwierigkeiten, überhaupt einen anderen Weg für das Geschäft zu erkennen.",
+                  "fitRationaleDe": "Das ausdrücklich fehlende Erkennen von Alternativen ist ein direkter Negativanker.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.1.1, CS1, PDF page 175 (printed C-3)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 46,
+                      "cells": {
+                        "score": "D46",
+                        "anchor": "E46",
+                        "typicalEvidence": "F46",
+                        "empiricalExample": "G46",
+                        "source": "H46",
+                        "rationale": "I46"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 45,
+                      "cells": {
+                        "score": "D45",
+                        "anchor": "E45"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-02-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Kritische Lieferanten und Marktalternativen sind nicht identifiziert.",
+                  "typicalEvidenceDe": "Keine vorbereiteten Ersatzressourcen oder Bezugsoptionen.",
+                  "empiricalEvidenceDe": "CS5 hatte weder kritische Lieferungen und Lieferanten noch mögliche Alternativen im Markt bestimmt.",
+                  "fitRationaleDe": "Ohne identifizierte Alternativen kann aus einem Ausfall kein Vorteil entwickelt werden.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.5.1, CS5, PDF page 186 (printed C-14)"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 47,
+                      "cells": {
+                        "score": "D47",
+                        "anchor": "E47",
+                        "typicalEvidence": "F47",
+                        "empiricalExample": "G47",
+                        "source": "H47",
+                        "rationale": "I47"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 46,
+                      "cells": {
+                        "score": "D46",
+                        "anchor": "E46"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Eine konkrete Alternative wird entwickelt oder umgesetzt, bleibt aber reaktiv, eng begrenzt oder ohne starken Vorteilsnachweis.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-02-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Ein Backup wird erst nach Erkennen einer kritischen Schwäche eingerichtet.",
+                  "typicalEvidenceDe": "Reaktive Sicherung einer einzelnen Kommunikationskomponente.",
+                  "empiricalEvidenceDe": "Eine Fallorganisation identifizierte das fehlende Backup eines wichtigen Kommunikationspakets und duplizierte es kurz vor der Studie.",
+                  "fitRationaleDe": "Eine Alternative wurde umgesetzt, aber nur für eine einzelne Schwachstelle und nicht vorausschauend.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.6.1, CS6, PDF page 189 (printed C-17)"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 44,
+                      "cells": {
+                        "score": "D44",
+                        "anchor": "E44",
+                        "typicalEvidence": "F44",
+                        "empiricalExample": "G44",
+                        "source": "H44",
+                        "rationale": "I44"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 43,
+                      "cells": {
+                        "score": "D43",
+                        "anchor": "E43"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-02-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die Produktionskonfiguration wird zur Senkung fixer Kosten verlagert.",
+                  "typicalEvidenceDe": "Eine langfristige Produktionsalternative wird tatsächlich umgesetzt, bleibt aber auf eine einzelne betriebliche Stellschraube begrenzt.",
+                  "empiricalEvidenceDe": "In der untersuchten Gruppe schwedischer Textil-KMU verlagerten resiliente Produktionsunternehmen Fertigung, um Fixkosten zu senken.",
+                  "fitRationaleDe": "Die realisierte Alternative schafft einen dokumentierten Kostenvorteil, belegt aber noch kein breites Portfolio gleichzeitig nutzbarer Alternativen.",
+                  "sourceReference": {
+                    "sourceId": "pal-2013-dissertation",
+                    "locator": "Table 5.7, dissertation PDF pages 127-128 (printed pages 106-107), long-term sustenance strategies"
+                  },
+                  "workbookProvenance": {
+                    "status": "replaced_invalid_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 45,
+                      "cells": {
+                        "score": "D45",
+                        "anchor": "E45",
+                        "typicalEvidence": "F45",
+                        "empiricalExample": "G45",
+                        "source": "H45",
+                        "rationale": "I45"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 44,
+                      "cells": {
+                        "score": "D44",
+                        "anchor": "E44"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Die Organisation kombiniert Alternativen und nutzt die negative Situation erkennbar für verbesserte Leistungsfähigkeit oder dauerhafte neue Fähigkeiten.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-02-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Finanzielle und operative Alternativen erzeugen Krisenbewältigung und Wettbewerbsvorteile.",
+                  "typicalEvidenceDe": "Alternative Finanzierung, Kostendesign, Prozessinnovation und gemeinsamer Ressourcenbeitrag.",
+                  "empiricalEvidenceDe": "Southwest verband Aktienemissionen, freiwillige Lohnbeiträge und ein innovatives Kurzstrecken-Kostenmodell, um den Krisendruck in verbesserte Handlungsfähigkeit zu übersetzen.",
+                  "fitRationaleDe": "Mehrere eingesetzte Alternativen haben einen erkennbaren finanziellen und operativen Nutzen.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article pages 8-9"
+                  },
+                  "workbookProvenance": {
+                    "status": "selected",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 41,
+                      "cells": {
+                        "score": "D41",
+                        "anchor": "E41",
+                        "typicalEvidence": "F41",
+                        "empiricalExample": "G41",
+                        "source": "H41",
+                        "rationale": "I41"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 41,
+                      "cells": {
+                        "score": "D41",
+                        "anchor": "E41"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-02-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Eine neue technologische Alternative löst einen Engpass und wird dauerhaft nutzbar.",
+                  "typicalEvidenceDe": "Algorithmisch veränderte Auftragsverteilung bei Arbeits- und Lieferengpässen.",
+                  "empiricalEvidenceDe": "SupplyCo programmierte sein System so um, dass bei Engpässen alle Kunden Teilmengen erhielten; die digitale Anpassung ging in die dauerhafte Fähigkeit ein.",
+                  "fitRationaleDe": "Die Alternative bewältigt die negative Situation und schafft eine über die Krise hinaus nutzbare Fähigkeit.",
+                  "sourceReference": {
+                    "sourceId": "browder-et-al-2024",
+                    "locator": "Section 4.3.1 'Enhanced crisis-preparedness', article pages 146-147, partial-order algorithm on page 147; Table 8, pages 146-147"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 43,
+                      "cells": {
+                        "score": "D43",
+                        "anchor": "E43",
+                        "typicalEvidence": "F43",
+                        "empiricalExample": "G43",
+                        "source": "H43",
+                        "rationale": "I43"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 42,
+                      "cells": {
+                        "score": "D42",
+                        "anchor": "E42"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "itemId": "agi-03",
+          "position": 7,
+          "dimensionId": "agility",
+          "originalStatementEn": "My organization is agile in taking required action when needed.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Agility item 3"
+          },
+          "elicitationQuestionDe": "Wie passt Ihre Organisation ihr Handeln an, wenn sich die Situation verändert und konkrete Maßnahmen nötig werden?",
+          "codingInstructionDe": "Kodiere, ob benötigte Maßnahmen situationsgerecht mobilisiert und umgesetzt werden. Strukturelle Voraussetzungen ohne beobachtete Aktion sind schwächere Evidenz als tatsächliche schnelle Anpassung.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Fehlende Rollen-, Personal- oder Ressourcenarrangements verhindern situationsgerechtes Handeln.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-03-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Ein Krisenroster zur Mobilisierung von Personal fehlt dauerhaft.",
+                  "typicalEvidenceDe": "Keine klare Personalzuordnung für Krisenaufgaben.",
+                  "empiricalEvidenceDe": "Bei CS2 fehlte ein etabliertes Personalroster; dies war in einer realen Krise ein Hauptproblem und war ein Jahr später noch ungelöst.",
+                  "fitRationaleDe": "Die Organisation konnte benötigte Personen nicht verlässlich mobilisieren und behob die Blockade nicht zeitnah.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.2.1, CS2, PDF page 177 (printed C-5)"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 52,
+                      "cells": {
+                        "score": "D52",
+                        "anchor": "E52",
+                        "typicalEvidence": "F52",
+                        "empiricalExample": "G52",
+                        "source": "H52",
+                        "rationale": "I52"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 51,
+                      "cells": {
+                        "score": "D51",
+                        "anchor": "E51"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-03-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Vorbereitete Bezugsalternativen für Krisen fehlen.",
+                  "typicalEvidenceDe": "Nur wenige bevorzugte Liefervereinbarungen für Störfälle.",
+                  "empiricalEvidenceDe": "CS5 verfügte über nur wenige bevorzugte Liefervereinbarungen, die in einer Krise genutzt werden konnten.",
+                  "fitRationaleDe": "Die begrenzte Ressourcenvorbereitung schränkt benötigte situative Aktion direkt ein.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.5.1, CS5, PDF page 186 (printed C-14)"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 53,
+                      "cells": {
+                        "score": "D53",
+                        "anchor": "E53",
+                        "typicalEvidence": "F53",
+                        "empiricalExample": "G53",
+                        "source": "H53",
+                        "rationale": "I53"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 52,
+                      "cells": {
+                        "score": "D52",
+                        "anchor": "E52"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Konkrete Anpassungsfähigkeit besteht, ist aber reaktiv oder auf einzelne Abteilungen begrenzt.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-03-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Eine benötigte Ersatzlösung wird umgesetzt, bleibt jedoch umständlich und zeitaufwendig.",
+                  "typicalEvidenceDe": "Konkreter Workaround nach Eintritt der Störung mit fortbestehender Prozessreibung.",
+                  "empiricalEvidenceDe": "Eine Hochschulabteilung ersetzte den papiergebundenen Unterschriftenprozess kurzfristig durch einen E-Mail- und PDF-Ablauf, der funktionierte, aber umständlich, frustrierend und zeitaufwendig blieb.",
+                  "fitRationaleDe": "Die notwendige Handlung wurde ausgeführt, erreicht wegen der erheblichen Reibung aber keinen hohen Agilitätsanker.",
+                  "sourceReference": {
+                    "sourceId": "krsmanovic-et-al-2024",
+                    "locator": "Results, section 4.2.2(b), journal page 6"
+                  },
+                  "workbookProvenance": {
+                    "status": "replaced_invalid_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 50,
+                      "cells": {
+                        "score": "D50",
+                        "anchor": "E50",
+                        "typicalEvidence": "F50",
+                        "empiricalExample": "G50",
+                        "source": "H50",
+                        "rationale": "I50"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 49,
+                      "cells": {
+                        "score": "D49",
+                        "anchor": "E49"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-03-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Eine Abteilung besitzt eine konkrete Krisenfähigkeit, andere jedoch nicht.",
+                  "typicalEvidenceDe": "Lokale Kontakt- und Redundanzlösung ohne organisationsweite Ausweitung.",
+                  "empiricalEvidenceDe": "Eine Abteilung erstellte und verteilte eine kompakte Krisenkontaktliste; diese Fähigkeit wurde nicht auf andere Abteilungen übertragen.",
+                  "fitRationaleDe": "Benötigte Aktion ist lokal möglich, aber die Organisation als Ganzes ist nur teilweise agil.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.1.1, CS1, PDF page 175 (printed C-3)"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 51,
+                      "cells": {
+                        "score": "D51",
+                        "anchor": "E51",
+                        "typicalEvidence": "F51",
+                        "empiricalExample": "G51",
+                        "source": "H51",
+                        "rationale": "I51"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 50,
+                      "cells": {
+                        "score": "D50",
+                        "anchor": "E50"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Erforderliche Aktionen werden schnell und flexibel erkannt, delegiert und umgesetzt.",
+              "approvedExamples": [
+                {
+                  "exampleId": "agi-03-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Neue Regeln und operative Anforderungen werden schnell umgesetzt.",
+                  "typicalEvidenceDe": "Schnelles Lernen, unmittelbare Rückkehr und rasche Reorganisation.",
+                  "empiricalEvidenceDe": "Southwest setzte neue Sicherheitsverfahren schnell um, mobilisierte Beschäftigte und replante den Flugbetrieb in der Notsituation.",
+                  "fitRationaleDe": "Der Befund zeigt tatsächliche, zeitnahe Umsetzung mehrerer erforderlicher Maßnahmen.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article pages 9-10"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 48,
+                      "cells": {
+                        "score": "D48",
+                        "anchor": "E48",
+                        "typicalEvidence": "F48",
+                        "empiricalExample": "G48",
+                        "source": "H48",
+                        "rationale": "I48"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 47,
+                      "cells": {
+                        "score": "D47",
+                        "anchor": "E47"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "agi-03-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Eine vorhandene technische Ressource wird unmittelbar für die erforderliche Krisenaktion mobilisiert.",
+                  "typicalEvidenceDe": "Sofortiger Wechsel des Arbeitsmodus mit erfolgreicher Aufrechterhaltung der Kernleistung.",
+                  "empiricalEvidenceDe": "Die Hochschule verlagerte soziale Zusammenarbeit und Lehrveranstaltungen unmittelbar in die zuvor eingeführte Teams-Umgebung; das System funktionierte von Beginn an ohne größere Probleme und sicherte die Kurse.",
+                  "fitRationaleDe": "Situation, erforderliche Aktion, sofortige Umsetzung und funktionierendes Ergebnis sind im Fall ausdrücklich belegt.",
+                  "sourceReference": {
+                    "sourceId": "krsmanovic-et-al-2024",
+                    "locator": "Results, section 4.2.1, journal page 5"
+                  },
+                  "workbookProvenance": {
+                    "status": "replaced_invalid_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 49,
+                      "cells": {
+                        "score": "D49",
+                        "anchor": "E49",
+                        "typicalEvidence": "F49",
+                        "empiricalExample": "G49",
+                        "source": "H49",
+                        "rationale": "I49"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 48,
+                      "cells": {
+                        "score": "D48",
+                        "anchor": "E48"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimensionId": "integrity",
+      "label": "Integrity",
+      "position": 3,
+      "items": [
+        {
+          "itemId": "int-01",
+          "position": 8,
+          "dimensionId": "integrity",
+          "originalStatementEn": "My organization is a place where all the employees engaged to do what is required from them.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Integrity item 1"
+          },
+          "elicitationQuestionDe": "Wie setzen sich die Beschäftigten Ihrer Organisation in schwierigen Situationen dafür ein, das Erforderliche zu tun?",
+          "codingInstructionDe": "Kodiere beobachtete Aufgabenerfüllung, Rollenverständnis und Engagement der Beschäftigten. Aussagen über eine Mehrheit rechtfertigen wegen des Wortlauts 'all employees' höchstens einen mittleren Referenzwert.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Beschäftigte kennen benötigte Rollen nicht oder besitzen nicht das Mandat, ihre Verantwortung zu erfüllen.",
+              "approvedExamples": [
+                {
+                  "exampleId": "int-01-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Rollen und Verantwortlichkeiten sind unklar und schlecht kommuniziert.",
+                  "typicalEvidenceDe": "Geringes Rollenwissen und Unzufriedenheit über Verantwortung und Rechenschaft.",
+                  "empiricalEvidenceDe": "Bei CS2 waren Gründe für Verantwortung unzureichend kommuniziert und das Wissen über Rollen und Zuständigkeiten in der Organisation schwach.",
+                  "fitRationaleDe": "Ohne Rollenverständnis können Beschäftigte das Erforderliche nicht verlässlich erkennen und erfüllen.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.2.1, CS2, PDF page 178 (printed C-6)"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 59,
+                      "cells": {
+                        "score": "D59",
+                        "anchor": "E59",
+                        "typicalEvidence": "F59",
+                        "empiricalExample": "G59",
+                        "source": "H59",
+                        "rationale": "I59"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 58,
+                      "cells": {
+                        "score": "D58",
+                        "anchor": "E58"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "int-01-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Verantwortung und Entscheidungsmandat passen in der Krise nicht zusammen.",
+                  "typicalEvidenceDe": "Zugewiesene Aufgabe ohne ausreichende Autorität und daraus entstehende Frustration.",
+                  "empiricalEvidenceDe": "In einer Krisenübung waren Verantwortung und Entscheidungsmandat für Teile des Personals nicht ausgerichtet, was erhebliche Frustration auslöste.",
+                  "fitRationaleDe": "Die Mandatslücke verhindert wirksame Aufgabenerfüllung trotz formaler Verantwortung.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.4.1, CS4, PDF page 182 (printed C-10)"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 60,
+                      "cells": {
+                        "score": "D60",
+                        "anchor": "E60",
+                        "typicalEvidence": "F60",
+                        "empiricalExample": "G60",
+                        "source": "H60",
+                        "rationale": "I60"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 59,
+                      "cells": {
+                        "score": "D59",
+                        "anchor": "E59"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Engagement und Unterstützung sind breit, aber nicht bei allen Beschäftigten oder nicht gleichmäßig umgesetzt.",
+              "approvedExamples": [
+                {
+                  "exampleId": "int-01-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Führung mobilisiert Unterstützung, die Umsetzung durch Vorgesetzte bleibt ungleich.",
+                  "typicalEvidenceDe": "Organisationale Ressourcenhilfe mit Unebenheiten in der Ausführung.",
+                  "empiricalEvidenceDe": "Senior Management mobilisierte Ressourcen für Mitarbeitendenhilfe, während einzelne Vorgesetzte Unterstützung uneinheitlich kommunizierten und umsetzten.",
+                  "fitRationaleDe": "Das organisationsweite Ziel ist vorhanden, wird jedoch nicht von allen Verantwortlichen gleich getragen.",
+                  "sourceReference": {
+                    "sourceId": "nilakant-et-al-2013",
+                    "locator": "Section 'The Leadership Behaviour of Supervisors', journal PDF page 9"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 57,
+                      "cells": {
+                        "score": "D57",
+                        "anchor": "E57",
+                        "typicalEvidence": "F57",
+                        "empiricalExample": "G57",
+                        "source": "H57",
+                        "rationale": "I57"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 56,
+                      "cells": {
+                        "score": "D56",
+                        "anchor": "E56"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "int-01-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die Mehrheit, aber nicht die gesamte Belegschaft, ist missionsgetrieben.",
+                  "typicalEvidenceDe": "Breites Engagement mit expliziter Einschränkung des Umfangs.",
+                  "empiricalEvidenceDe": "Eine Nonprofit-Fallorganisation beschrieb die Mehrheit der Beschäftigten als von der Mission angetrieben und als Träger des Organisationsgeists.",
+                  "fitRationaleDe": "Die Evidenz ist positiv, erreicht wegen der ausdrücklichen Begrenzung auf die Mehrheit aber nicht den All-Employees-Anspruch.",
+                  "sourceReference": {
+                    "sourceId": "witmer-mellinger-2016",
+                    "locator": "Table 2, journal page 260"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 58,
+                      "cells": {
+                        "score": "D58",
+                        "anchor": "E58",
+                        "typicalEvidence": "F58",
+                        "empiricalExample": "G58",
+                        "source": "H58",
+                        "rationale": "I58"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 57,
+                      "cells": {
+                        "score": "D57",
+                        "anchor": "E57"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Beschäftigte erfüllen erforderliche Aufgaben auch unter starker Belastung und zeigen breit belegtes Engagement und Kooperation.",
+              "approvedExamples": [
+                {
+                  "exampleId": "int-01-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Beschäftigte kehren trotz persönlicher Belastung zurück und sichern notwendige Aufgaben.",
+                  "typicalEvidenceDe": "Rückkehr an Arbeitsplätze, operative Replanung, Loyalität und Einsatz.",
+                  "empiricalEvidenceDe": "Southwest-Beschäftigte kehrten trotz Trauer an ihre Arbeitsplätze zurück und planten die Flüge neu, um den Routenbetrieb sicherzustellen.",
+                  "fitRationaleDe": "Das tatsächlich beobachtete Verhalten belegt die Erfüllung notwendiger Aufgaben unter hoher Belastung.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article page 9, employee-commitment evidence"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 54,
+                      "cells": {
+                        "score": "D54",
+                        "anchor": "E54",
+                        "typicalEvidence": "F54",
+                        "empiricalExample": "G54",
+                        "source": "H54",
+                        "rationale": "I54"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 53,
+                      "cells": {
+                        "score": "D53",
+                        "anchor": "E53"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "int-01-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Beschäftigte richten ihre Arbeit trotz persönlicher Krisenbelastung auf die Erfordernisse der Organisation aus und übernehmen zusätzliche Verantwortung.",
+                  "typicalEvidenceDe": "Eigene Aufgaben erfüllen, über Anforderungen hinausgehen, Initiative in ungewohnten Situationen und Anpassungsbereitschaft.",
+                  "empiricalEvidenceDe": "In den stark engagierten Fallorganisationen richteten Beschäftigte trotz eigener Erdbebenbelastungen ihre Arbeit auf die Bedürfnisse der Organisation, erfüllten ihre Aufgaben, gingen über Anforderungen hinaus, übernahmen Initiative in ungewohnten Situationen und passten sich an.",
+                  "fitRationaleDe": "Der primär-empirische Mehrfallbefund verbindet tatsächliche Aufgabenerfüllung unter Belastung mit zusätzlicher Initiative und Anpassung; er ist verhaltensnäher und unabhängiger als allgemeines Gründerlob.",
+                  "sourceReference": {
+                    "sourceId": "walker-et-al-2014",
+                    "locator": "Employee engagement findings, PDF page 13, paragraph beginning 'Positive patterns were also evident'"
+                  },
+                  "workbookProvenance": {
+                    "status": "replaced_invalid_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 55,
+                      "cells": {
+                        "score": "D55",
+                        "anchor": "E55",
+                        "typicalEvidence": "F55",
+                        "empiricalExample": "G55",
+                        "source": "H55",
+                        "rationale": "I55"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 54,
+                      "cells": {
+                        "score": "D54",
+                        "anchor": "E54"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "itemId": "int-02",
+          "position": 9,
+          "dimensionId": "integrity",
+          "originalStatementEn": "My organization is successful in acting as a whole with all of its employees.",
+          "sourceReference": {
+            "sourceId": "kantur-iseri-say-2015",
+            "locator": "Table 4, journal page 465, Integrity item 2"
+          },
+          "elicitationQuestionDe": "Wie handelt Ihre Organisation gemeinsam mit ihren Beschäftigten, wenn abgestimmtes Vorgehen erforderlich ist?",
+          "codingInstructionDe": "Kodiere organisationsweite Koordination, gemeinsame Orientierung und tatsächliches Zusammenwirken. Ein hoher Wert erfordert belastbare organisationsweite Evidenz und darf nicht allein aus einzelnen koordinierten Teams abgeleitet werden; eine Vollerhebung jedes Beschäftigten ist dafür nicht erforderlich.",
+          "anchors": [
+            {
+              "score": 1,
+              "interpretationDe": "Abteilungen oder Informationswege sind so fragmentiert, dass kein gemeinsames Handeln entsteht.",
+              "approvedExamples": [
+                {
+                  "exampleId": "int-02-1-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Abteilungen handeln unabhängig und können in der Krise gegeneinander arbeiten.",
+                  "typicalEvidenceDe": "Silos, widersprüchliche Entscheidungen und fehlende organisationsweite Koordination.",
+                  "empiricalEvidenceDe": "In CS1 arbeiteten Abteilungen unabhängig, sodass Entscheider verschiedener Bereiche in einer Krise potenziell gegeneinander handeln konnten.",
+                  "fitRationaleDe": "Der Fall beschreibt unmittelbar das Gegenteil eines abgestimmten Organisationshandelns.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.1.1, CS1, PDF page 175 (printed C-3)"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 68,
+                      "cells": {
+                        "score": "D68",
+                        "anchor": "E68",
+                        "typicalEvidence": "F68",
+                        "empiricalExample": "G68",
+                        "source": "H68",
+                        "rationale": "I68"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 67,
+                      "cells": {
+                        "score": "D67",
+                        "anchor": "E67"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "int-02-1-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Interne Kommunikation transportiert Informationen in der Krise nicht wirksam.",
+                  "typicalEvidenceDe": "Blockierter Informationsfluss und übersehenes Spezialwissen.",
+                  "empiricalEvidenceDe": "Bei CS2 erlaubten interne Kommunikationsprozesse keinen effektiven Informationsfluss durch die Organisation in Krisenzeiten.",
+                  "fitRationaleDe": "Ohne gemeinsamen Informationsstand ist kohärentes Handeln der Gesamtorganisation nicht möglich.",
+                  "sourceReference": {
+                    "sourceId": "mcmanus-2008",
+                    "locator": "Appendix C.2.2.1, CS2, PDF page 178 (printed C-6)"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 69,
+                      "cells": {
+                        "score": "D69",
+                        "anchor": "E69",
+                        "typicalEvidence": "F69",
+                        "empiricalExample": "G69",
+                        "source": "H69",
+                        "rationale": "I69"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 68,
+                      "cells": {
+                        "score": "D68",
+                        "anchor": "E68"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 4,
+              "interpretationDe": "Zusammenarbeit oder Engagement sind in großen Teilen vorhanden, aber nicht vollständig oder zwischen Teams uneinheitlich.",
+              "approvedExamples": [
+                {
+                  "exampleId": "int-02-4-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Die Gesamtorganisation weist hohes, aber nicht vollständiges Engagement auf.",
+                  "typicalEvidenceDe": "Breites organisationsweites Engagement deutlich unter 100 Prozent.",
+                  "empiricalEvidenceDe": "Eine untersuchte Organisation berichtete für die Gesamtorganisation ein Engagement von ungefähr 80 Prozent.",
+                  "fitRationaleDe": "Die Reichweite ist organisationsweit und hoch, erfüllt aber den Anspruch des Handelns mit allen Beschäftigten nicht.",
+                  "sourceReference": {
+                    "sourceId": "walker-et-al-2014",
+                    "locator": "Results, Senior Manager, PDF page 16, approximately 80 percent whole-organization engagement"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 65,
+                      "cells": {
+                        "score": "D65",
+                        "anchor": "E65",
+                        "typicalEvidence": "F65",
+                        "empiricalExample": "G65",
+                        "source": "H65",
+                        "rationale": "I65"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 64,
+                      "cells": {
+                        "score": "D64",
+                        "anchor": "E64"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "int-02-4-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Teampraktiken sind uneinheitlich und erschweren bereichsübergreifende Zusammenarbeit.",
+                  "typicalEvidenceDe": "Funktionierende Kooperation in einigen Teams und gegensätzliche Praktiken in anderen.",
+                  "empiricalEvidenceDe": "In der untersuchten Hochschule unterschieden sich Teampraktiken stark; gegensätzliche Vorgehensweisen erschwerten die Zusammenarbeit mit anderen Fachpersonen.",
+                  "fitRationaleDe": "Zusammenarbeit existiert, ist aber nicht konsistent über die Organisation hinweg.",
+                  "sourceReference": {
+                    "sourceId": "krsmanovic-et-al-2024",
+                    "locator": "Results, section 4.2.2(b), journal page 6, male administrative employee"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 67,
+                      "cells": {
+                        "score": "D67",
+                        "anchor": "E67",
+                        "typicalEvidence": "F67",
+                        "empiricalExample": "G67",
+                        "source": "H67",
+                        "rationale": "I67"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 66,
+                      "cells": {
+                        "score": "D66",
+                        "anchor": "E66"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "score": 7,
+              "interpretationDe": "Organisation und Beschäftigte richten Handlungen an gemeinsamen Zielen aus und tragen Entscheidungen oder Belastungen gemeinsam.",
+              "approvedExamples": [
+                {
+                  "exampleId": "int-02-7-a",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Beschäftigte koordinieren ihre Handlungen unmittelbar, um den gemeinsamen Betrieb aufrechtzuerhalten.",
+                  "typicalEvidenceDe": "Gemeinsame Rückkehr an die jeweiligen Einsatzorte und schnelle operative Neuplanung trotz persönlicher Belastung.",
+                  "empiricalEvidenceDe": "Southwest-Beschäftigte kehrten trotz Trauer rasch an ihre jeweiligen Arbeitsplätze zurück und planten Flugverbindungen neu, um den Routenbetrieb zu sichern.",
+                  "fitRationaleDe": "Das beobachtete gemeinsame Handeln verbindet individuelle Aufgabenerfüllung mit koordinierter Neuplanung für das Organisationsziel.",
+                  "sourceReference": {
+                    "sourceId": "chen-et-al-2021",
+                    "locator": "Table 4, article page 9"
+                  },
+                  "workbookProvenance": {
+                    "status": "remapped_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 62,
+                      "cells": {
+                        "score": "D62",
+                        "anchor": "E62",
+                        "typicalEvidence": "F62",
+                        "empiricalExample": "G62",
+                        "source": "H62",
+                        "rationale": "I62"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 61,
+                      "cells": {
+                        "score": "D61",
+                        "anchor": "E61"
+                      }
+                    }
+                  }
+                },
+                {
+                  "exampleId": "int-02-7-b",
+                  "evidenceKind": "observed_empirical_evidence",
+                  "evidenceVerificationStatus": "source_content_checked",
+                  "behavioralAnchorDe": "Beschäftigte arbeiten berufs-, team- und organisationsübergreifend auf ein gemeinsames Krisenziel hin.",
+                  "typicalEvidenceDe": "Gemeinsames Sicherheitsziel, multidisziplinäre Zusammenarbeit und neue Kommunikationswege über traditionelle Grenzen.",
+                  "empiricalEvidenceDe": "In der qualitativen Studie nannten alle 20 Befragten multidisziplinäre Teams und grenzüberschreitende Zusammenarbeit als zentral für die COVID-Reaktion; der gemeinsame Fokus auf Beschäftigten- und Patientensicherheit verband Abteilungen, Teams, Organisationen und Gesundheitssysteme.",
+                  "fitRationaleDe": "Die beobachtete Zusammenarbeit überschritt organisatorische Grenzen und richtete unterschiedliche Beschäftigtengruppen auf ein gemeinsames Krisenziel aus.",
+                  "sourceReference": {
+                    "sourceId": "khurshid-et-al-2021",
+                    "locator": "Results, 'A collective way of working', article page 7; Discussion, shared health-system goal, article page 8"
+                  },
+                  "workbookProvenance": {
+                    "status": "replaced_invalid_candidate",
+                    "fullData": {
+                      "sheet": "Full_Data",
+                      "row": 63,
+                      "cells": {
+                        "score": "D63",
+                        "anchor": "E63",
+                        "typicalEvidence": "F63",
+                        "empiricalExample": "G63",
+                        "source": "H63",
+                        "rationale": "I63"
+                      }
+                    },
+                    "onlyAnchor": {
+                      "sheet": "Only_Anchor_V",
+                      "row": 62,
+                      "cells": {
+                        "score": "D62",
+                        "anchor": "E62"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 1,
+  "mappingId": "resilient-decision-processes-kantur-evidence-v1",
+  "mappingVersion": "1.0.0",
+  "status": "pilot_only",
+  "language": "de",
+  "instrument": {
+    "instrumentId": "kantur-iseri-say-evidence-rating",
+    "instrumentVersion": "1.0.0"
+  },
+  "sourceGuide": {
+    "guideId": "guide:v1:1nxmdyi1jb20h2",
+    "title": "Interviewleitfaden: Resiliente Entscheidungsprozesse",
+    "stableIdVersion": "v1",
+    "sourceFile": "Interview Leitfaden_Test Voice Agent.docx.md",
+    "structureFingerprintSha256": "11cc8c52c338a59ec7d8cb9a2afad5a6601982c08c17dd01c706e7d32f071229",
+    "sections": [
+      {
+        "sectionId": "section:v1:108d29908eb5q9",
+        "phaseContext": "respondent_context",
+        "mainQuestions": [
+          {
+            "mainQuestionId": "main-question:v1:1kpnoxt0tgiokt",
+            "followUpQuestionIds": ["follow-up:v1:1sjumpk06mgsj8", "follow-up:v1:1xiz1da1gv3aky"]
+          }
+        ]
+      },
+      {
+        "sectionId": "section:v1:00qjap50nphf51",
+        "phaseContext": "pre_adversity",
+        "mainQuestions": [
+          {
+            "mainQuestionId": "main-question:v1:16pzv6f1xhh9gj",
+            "followUpQuestionIds": [
+              "follow-up:v1:0ead31y0ow020q",
+              "follow-up:v1:1d6xyky06qpi9a",
+              "follow-up:v1:0a7g9y20q0u9pa"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:1mkc90v1uwfe8b",
+            "followUpQuestionIds": [
+              "follow-up:v1:10k5x661sj76a2",
+              "follow-up:v1:04mldmv0wdrok3",
+              "follow-up:v1:14fdkpz0vuavab"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:0mcdmnz1pnogcz",
+            "followUpQuestionIds": [
+              "follow-up:v1:0ss8l0814e7g0c",
+              "follow-up:v1:00vf2280dxcsik",
+              "follow-up:v1:0zduiu90ebbzvh",
+              "follow-up:v1:0rlzz4l1uq1f6x"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:0aomhea13m4fcu",
+            "followUpQuestionIds": ["follow-up:v1:1mzcq3e0zskdjq", "follow-up:v1:0wxtjh0105on8w"]
+          }
+        ]
+      },
+      {
+        "sectionId": "section:v1:077dpgi0dfo5qu",
+        "phaseContext": "during_adversity",
+        "mainQuestions": [
+          {
+            "mainQuestionId": "main-question:v1:1na5k671bgr4gz",
+            "followUpQuestionIds": [
+              "follow-up:v1:0hmc1tp132720p",
+              "follow-up:v1:135nyrq1rlywhm",
+              "follow-up:v1:1o7ts7w1tp12ns"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:1jd7o4006m2orw",
+            "followUpQuestionIds": [
+              "follow-up:v1:1pdwffw1pya5aw",
+              "follow-up:v1:0icdi5p1dcb8a9",
+              "follow-up:v1:0497kow0dhp7gs"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:07l8q990ln4om1",
+            "followUpQuestionIds": [
+              "follow-up:v1:03bfomd07jc3kp",
+              "follow-up:v1:1wt9kxx0gchgrl",
+              "follow-up:v1:1v3riyh0e4otqt"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:1cr8siw0prl324",
+            "followUpQuestionIds": [
+              "follow-up:v1:0hy16tw08rp7x4",
+              "follow-up:v1:030fofn178hm5j",
+              "follow-up:v1:010ty9o1ms33hc"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:0nf2ncz0rumbnz",
+            "followUpQuestionIds": [
+              "follow-up:v1:07jk187120dxs3",
+              "follow-up:v1:1f7537f07begav",
+              "follow-up:v1:1clqizz1ps6kob"
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": "section:v1:0ktflrb1ykxgkj",
+        "phaseContext": "post_adversity",
+        "mainQuestions": [
+          {
+            "mainQuestionId": "main-question:v1:0ek7jvv04smipj",
+            "followUpQuestionIds": [
+              "follow-up:v1:0scwmcu0v8ra7m",
+              "follow-up:v1:0e2wo161kezlkm",
+              "follow-up:v1:1xq2og8018t0jg"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:0n1hys01rm1a9w",
+            "followUpQuestionIds": [
+              "follow-up:v1:13i73h31bi8gyb",
+              "follow-up:v1:15m57100i5ztv4",
+              "follow-up:v1:02x56wv151rawb"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:1lcs79509gmlpp",
+            "followUpQuestionIds": [
+              "follow-up:v1:01t0qpw01urvcw",
+              "follow-up:v1:1618c0q1b60e9y",
+              "follow-up:v1:0hx9azc0adcrvo"
+            ]
+          },
+          {
+            "mainQuestionId": "main-question:v1:1kg39mg1t6r2zo",
+            "followUpQuestionIds": [
+              "follow-up:v1:03br0w7025ksf7",
+              "follow-up:v1:04jl7a01bq9rvo",
+              "follow-up:v1:16jcoby19wi3sy"
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": "section:v1:063rqe10g83ht9",
+        "phaseContext": "cross_phase",
+        "mainQuestions": [
+          {
+            "mainQuestionId": "main-question:v1:13hsk9k0frvkfo",
+            "followUpQuestionIds": []
+          },
+          {
+            "mainQuestionId": "main-question:v1:1v57l0614hkluq",
+            "followUpQuestionIds": []
+          },
+          {
+            "mainQuestionId": "main-question:v1:03cchk816tf8o4",
+            "followUpQuestionIds": []
+          }
+        ]
+      }
+    ],
+    "contextOnlyQuestionIds": [
+      "main-question:v1:1kpnoxt0tgiokt",
+      "follow-up:v1:1sjumpk06mgsj8",
+      "follow-up:v1:1xiz1da1gv3aky"
+    ]
+  },
+  "methodologicalSafeguards": {
+    "phaseTreatment": "context_only_not_additional_rating_items",
+    "guideQuestionTreatment": "evidence_prompts_not_rating_items",
+    "noCrisisRule": "never_infer_low_score_from_absence_of_crisis",
+    "hypotheticalEvidenceRule": "label_hypothetical_and_do_not_treat_as_observed_behavior",
+    "partialCoverageRule": "use_insufficient_evidence_instead_of_forced_score",
+    "multipleEvidenceRule": "retain_supporting_counter_and_ambiguous_evidence"
+  },
+  "scenarioRoutes": [
+    {
+      "routeId": "actual_event",
+      "evidenceClassification": "observed_event",
+      "activationConditionDe": "Die interviewte Person kann eine tatsächlich erlebte Krise oder erhebliche Belastung beschreiben.",
+      "interviewerInstructionDe": "Erfrage konkrete Abläufe, beobachtetes Verhalten, Verantwortlichkeiten, Zeitpunkte und Folgen neutral anhand des erlebten Ereignisses.",
+      "scoringConstraintDe": "Nur wörtlich belegte Aussagen zum beobachteten Organisationsverhalten dürfen als tatsächliche Ereignisevidenz codiert werden."
+    },
+    {
+      "routeId": "hypothetical_event",
+      "evidenceClassification": "hypothetical_response",
+      "activationConditionDe": "Die interviewte Person kann kein ausreichend passendes Ereignis schildern, kann aber einen hypothetischen Ablauf erläutern.",
+      "interviewerInstructionDe": "Formuliere genau eine neutrale Was-wäre-wenn-Frage und kennzeichne die Antwort als hypothetische Aussage.",
+      "scoringConstraintDe": "Hypothetische Absichten sind keine beobachtete Verhaltensleistung und dürfen nicht wie tatsächliche Krisenevidenz behandelt werden."
+    },
+    {
+      "routeId": "no_crisis_experienced",
+      "evidenceClassification": "preparation_or_minor_disruption",
+      "activationConditionDe": "Die interviewte Person erklärt ausdrücklich, dass die Organisation keine Krise erlebt hat.",
+      "interviewerInstructionDe": "Akzeptiere die Aussage ohne Widerspruch und frage neutral nach Übungen, kleineren Störungen oder konkreter Vorbereitung, soweit vorhanden.",
+      "scoringConstraintDe": "Das Fehlen einer erlebten Krise ist keine niedrige Resilienzausprägung; fehlende beobachtbare Evidenz führt zu unzureichender Evidenz oder nicht anwendbar."
+    }
+  ],
+  "itemRoutes": [
+    {
+      "itemId": "rob-01",
+      "primaryQuestionIds": ["main-question:v1:1cr8siw0prl324", "follow-up:v1:0hy16tw08rp7x4"],
+      "supportingQuestionIds": [
+        "follow-up:v1:14fdkpz0vuavab",
+        "main-question:v1:0mcdmnz1pnogcz",
+        "follow-up:v1:0ss8l0814e7g0c",
+        "main-question:v1:1na5k671bgr4gz",
+        "follow-up:v1:0hmc1tp132720p",
+        "follow-up:v1:010ty9o1ms33hc",
+        "follow-up:v1:0scwmcu0v8ra7m",
+        "follow-up:v1:1xq2og8018t0jg",
+        "follow-up:v1:04jl7a01bq9rvo",
+        "main-question:v1:13hsk9k0frvkfo"
+      ],
+      "counterEvidenceQuestionIds": ["follow-up:v1:030fofn178hm5j", "follow-up:v1:0e2wo161kezlkm"],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Welche zentrale Position oder Kernfunktion war in dieser Situation bedroht, und woran zeigte sich, ob sie erhalten blieb?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Angenommen, eine wesentliche Kernfunktion gerät unter Druck: Woran würde sich zeigen, wie Ihre Organisation ihre Stabilität schützt?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Welche konkrete Übung, kleinere Störung oder Vorbereitung zeigt, wie zentrale Funktionen geschützt würden?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    },
+    {
+      "itemId": "rob-02",
+      "primaryQuestionIds": [
+        "follow-up:v1:10k5x661sj76a2",
+        "main-question:v1:07l8q990ln4om1",
+        "follow-up:v1:1v3riyh0e4otqt",
+        "main-question:v1:1lcs79509gmlpp",
+        "follow-up:v1:01t0qpw01urvcw"
+      ],
+      "supportingQuestionIds": [
+        "main-question:v1:16pzv6f1xhh9gj",
+        "follow-up:v1:0ead31y0ow020q",
+        "follow-up:v1:1d6xyky06qpi9a",
+        "follow-up:v1:04mldmv0wdrok3",
+        "follow-up:v1:0rlzz4l1uq1f6x",
+        "main-question:v1:0aomhea13m4fcu",
+        "follow-up:v1:1mzcq3e0zskdjq",
+        "follow-up:v1:0wxtjh0105on8w",
+        "main-question:v1:1jd7o4006m2orw",
+        "follow-up:v1:1pdwffw1pya5aw",
+        "main-question:v1:0n1hys01rm1a9w",
+        "follow-up:v1:13i73h31bi8gyb",
+        "main-question:v1:1kg39mg1t6r2zo",
+        "follow-up:v1:03br0w7025ksf7",
+        "follow-up:v1:16jcoby19wi3sy",
+        "main-question:v1:03cchk816tf8o4"
+      ],
+      "counterEvidenceQuestionIds": ["follow-up:v1:1wt9kxx0gchgrl"],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Welche unterschiedlichen Lösungen wurden für die konkrete Herausforderung entwickelt, und welche davon waren tatsächlich nutzbar?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Wie würde Ihre Organisation bei einer neuartigen Störung mehrere umsetzbare Lösungswege entwickeln?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Bei welcher Übung oder kleineren Störung wurden mehrere konkrete Lösungswege erprobt?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    },
+    {
+      "itemId": "rob-03",
+      "primaryQuestionIds": [
+        "main-question:v1:1cr8siw0prl324",
+        "follow-up:v1:0hy16tw08rp7x4",
+        "follow-up:v1:030fofn178hm5j"
+      ],
+      "supportingQuestionIds": [
+        "follow-up:v1:14fdkpz0vuavab",
+        "follow-up:v1:0ss8l0814e7g0c",
+        "main-question:v1:1na5k671bgr4gz",
+        "follow-up:v1:0hmc1tp132720p",
+        "follow-up:v1:010ty9o1ms33hc",
+        "follow-up:v1:1xq2og8018t0jg",
+        "follow-up:v1:04jl7a01bq9rvo",
+        "main-question:v1:13hsk9k0frvkfo"
+      ],
+      "counterEvidenceQuestionIds": ["follow-up:v1:0e2wo161kezlkm"],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Was tat Ihre Organisation, als etwas Wesentliches verloren zu gehen drohte, und was wurde dabei fortgeführt oder aufgegeben?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Wie würde Ihre Organisation handeln, wenn eine zentrale Funktion oder ein wichtiges Ziel ernsthaft gefährdet wäre?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Welche konkrete Vorbereitung oder kleinere Belastung zeigt, wie die Organisation wesentliche Ziele schützt?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    },
+    {
+      "itemId": "rob-04",
+      "primaryQuestionIds": [
+        "follow-up:v1:0497kow0dhp7gs",
+        "follow-up:v1:0e2wo161kezlkm",
+        "main-question:v1:1kg39mg1t6r2zo",
+        "follow-up:v1:03br0w7025ksf7"
+      ],
+      "supportingQuestionIds": [
+        "follow-up:v1:04mldmv0wdrok3",
+        "main-question:v1:0aomhea13m4fcu",
+        "follow-up:v1:1mzcq3e0zskdjq",
+        "follow-up:v1:0wxtjh0105on8w",
+        "follow-up:v1:030fofn178hm5j",
+        "main-question:v1:0ek7jvv04smipj",
+        "follow-up:v1:0hx9azc0adcrvo",
+        "follow-up:v1:16jcoby19wi3sy",
+        "main-question:v1:03cchk816tf8o4"
+      ],
+      "counterEvidenceQuestionIds": ["follow-up:v1:1wt9kxx0gchgrl"],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Wie ging Ihre Organisation nach einem Rückschlag mit ihrer Kernaufgabe um, und was wurde fortgeführt oder verändert?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Wie würde Ihre Organisation nach einem schweren Rückschlag entscheiden, was fortgeführt, verändert oder beendet wird?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Welches Beispiel aus einer kleineren Störung oder Übung zeigt, wie die Kernaufgabe trotz Schwierigkeiten fortgeführt wird?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    },
+    {
+      "itemId": "agi-01",
+      "primaryQuestionIds": [
+        "main-question:v1:0mcdmnz1pnogcz",
+        "follow-up:v1:0zduiu90ebbzvh",
+        "main-question:v1:1na5k671bgr4gz",
+        "follow-up:v1:0hmc1tp132720p",
+        "follow-up:v1:1o7ts7w1tp12ns",
+        "follow-up:v1:03bfomd07jc3kp",
+        "follow-up:v1:1618c0q1b60e9y",
+        "main-question:v1:1v57l0614hkluq"
+      ],
+      "supportingQuestionIds": [
+        "main-question:v1:1mkc90v1uwfe8b",
+        "follow-up:v1:0ss8l0814e7g0c",
+        "follow-up:v1:00vf2280dxcsik",
+        "follow-up:v1:0rlzz4l1uq1f6x",
+        "follow-up:v1:010ty9o1ms33hc",
+        "follow-up:v1:0scwmcu0v8ra7m",
+        "follow-up:v1:1xq2og8018t0jg"
+      ],
+      "counterEvidenceQuestionIds": [],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Wie viel Zeit lag zwischen dem erkannten Handlungsbedarf und der tatsächlich umgesetzten Maßnahme?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Wie würde Ihre Organisation sicherstellen, dass bei akutem Handlungsbedarf tatsächlich schnell gehandelt wird?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Welche Übung oder kleinere Störung zeigt konkret, wie schnell Maßnahmen umgesetzt werden können?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    },
+    {
+      "itemId": "agi-02",
+      "primaryQuestionIds": [
+        "follow-up:v1:10k5x661sj76a2",
+        "follow-up:v1:1v3riyh0e4otqt",
+        "main-question:v1:1lcs79509gmlpp",
+        "follow-up:v1:01t0qpw01urvcw",
+        "follow-up:v1:0hx9azc0adcrvo"
+      ],
+      "supportingQuestionIds": [
+        "main-question:v1:16pzv6f1xhh9gj",
+        "main-question:v1:1mkc90v1uwfe8b",
+        "main-question:v1:0aomhea13m4fcu",
+        "follow-up:v1:1mzcq3e0zskdjq",
+        "follow-up:v1:0wxtjh0105on8w",
+        "main-question:v1:07l8q990ln4om1",
+        "follow-up:v1:03bfomd07jc3kp",
+        "main-question:v1:0n1hys01rm1a9w",
+        "follow-up:v1:13i73h31bi8gyb",
+        "main-question:v1:1kg39mg1t6r2zo",
+        "follow-up:v1:03br0w7025ksf7",
+        "main-question:v1:1v57l0614hkluq"
+      ],
+      "counterEvidenceQuestionIds": ["follow-up:v1:1wt9kxx0gchgrl"],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Welche Alternative wurde aus der negativen Situation heraus entwickelt, und welchen konkreten Nutzen brachte sie?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Welche nutzbare Alternative würde Ihre Organisation bei einer negativen Entwicklung gezielt prüfen?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Welche tatsächlich genutzte Alternative mit erkennbarem Vorteil entstand aus einer kleineren Störung oder Übung?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    },
+    {
+      "itemId": "agi-03",
+      "primaryQuestionIds": [
+        "main-question:v1:0mcdmnz1pnogcz",
+        "follow-up:v1:0zduiu90ebbzvh",
+        "main-question:v1:1jd7o4006m2orw",
+        "follow-up:v1:1pdwffw1pya5aw",
+        "main-question:v1:07l8q990ln4om1",
+        "follow-up:v1:03bfomd07jc3kp",
+        "main-question:v1:1cr8siw0prl324",
+        "follow-up:v1:010ty9o1ms33hc",
+        "follow-up:v1:13i73h31bi8gyb",
+        "follow-up:v1:02x56wv151rawb",
+        "main-question:v1:1kg39mg1t6r2zo",
+        "follow-up:v1:16jcoby19wi3sy"
+      ],
+      "supportingQuestionIds": [
+        "main-question:v1:16pzv6f1xhh9gj",
+        "follow-up:v1:0ead31y0ow020q",
+        "follow-up:v1:1d6xyky06qpi9a",
+        "main-question:v1:1mkc90v1uwfe8b",
+        "follow-up:v1:04mldmv0wdrok3",
+        "follow-up:v1:0wxtjh0105on8w",
+        "main-question:v1:1na5k671bgr4gz",
+        "follow-up:v1:0hmc1tp132720p",
+        "follow-up:v1:1o7ts7w1tp12ns",
+        "follow-up:v1:0icdi5p1dcb8a9",
+        "main-question:v1:0ek7jvv04smipj",
+        "follow-up:v1:0e2wo161kezlkm",
+        "main-question:v1:0n1hys01rm1a9w",
+        "follow-up:v1:1618c0q1b60e9y",
+        "follow-up:v1:0hx9azc0adcrvo",
+        "follow-up:v1:03br0w7025ksf7",
+        "main-question:v1:1v57l0614hkluq"
+      ],
+      "counterEvidenceQuestionIds": ["follow-up:v1:1wt9kxx0gchgrl"],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Welche erforderliche Maßnahme wurde nach einer Situationsänderung konkret angepasst und umgesetzt?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Wie würde Ihre Organisation eine notwendige Maßnahme anpassen und tatsächlich umsetzen, wenn sich die Lage plötzlich ändert?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Welche Übung oder kleinere Veränderung zeigt, dass benötigte Maßnahmen situationsgerecht angepasst und umgesetzt werden?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    },
+    {
+      "itemId": "int-01",
+      "primaryQuestionIds": [
+        "follow-up:v1:00vf2280dxcsik",
+        "follow-up:v1:1f7537f07begav",
+        "follow-up:v1:1clqizz1ps6kob",
+        "follow-up:v1:15m57100i5ztv4"
+      ],
+      "supportingQuestionIds": [
+        "main-question:v1:0mcdmnz1pnogcz",
+        "follow-up:v1:135nyrq1rlywhm",
+        "main-question:v1:0nf2ncz0rumbnz",
+        "follow-up:v1:1xq2og8018t0jg",
+        "follow-up:v1:04jl7a01bq9rvo",
+        "main-question:v1:13hsk9k0frvkfo"
+      ],
+      "counterEvidenceQuestionIds": [],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Woran war konkret erkennbar, wie Beschäftigte ihre erforderlichen Aufgaben in der schwierigen Situation wahrnahmen?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Wie würden Beschäftigte bei einer erheblichen Störung wissen und umsetzen, was von ihnen erforderlich ist?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Welche Übung oder kleinere Störung zeigt beobachtbar, wie Beschäftigte erforderliche Aufgaben übernehmen?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    },
+    {
+      "itemId": "int-02",
+      "primaryQuestionIds": [
+        "main-question:v1:0nf2ncz0rumbnz",
+        "follow-up:v1:07jk187120dxs3",
+        "follow-up:v1:1f7537f07begav",
+        "follow-up:v1:1clqizz1ps6kob",
+        "follow-up:v1:02x56wv151rawb"
+      ],
+      "supportingQuestionIds": [
+        "follow-up:v1:0a7g9y20q0u9pa",
+        "follow-up:v1:0zduiu90ebbzvh",
+        "follow-up:v1:135nyrq1rlywhm",
+        "main-question:v1:1jd7o4006m2orw",
+        "follow-up:v1:0icdi5p1dcb8a9",
+        "follow-up:v1:1xq2og8018t0jg",
+        "main-question:v1:0n1hys01rm1a9w",
+        "main-question:v1:13hsk9k0frvkfo",
+        "main-question:v1:03cchk816tf8o4"
+      ],
+      "counterEvidenceQuestionIds": [],
+      "scenarioRoutes": [
+        {
+          "routeId": "actual_event",
+          "neutralPromptDe": "Wie arbeiteten unterschiedliche Bereiche und Beschäftigte in dieser Situation tatsächlich als Organisation zusammen?",
+          "preferredPhaseContexts": ["during_adversity", "post_adversity"]
+        },
+        {
+          "routeId": "hypothetical_event",
+          "neutralPromptDe": "Wie würde ein organisationsweit abgestimmtes Vorgehen bei einer erheblichen Störung konkret hergestellt?",
+          "preferredPhaseContexts": ["pre_adversity"]
+        },
+        {
+          "routeId": "no_crisis_experienced",
+          "neutralPromptDe": "Welche Übung oder kleinere Störung zeigt, wie Bereiche und Beschäftigte organisationsweit abgestimmt handeln?",
+          "preferredPhaseContexts": ["pre_adversity", "cross_phase"]
+        }
+      ]
+    }
+  ]
+}

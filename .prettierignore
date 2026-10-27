@@ -1,0 +1,14 @@
+node_modules
+dist
+coverage
+playwright-report
+test-results
+/Literatur/
+package-lock.json
+examples/*.md
+*.docx.md
+apps/backend/drizzle/meta/*.json
+.env.example
+massentest/results/
+Dockerfile
+docker/nginx.conf

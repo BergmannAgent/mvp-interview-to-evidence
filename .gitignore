@@ -1,0 +1,48 @@
+# Dependencies and package-manager state
+node_modules/
+.pnpm-store/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Build and test output
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Local runtime data
+data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+postgres-data/
+*.dump
+audio-recordings/
+*.wav
+*.mp3
+*.webm
+
+# User-owned research source library (not part of the application repository)
+/Literatur/
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+.tmp/
+*.tmp
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+# Microsoft Office owner/lock files
+~$*
+.DS_Store
+Thumbs.db

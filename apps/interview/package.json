@@ -1,0 +1,25 @@
+{
+  "name": "@orgscience/interview-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "dev": "vite --host 0.0.0.0",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@orgscience/api-client": "0.1.0",
+    "@orgscience/contracts": "0.1.0",
+    "@orgscience/frontend-i18n": "0.1.0",
+    "lucide-react": "1.31.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "vite": "8.2.0"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "live-interview-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.12.1",
+  "engines": {
+    "node": ">=24.18.0",
+    "npm": ">=11.8.0 <12"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "overrides": {
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.25.12"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b --clean && tsc -b && node scripts/verify-build-artifacts.mjs",
+    "clean": "tsc -b --clean",
+    "db:check": "drizzle-kit check --config=drizzle.config.ts",
+    "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
+    "db:migrate": "npm run db:migrate --workspace @orgscience/backend",
+    "evaluation:calibration:provider": "npm run build --workspace @orgscience/contracts && npm run build --workspace @orgscience/domain && node --env-file-if-exists=.env --import tsx scripts/run-evaluation-calibration-provider-smoke.ts",
+    "evaluation:massentest": "npm run build --workspace @orgscience/contracts && npm run build --workspace @orgscience/domain && node --env-file-if-exists=.env --import tsx scripts/run-evaluation-massentest.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "research:validate": "tsx scripts/validate-literature-instrument.ts",
+    "test": "vitest run",
+    "test:browser:i18n": "node scripts/run-bilingual-browser-smoke.mjs",
+    "test:browser:settings": "node scripts/run-interview-settings-browser-smoke.mjs",
+    "test:watch": "vitest",
+    "test:persistence": "vitest run apps/backend/src/application/persistence apps/backend/src/infrastructure/database",
+    "test:postgres": "node scripts/run-postgres-tests.mjs",
+    "typecheck": "tsc -b --pretty false && tsc -p tsconfig.tests.json --pretty false"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "24.13.3",
+    "@vitest/coverage-v8": "4.1.10",
+    "drizzle-kit": "0.31.10",
+    "eslint": "10.8.0",
+    "globals": "17.9.0",
+    "playwright-core": "1.62.1",
+    "prettier": "3.9.6",
+    "tsx": "4.23.9",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.66.0",
+    "vitest": "4.1.10"
+  }
+}

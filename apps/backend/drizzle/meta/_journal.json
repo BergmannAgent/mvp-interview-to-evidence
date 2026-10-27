@@ -1,0 +1,97 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1786108629700,
+      "tag": "0000_initial_app_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1786110977148,
+      "tag": "0001_transcript_mutation_fence",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1786137944746,
+      "tag": "0002_ai_delivery_contracts",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1786138598793,
+      "tag": "0003_unicode_transcript_contracts",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1786139927053,
+      "tag": "0004_canonical_transcript_contracts",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1786144627659,
+      "tag": "0005_interview_state_summary_pagination",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1786522854430,
+      "tag": "0006_event_outbox_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1786529096379,
+      "tag": "0007_workflow_step_agent_binding",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1786540800000,
+      "tag": "0008_fast_mvp_sessions",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1786665600000,
+      "tag": "0009_evaluation_persistence",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1786718208000,
+      "tag": "0010_realtime_provider_transcript",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1787322248084,
+      "tag": "0011_evaluation_profiles",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1787343947702,
+      "tag": "0012_profile_driven_evaluations",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/contracts" },
+    { "path": "packages/domain" },
+    { "path": "packages/api-client" },
+    { "path": "packages/design-tokens" },
+    { "path": "packages/frontend-i18n" },
+    { "path": "apps/backend" },
+    { "path": "apps/evaluation-studio" },
+    { "path": "apps/interview" },
+    { "path": "apps/monitoring" }
+  ]
+}

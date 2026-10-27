@@ -1,0 +1,2 @@
+ALTER TABLE "app"."ai_turn_deliveries" DROP CONSTRAINT "ai_turn_deliveries_confirmed_prefix";--> statement-breakpoint
+ALTER TABLE "app"."ai_turn_deliveries" ADD CONSTRAINT "ai_turn_deliveries_confirmed_prefix" CHECK ("app"."ai_turn_deliveries"."confirmed_spoken_text" is null or "app"."ai_turn_deliveries"."status" = 'complete' or left("app"."ai_turn_deliveries"."proposed_text", char_length("app"."ai_turn_deliveries"."confirmed_spoken_text")) = "app"."ai_turn_deliveries"."confirmed_spoken_text");

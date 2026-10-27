@@ -1,0 +1,112 @@
+services:
+  postgres:
+    image: postgres:17.9-alpine
+    environment:
+      POSTGRES_DB: interview
+      POSTGRES_USER: interview
+      POSTGRES_PASSWORD: interview
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U interview -d interview']
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - interview-postgres:/var/lib/postgresql/data
+
+  migrations:
+    build:
+      context: .
+      target: backend
+    command: ['node', 'apps/backend/dist/infrastructure/database/migrate.js']
+    environment:
+      DATABASE_URL: postgresql://interview:interview@postgres:5432/interview
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: 'no'
+
+  backend:
+    build:
+      context: .
+      target: backend
+    environment:
+      DATABASE_URL: postgresql://interview:interview@postgres:5432/interview
+      BACKEND_HOST: 0.0.0.0
+      BACKEND_PORT: 3000
+      DEMO_MODE: ${DEMO_MODE:-false}
+      INTERVIEW_AGENT_MODEL: ${INTERVIEW_AGENT_MODEL:-openai/gpt-5.4-nano}
+      EVALUATION_MODEL: ${EVALUATION_MODEL:-openai/gpt-5.6-terra}
+      EVALUATION_TIMEOUT_MS: ${EVALUATION_TIMEOUT_MS:-120000}
+      AI_MODEL: ${AI_MODEL:-}
+      HTTP_ALLOWED_ORIGINS: http://localhost:5273,http://localhost:5274,http://localhost:5275
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_REALTIME_MODEL: ${OPENAI_REALTIME_MODEL:-gpt-realtime-2.1}
+      OPENAI_TRANSCRIPTION_MODEL: ${OPENAI_TRANSCRIPTION_MODEL:-gpt-live-transcribe}
+      OPENAI_REALTIME_VOICE: ${OPENAI_REALTIME_VOICE:-marin}
+      REALTIME_POLL_INTERVAL_MS: 1000
+      REALTIME_REPLAY_PAGE_SIZE: 250
+      REALTIME_MAXIMUM_REPLAY_EVENTS: 50000
+      REALTIME_MAXIMUM_SUBSCRIBERS: 200
+      REALTIME_MAXIMUM_SUBSCRIBERS_PER_INTERVIEW: 20
+      REALTIME_HEARTBEAT_INTERVAL_MS: 15000
+      REALTIME_RETRY_MS: 1000
+      REALTIME_WRITE_TIMEOUT_MS: 5000
+      REALTIME_MAXIMUM_FRAME_BYTES: 262144
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:3000/health/ready']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    ports:
+      - '3100:3000'
+
+  interview:
+    build:
+      context: .
+      target: interview
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1/']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    ports:
+      - '5273:80'
+
+  monitoring:
+    build:
+      context: .
+      target: monitoring
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1/']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    ports:
+      - '5274:80'
+
+  evaluation-studio:
+    build:
+      context: .
+      target: evaluation-studio
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1/']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    ports:
+      - '5275:80'
+
+volumes:
+  interview-postgres:

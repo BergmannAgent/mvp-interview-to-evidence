@@ -1,0 +1,898 @@
+{
+  "schemaVersion": 1,
+  "overlayId": "default-or-evaluation-profile-en",
+  "overlayVersion": "1.0.0",
+  "language": "en",
+  "classification": "controlled_translation_of_derived_pilot_instrument",
+  "approvalStatus": "pilot_only",
+  "appliesTo": {
+    "instrumentId": "kantur-iseri-say-evidence-rating",
+    "instrumentVersion": "1.0.0",
+    "instrumentFingerprintSha256": "5664be7211e3818f62b7a6d73e0e333e1176172b2633355593f08a4129d9dc61",
+    "interpolationCodebookId": "or-evidence-interpolation-codebook",
+    "interpolationCodebookVersion": "1.0.0",
+    "interpolationCodebookFingerprintSha256": "caeffe44c7874e49e84063a5f90f42ee810c60918dcddc729bd8a193860800f3"
+  },
+  "translationMethod": {
+    "sourceLanguage": "de",
+    "originalItemStatements": "primary_source_english_wording_preserved",
+    "derivedRuntimeTexts": "controlled_semantic_translation",
+    "validationStatus": "not_psychometrically_validated",
+    "scope": "complete_or_runtime_texts",
+    "method": "controlled_semantic_translation_with_source_identity_preservation",
+    "curator": {
+      "identity": "codex-assisted-translation",
+      "kind": "ai_assisted"
+    },
+    "reviewer": {
+      "identity": "automated-schema-and-parity-review",
+      "kind": "automated_validation"
+    },
+    "curatedOn": "2026-09-02",
+    "reviewedOn": "2026-09-02",
+    "humanReviewStatus": "pending"
+  },
+  "profile": {
+    "description": "Editable 1-to-7 evidence profile containing the nine currently used Organizational Resilience items.",
+    "coderPrompt": "Evaluate observable organizational resilience in the interview for every profile item. Consider both supporting and counter evidence and assign the statements to the best-matching criterion on the 1-to-7 scale. A high rating requires concrete and credible evidence of actual practice. General statements of intent and purely hypothetical statements are weaker evidence. If the statements do not support a defensible rating, use the appropriate non-score status and identify the missing or conflicting evidence.",
+    "dimensions": [
+      { "dimensionId": "robustness", "name": "Robustness" },
+      { "dimensionId": "agility", "name": "Agility" },
+      { "dimensionId": "integrity", "name": "Integrity" }
+    ],
+    "items": [
+      {
+        "itemId": "rob-01",
+        "dimensionId": "robustness",
+        "name": "What does your organization do under difficult conditions to preserve its position and stability?",
+        "codingInstruction": "Code only observable evidence showing whether the organization's central position, stability, and ability to function are maintained under substantial strain. Later recovery alone does not demonstrate that they were maintained during the crisis.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "The organization's previous financial, strategic, or operational position collapses under the strain to the point that its existence is threatened."
+          },
+          {
+            "score": 2,
+            "criterion": "At least one limited function or stability resource is preserved, but failures and a substantial threat to the previous position dominate overall.\nBoundary: Do not use when no preservation is evidenced (1), or when several central functions demonstrably continue (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "Several central functions or stability factors are preserved while substantial failures remain; the organization's existence is not wholly threatened, but continuity remains below the middle reference anchor.\nBoundary: Do not use when only one isolated residual function remains (2), or when the evidence fully meets the partial-preservation reference anchor 4."
+          },
+          {
+            "score": 4,
+            "criterion": "Individual functions or stability factors are preserved, but continuity is limited or not integrated across the organization."
+          },
+          {
+            "score": 5,
+            "criterion": "The organization's position and most central functions demonstrably remain stable, but at least one substantial gap remains in organization-wide reach, duration, or outcome stability.\nBoundary: Do not use when only individual functions are preserved (4), or when near-complete stability with only a minor residual gap is evidenced (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "The organization's position, stability, and central functions are maintained across nearly the whole organization even under substantial strain; only one clearly limited residual gap prevents the high reference anchor.\nBoundary: Do not use when substantial areas or outcomes remain unstable (5 or lower), or when complete preservation without a relevant gap is evidenced (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "The organization demonstrably maintains its position, central functions, and stability even under severe strain."
+          }
+        ]
+      },
+      {
+        "itemId": "rob-02",
+        "dimensionId": "robustness",
+        "name": "How does your organization develop different solutions when confronted with difficult challenges?",
+        "codingInstruction": "Code the breadth, diversity, and actual usability of solutions. Individual reactions, or plans that exist but cannot be applied, do not justify a high rating.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "Viable alternatives and a shared organization-wide solution space are absent."
+          },
+          {
+            "score": 2,
+            "criterion": "One fragile or improvised alternative is apparent, while a shared solution space and further viable options are largely absent.\nBoundary: Do not use when no alternative exists at all (1), or when several usable local solutions are developed (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "More than one local or provisional solution is developed, but their coordination, transferability, or viability remains clearly limited.\nBoundary: Do not use when only one barely viable option exists (2), or when the reactive ability to generate several solutions meets the middle reference anchor 4."
+          },
+          {
+            "score": 4,
+            "criterion": "Individual solutions or plans exist, but they are reactive, uncoordinated, or difficult to apply to specific crises."
+          },
+          {
+            "score": 5,
+            "criterion": "Several different solutions are developed or deployed in a coordinated way, but substantial gaps remain in their combination, testing, or organization-wide use.\nBoundary: Do not use when solutions remain predominantly uncoordinated (4), or when a broadly evidenced capacity to combine solutions has only a minor residual gap (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "Different financial, operational, technological, or organizational solutions are demonstrably combined; only a limited integration or outcome gap remains.\nBoundary: Do not use when combination succeeds only in parts of the organization (5), or when several types of solution are combined fully and reliably (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "The organization demonstrably generates and combines multiple different financial, operational, technological, or organizational solutions."
+          }
+        ]
+      },
+      {
+        "itemId": "rob-03",
+        "dimensionId": "robustness",
+        "name": "How does your organization behave when it is at risk of losing something essential?",
+        "codingInstruction": "Code sustained, concrete efforts to protect survival, core functions, employment, or central goals. A crisis condition without observed behavior is not sufficient for a high rating.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "The organization stops resisting early, or affected organizations fail under the strain."
+          },
+          {
+            "score": 2,
+            "criterion": "Limited or short-lived resistance is evidenced before the organization largely gives up or loses essential goals and functions.\nBoundary: Do not use when resistance is entirely absent (1), or when several functions are actively protected over a relevant period (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "The organization actively protects several functions, jobs, or services, but duration, scope, or success remains below the middle reference anchor.\nBoundary: Do not use when only isolated short-term resistance is apparent (2), or when active partial protection meets reference anchor 4."
+          },
+          {
+            "score": 4,
+            "criterion": "The organization actively protects individual functions, jobs, or services, but the evidence remains limited or focused on recovery."
+          },
+          {
+            "score": 5,
+            "criterion": "The organization resists sustained strong pressure and secures a large proportion of its central goals, while at least one substantial goal or core function remains observably unsecured.\nBoundary: Do not use when protection remains only partial or recovery-oriented (4), or when nearly all central goals are secured with only minor residual uncertainty (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "Sustained resistance under severe pressure and the broad protection of survival or central goals are evidenced; only one clearly limited goal or small organizational area remains observably unsecured.\nBoundary: Do not use when substantial goals remain unsecured (5 or lower), or when survival and central goals are fully evidenced as secured (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "The organization continues to resist under severe pressure and demonstrably secures its survival or central goals."
+          }
+        ]
+      },
+      {
+        "itemId": "rob-04",
+        "dimensionId": "robustness",
+        "name": "How does your organization deal with setbacks and difficulties when its previous course is at risk?",
+        "codingInstruction": "Code observed continuation of operations, the core mission, or a deliberately chosen strategic course. Uncritical path persistence is not automatically resilient; permissible adaptation may be part of continuing the core mission.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "The organization, or a clearly defined case operation, ends after the strain and does not continue its course."
+          },
+          {
+            "score": 2,
+            "criterion": "The previous course or operation is largely discontinued while only an isolated partial activity or limited restart continues.\nBoundary: Do not use when no continuation is evidenced (1), or when larger parts continue operating despite clear performance losses (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "Substantial parts continue operating despite the setback, but with major interruptions, a marked performance decline, or uncertain continuation.\nBoundary: Do not use when only an isolated residual activity remains (2), or when partial persistence meets reference anchor 4."
+          },
+          {
+            "score": 4,
+            "criterion": "The organization persists through a setback and continues operating, but success remains partial or performance initially declines substantially."
+          },
+          {
+            "score": 5,
+            "criterion": "Operations or the core mission continue broadly, but relevant interruptions, performance losses, or partial failure to meet objectives remain.\nBoundary: Do not use when continuation succeeds only partially (4), or when the core mission continues almost throughout with only a minor residual gap (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "Operations or the core mission continue almost throughout a severe crisis and decisions are aligned accordingly; only a limited interruption or outcome gap remains.\nBoundary: Do not use when relevant parts of the core mission remain impaired (5 or lower), or when consistent continuation is fully evidenced (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "The organization consistently continues its operations or core mission despite a severe crisis and aligns its decisions accordingly."
+          }
+        ]
+      },
+      {
+        "itemId": "agi-01",
+        "dimensionId": "agility",
+        "name": "How does your organization act when rapid action is required?",
+        "codingInstruction": "Code evidenced response and implementation time. Intent, mere recognition of a problem, or later action without temporal evidence must not be rated as rapid.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "Decisions and responses are substantially delayed or demonstrably too slow."
+          },
+          {
+            "score": 2,
+            "criterion": "The overall response remains substantially delayed or demonstrably too slow, but one time-critical measure is implemented in time and limits part of the damage.\nBoundary: Do not use when all observed decisions and responses are substantially delayed or too slow (1), or when several relevant measures are implemented effectively after the delay (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "The organization initially responds too late but then implements several relevant measures; the initial delay remains more serious than under the middle reference anchor.\nBoundary: Do not use when the delayed response has little effect (2), or when the response meets reference anchor 4 without an additional severe delay."
+          },
+          {
+            "score": 4,
+            "criterion": "The organization responds and acts, but only after the event occurs or after an initial delay."
+          },
+          {
+            "score": 5,
+            "criterion": "Necessary decisions and measures are taken mostly in a timely manner, but individual substantial decision or implementation steps remain delayed.\nBoundary: Do not use when action begins only after the event or an initial delay (4), or when almost all steps are completed rapidly under time pressure (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "Decisions and measures are implemented rapidly and almost consistently under time pressure; only one clearly limited step or area is delayed.\nBoundary: Do not use when several substantial delays remain (5 or lower), or when consistently rapid implementation is fully evidenced (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "The organization demonstrably makes necessary decisions and implements measures rapidly under time pressure."
+          }
+        ]
+      },
+      {
+        "itemId": "agi-02",
+        "dimensionId": "agility",
+        "name": "How does your organization develop and use alternatives to remain capable of acting, or emerge stronger, from adverse circumstances?",
+        "codingInstruction": "Code only alternatives that are actually developed or used and create an observable benefit from the adverse situation. Mere error correction without an alternative or benefit is insufficient for a high rating.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "The organization neither identifies nor prepares viable alternatives."
+          },
+          {
+            "score": 2,
+            "criterion": "An initial narrow or delayed alternative is identified, but it remains barely viable and restores only minimal capacity to act.\nBoundary: Do not use when no alternative exists (1), or when a concrete alternative becomes demonstrably usable (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "A concrete and basically usable alternative is developed, but it remains especially narrow, late, or less effective than the middle reference anchor.\nBoundary: Do not use when the alternative is barely viable (2), or when an implemented reactive alternative meets reference anchor 4."
+          },
+          {
+            "score": 4,
+            "criterion": "A concrete alternative is developed or implemented, but remains reactive, narrowly limited, or lacks strong evidence of benefit."
+          },
+          {
+            "score": 5,
+            "criterion": "Several alternatives, or a lasting new capability, improve the capacity to act, but their observed combination, reach, or effect remains substantially limited in important areas.\nBoundary: Do not use when only one narrow reactive alternative exists (4), or when combined alternatives show an almost fully evidenced lasting benefit (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "Several alternatives are combined and demonstrably lead to lasting performance or new capabilities; only one clearly limited area retains an observed reach or outcome gap.\nBoundary: Do not use when combination or lasting effect has substantial gaps (5 or lower), or when both are fully evidenced (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "The organization combines alternatives and demonstrably uses the adverse situation to improve performance or create lasting new capabilities."
+          }
+        ]
+      },
+      {
+        "itemId": "agi-03",
+        "dimensionId": "agility",
+        "name": "How does your organization adapt its actions when the situation changes and concrete measures become necessary?",
+        "codingInstruction": "Code whether required measures are mobilized and implemented in a manner appropriate to the situation. Structural preconditions without observed action are weaker evidence than actual rapid adaptation.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "Missing role, staffing, or resource arrangements prevent action appropriate to the situation."
+          },
+          {
+            "score": 2,
+            "criterion": "A limited role, staffing, or resource adjustment succeeds while structural barriers continue to prevent action appropriate to the situation in most respects.\nBoundary: Do not use when no effective adaptation is possible (1), or when several concrete local adaptations are implemented (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "Several concrete adaptations are implemented but remain highly reactive, slow, or confined to a narrow area.\nBoundary: Do not use when barriers dominate despite an individual adjustment (2), or when local reactive adaptability meets reference anchor 4."
+          },
+          {
+            "score": 4,
+            "criterion": "Concrete adaptability exists, but is reactive or limited to individual departments."
+          },
+          {
+            "score": 5,
+            "criterion": "Actions are adapted and delegated in a coordinated way across several areas, but relevant delays or gaps in responsibility or resources remain.\nBoundary: Do not use when adaptation remains limited to individual departments (4), or when it occurs rapidly and flexibly across nearly the whole organization (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "Required actions are recognized, flexibly delegated, and implemented rapidly across nearly the whole organization; only one clearly limited responsibility, resource, or implementation gap remains.\nBoundary: Do not use when several substantial coordination gaps remain (5 or lower), or when rapid and flexible implementation is fully evidenced (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "Required actions are recognized, delegated, and implemented rapidly and flexibly."
+          }
+        ]
+      },
+      {
+        "itemId": "int-01",
+        "dimensionId": "integrity",
+        "name": "How do the employees in your organization commit themselves to doing what is required in difficult situations?",
+        "codingInstruction": "Code observed task fulfilment, role understanding, and employee commitment. Because the original wording says 'all employees', statements about a majority justify at most a middle reference rating.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "Employees do not know the required roles or lack the mandate to fulfil their responsibilities."
+          },
+          {
+            "score": 2,
+            "criterion": "Individual employees perform required tasks while unclear roles or missing mandates prevent task ownership in most other observed areas.\nBoundary: Do not use when nobody can take responsibility effectively (1), or when commitment is apparent across several teams (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "Commitment and task ownership are evidenced in several teams, but remain clearly uneven because of differences in roles, mandates, or implementation.\nBoundary: Do not use when commitment is carried only by individuals (2), or when broad but incomplete support meets reference anchor 4."
+          },
+          {
+            "score": 4,
+            "criterion": "Commitment and support are broad, but do not include all employees or are not implemented consistently."
+          },
+          {
+            "score": 5,
+            "criterion": "Most employees perform required tasks and support one another even under strain, but at least one substantial group or mandate gap remains.\nBoundary: Do not use when commitment remains clearly uneven across the organization (4), or when nearly all employees contribute with only a minor residual gap (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "Required tasks, commitment, and cooperation are evidenced almost consistently under severe strain; only one clearly limited group or situation remains open.\nBoundary: Do not use when substantial groups or tasks are not supported (5 or lower), or when broad fulfilment and cooperation are fully evidenced (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "Employees fulfil required tasks even under severe strain and show broadly evidenced commitment and cooperation."
+          }
+        ]
+      },
+      {
+        "itemId": "int-02",
+        "dimensionId": "integrity",
+        "name": "How does your organization act together with its employees when coordinated action is required?",
+        "codingInstruction": "Code organization-wide coordination, shared orientation, and actual joint action. A high rating requires credible organization-wide evidence and must not be inferred from individual coordinated teams alone; a full survey of every employee is not required.",
+        "anchors": [
+          {
+            "score": 1,
+            "criterion": "Departments or information channels are so fragmented that no joint action emerges."
+          },
+          {
+            "score": 2,
+            "criterion": "Individual teams or people coordinate while fragmented departments or information channels continue to prevent joint action overall.\nBoundary: Do not use when no joint action emerges at all (1), or when several teams demonstrably act in a coordinated way (3 or 4)."
+          },
+          {
+            "score": 3,
+            "criterion": "Several teams act in a coordinated way, but central interfaces or information channels remain so inconsistent that organization-wide joint action is clearly restricted.\nBoundary: Do not use when coordination is isolated (2), or when cooperation across large parts of the organization meets reference anchor 4."
+          },
+          {
+            "score": 4,
+            "criterion": "Cooperation or commitment exists across large parts of the organization, but is incomplete or inconsistent between teams."
+          },
+          {
+            "score": 5,
+            "criterion": "Shared goals and coordinated action are evidenced in most areas, but at least one substantial team or information interface remains inconsistent.\nBoundary: Do not use when cooperation exists only across large parts without broad goal alignment (4), or when almost organization-wide coordination with a minor residual gap is evidenced (6)."
+          },
+          {
+            "score": 6,
+            "criterion": "The organization and its employees align actions with shared goals across nearly the whole organization and jointly bear decisions or burdens; only one clearly limited interface remains open.\nBoundary: Do not use when several substantial coordination gaps remain (5 or lower), or when shared alignment and burden-sharing are fully evidenced (7)."
+          },
+          {
+            "score": 7,
+            "criterion": "The organization and its employees align their actions with shared goals and jointly bear decisions or burdens."
+          }
+        ]
+      }
+    ]
+  },
+  "rubric": {
+    "title": "Organizational Resilience Evidence Rating",
+    "description": "Literature-based pilot for derived 1-to-7 evidence coding of the nine Kantur/Iseri-Say items. The English runtime texts are controlled translations and are not a separately psychometrically validated scale.",
+    "examples": [
+      {
+        "exampleId": "rob-01-1-a",
+        "behavioralAnchor": "Accumulated losses bring the organization to the brink of insolvency.",
+        "typicalEvidence": "An existential crisis, sustained losses, or a capital and strategic position that is no longer viable.",
+        "empiricalEvidence": "In 2004, Lego accumulated losses of DKK 1.931 billion and entered an existential crisis that brought it close to insolvency.",
+        "sourceReference": { "sourceId": "chen-et-al-2021", "locator": "Table 4, article page 8" }
+      },
+      {
+        "exampleId": "rob-01-1-b",
+        "behavioralAnchor": "The existing business model no longer sustains the organization's position.",
+        "typicalEvidence": "Impending collapse or insolvency before a fundamental reorientation.",
+        "empiricalEvidence": "In 2008, Starbucks was close to insolvency and had to redesign its business model fundamentally in order to emerge from the crisis.",
+        "sourceReference": { "sourceId": "chen-et-al-2021", "locator": "Table 3, article page 7" }
+      },
+      {
+        "exampleId": "rob-01-4-a",
+        "behavioralAnchor": "Operational priorities are secured in only parts of the organization.",
+        "typicalEvidence": "Local continuity capability with evident integration gaps.",
+        "empiricalEvidence": "CS5 had clear operational priorities in individual areas, but these priorities were not integrated across the organization.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.5.1, CS5, PDF page 186 (printed C-14)"
+        }
+      },
+      {
+        "exampleId": "rob-01-4-b",
+        "behavioralAnchor": "Diversification reduces a single dependency without demonstrating complete stability.",
+        "typicalEvidence": "Continued diversification of programs or revenue sources.",
+        "empiricalEvidence": "A nonprofit organization continued to diversify its programs so that it would not depend on a single source of revenue.",
+        "sourceReference": {
+          "sourceId": "witmer-mellinger-2016",
+          "locator": "Results and Table 2, journal pages 259-260"
+        }
+      },
+      {
+        "exampleId": "rob-01-7-a",
+        "behavioralAnchor": "Financial stability and growth are preserved even during a severe industry crisis.",
+        "typicalEvidence": "Stable liquidity, improved solvency, continued operations, and sustainable growth.",
+        "empiricalEvidence": "During the oil crisis, Southwest maintained solid cash flow, improved its solvency, and showed robust liquidity indicators even in the most difficult years.",
+        "sourceReference": { "sourceId": "chen-et-al-2021", "locator": "Table 4, article page 8" }
+      },
+      {
+        "exampleId": "rob-01-7-b",
+        "behavioralAnchor": "A centrally monitored core service remains at the defined quality level even under severe strain.",
+        "typicalEvidence": "Service quality is used as a core indicator and service standards are not lowered during severe crises.",
+        "empiricalEvidence": "Southwest used service quality as a central operating indicator and, according to the case coding, maintained its service standards even during the most difficult crisis periods.",
+        "sourceReference": {
+          "sourceId": "chen-et-al-2021",
+          "locator": "Table 4, article page 9, customer-service evidence"
+        }
+      },
+      {
+        "exampleId": "rob-02-1-a",
+        "behavioralAnchor": "No organization-wide alternatives exist if critical facilities are lost.",
+        "typicalEvidence": "No replacement sites, substitute structures, or integrated emergency options.",
+        "empiricalEvidence": "CS5 had no organization-wide planning for alternative sites, buildings, or structures in the event that important facilities were lost.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.5.1, CS5, PDF page 186 (printed C-14)"
+        }
+      },
+      {
+        "exampleId": "rob-02-1-b",
+        "behavioralAnchor": "Silos prevent a shared understanding of possible crisis responses.",
+        "typicalEvidence": "Departments work in isolation and do not know how other areas are expected to respond.",
+        "empiricalEvidence": "In one case organization, there was little staff movement between departments and no organization-wide understanding of how other areas would act during a crisis.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.1.1, CS1, PDF page 173 (printed C-1)"
+        }
+      },
+      {
+        "exampleId": "rob-02-4-a",
+        "behavioralAnchor": "Problems are addressed individually rather than through a coordinated portfolio of solutions.",
+        "typicalEvidence": "Fire-fighting and isolated operational measures without a long-term recovery strategy.",
+        "empiricalEvidence": "CS4 addressed emerging problems one at a time instead of prioritizing them strategically and aligning them with a long-term recovery strategy.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.4.1, CS4, PDF page 183 (printed C-11)"
+        }
+      },
+      {
+        "exampleId": "rob-02-4-b",
+        "behavioralAnchor": "Existing plans are difficult to apply to the specific crisis.",
+        "typicalEvidence": "Plans are readily accessible but adapt poorly to the situation.",
+        "empiricalEvidence": "CS8 knew where relevant plans were stored but had difficulty applying them in practice to a specific crisis.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.8.1, CS8, PDF page 195 (printed C-23)"
+        }
+      },
+      {
+        "exampleId": "rob-02-7-a",
+        "behavioralAnchor": "Several types of solution are deployed in parallel.",
+        "typicalEvidence": "Alternative financing, debt reduction, efficiency measures, process changes, and employee contributions.",
+        "empiricalEvidence": "Southwest combined equity issuance, debt repayment, higher aircraft utilization, short ground times, fleet standardization, and voluntary wage contributions.",
+        "sourceReference": {
+          "sourceId": "chen-et-al-2021",
+          "locator": "Table 4, article pages 8-9"
+        }
+      },
+      {
+        "exampleId": "rob-02-7-b",
+        "behavioralAnchor": "The organization simultaneously uses different technical, operational, and social solutions.",
+        "typicalEvidence": "Multiple measures are implemented concretely across different areas of work.",
+        "empiricalEvidence": "The university studied implemented more than one hundred measures, including changing teaching formats, remote work, and protection and hygiene rules; interprofessional teams also developed numerous creative teaching solutions.",
+        "sourceReference": {
+          "sourceId": "krsmanovic-et-al-2024",
+          "locator": "Results, sections 4.2.2 and 4.2.2(a), journal pages 5-6"
+        }
+      },
+      {
+        "exampleId": "rob-03-1-a",
+        "behavioralAnchor": "The initial response is to cease operations rather than pursue a continuation strategy.",
+        "typicalEvidence": "An impulse to shut down without an independently developed alternative.",
+        "empiricalEvidence": "During a simulated earthquake crisis in which all telecommunications failed, key CS10 decision-makers initially wanted to close and go home.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.10.1, CS10, PDF page 200 (printed C-28)"
+        }
+      },
+      {
+        "exampleId": "rob-03-1-b",
+        "behavioralAnchor": "The responsible founder ends the turnaround effort and abandons the company.",
+        "typicalEvidence": "Explicit abandonment after a failed turnaround, after which the organization no longer exists.",
+        "empiricalEvidence": "In the Startup D case, the turnaround failed; the founder explicitly abandoned the startup, and the case overview subsequently recorded it as no longer existing.",
+        "sourceReference": {
+          "sourceId": "gan-korsgaard-2025",
+          "locator": "Case descriptions, Case D, journal page 125; Table 1, startup status, journal page 124"
+        }
+      },
+      {
+        "exampleId": "rob-03-4-a",
+        "behavioralAnchor": "Operations and employment are protected through concrete, limited adaptations.",
+        "typicalEvidence": "Restoration of disrupted functions and temporary staffing measures.",
+        "empiricalEvidence": "SupplyCo restored disrupted functions, loaned employees to other units or competitors, and changed HR rules to protect jobs.",
+        "sourceReference": {
+          "sourceId": "browder-et-al-2024",
+          "locator": "Section 4.2.1 'Adaptation to crisis-driven adversity', article page 138 (SupplyCo 2-6); Appendix B, SupplyCo adaptations 2-6, page 161, and benefits adaptation 19, page 162"
+        }
+      },
+      {
+        "exampleId": "rob-03-4-b",
+        "behavioralAnchor": "A critical service continues despite substantial strain.",
+        "typicalEvidence": "Service continuity despite delayed pay and security risks, limited to one program.",
+        "empiricalEvidence": "Employees in an HIV program in Cote d'Ivoire continued to come to work despite delayed salaries and security concerns, thereby maintaining the service.",
+        "sourceReference": {
+          "sourceId": "barasa-et-al-2018",
+          "locator": "Human Capital section, journal page 499"
+        }
+      },
+      {
+        "exampleId": "rob-03-7-a",
+        "behavioralAnchor": "Sustained effort prevents defeat and enables further growth.",
+        "typicalEvidence": "Continued struggle, survival, and growth despite substantial adversity.",
+        "empiricalEvidence": "The Southwest team withstood the pressure, was not defeated, and achieved further growth despite adversity.",
+        "sourceReference": { "sourceId": "chen-et-al-2021", "locator": "Table 4, article page 9" }
+      },
+      {
+        "exampleId": "rob-03-7-b",
+        "behavioralAnchor": "Capabilities developed during the crisis are permanently incorporated into operations.",
+        "typicalEvidence": "Enduring adaptations and capabilities used beyond the crisis.",
+        "empiricalEvidence": "At GroceryCo and SupplyCo, digitally supported crisis adaptations became integral capabilities that both companies continued to use after the crisis.",
+        "sourceReference": {
+          "sourceId": "browder-et-al-2024",
+          "locator": "Table 7, article pages 141-142; section 4.3 'Phase 3: Postcrisis', pages 145-146, especially page 146"
+        }
+      },
+      {
+        "exampleId": "rob-04-1-a",
+        "behavioralAnchor": "Businesses do not reopen permanently or close after initially reopening.",
+        "typicalEvidence": "Long-term business closure after a natural disaster.",
+        "empiricalEvidence": "A random sample following Hurricane Katrina examined 371 operating and 126 closed businesses; some initially reopened and later closed after a cascade of additional pressures.",
+        "sourceReference": {
+          "sourceId": "sydnor-et-al-2017",
+          "locator": "Abstract; Natural Hazards 85, pages 1637-1663"
+        }
+      },
+      {
+        "exampleId": "rob-04-1-b",
+        "behavioralAnchor": "A business-model path that cannot adapt ends after the shock.",
+        "typicalEvidence": "Liquidation, sale, or closure during the long-term follow-up period.",
+        "empiricalEvidence": "In a seven-year longitudinal study after the Christchurch earthquakes, four of ten small businesses did not survive through 2018; two were liquidated, one was sold, and one was closed.",
+        "sourceReference": {
+          "sourceId": "de-vries-hamilton-2021",
+          "locator": "Abstract and Findings, article pages 1 and 8-9"
+        }
+      },
+      {
+        "exampleId": "rob-04-4-a",
+        "behavioralAnchor": "The organization persists despite a marked loss of engagement.",
+        "typicalEvidence": "Continued effort with temporarily poorer indicators and later partial recovery.",
+        "empiricalEvidence": "After the earthquake, one organization persisted with engagement at 53 to 54 percent and later returned to approximately 66 to 67 percent.",
+        "sourceReference": {
+          "sourceId": "walker-et-al-2014",
+          "locator": "Results, Middle Manager, Organisation Y, PDF page 16, engagement increase from 53/54 to 66/67 percent"
+        }
+      },
+      {
+        "exampleId": "rob-04-4-b",
+        "behavioralAnchor": "Work and learning continue after the crisis.",
+        "typicalEvidence": "Continued improvement and learning activities without complete evidence of outcomes.",
+        "empiricalEvidence": "One case organization continued its work on employee support and kept learning from the earthquake period.",
+        "sourceReference": {
+          "sourceId": "walker-et-al-2014",
+          "locator": "Results, HR Manager, Organisation Y, PDF page 16, continued work and staff-support finding"
+        }
+      },
+      {
+        "exampleId": "rob-04-7-a",
+        "behavioralAnchor": "Employees resume operations quickly and adhere to core principles.",
+        "typicalEvidence": "Return to duties, replanning of operations, and explicit adherence to the chosen path.",
+        "empiricalEvidence": "Despite their grief, Southwest employees returned to their duties, replanned flights, and continued to adhere to central principles under difficult conditions.",
+        "sourceReference": { "sourceId": "chen-et-al-2021", "locator": "Table 4, article page 9" }
+      },
+      {
+        "exampleId": "rob-04-7-b",
+        "behavioralAnchor": "The core mission remains the guiding principle throughout the crisis.",
+        "typicalEvidence": "All essential decisions prioritize the central mission over an extended crisis period.",
+        "empiricalEvidence": "At the university studied, fulfilling the teaching mission became the decisive priority for management decisions over a two-year period.",
+        "sourceReference": {
+          "sourceId": "krsmanovic-et-al-2024",
+          "locator": "Results, section 4.2.2(a), journal page 5"
+        }
+      },
+      {
+        "exampleId": "agi-01-1-a",
+        "behavioralAnchor": "The chain of command delays decisions by as much as one week.",
+        "typicalEvidence": "Slow approvals and delayed communication.",
+        "empiricalEvidence": "At the university studied, the chain of command responded slowly; decisions and confirmations sometimes took as long as one week.",
+        "sourceReference": {
+          "sourceId": "krsmanovic-et-al-2024",
+          "locator": "Results, section 4.2.2(a), journal page 6"
+        }
+      },
+      {
+        "exampleId": "agi-01-1-b",
+        "behavioralAnchor": "The organization is slow and changes only under extreme pressure.",
+        "typicalEvidence": "Strong reluctance to change, creating a risk that the response will come too late.",
+        "empiricalEvidence": "At CS1, decision-makers described the organization as slow and reluctant to change until intervention might be too late.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.1.1, CS1, PDF page 175 (printed C-3)"
+        }
+      },
+      {
+        "exampleId": "agi-01-4-a",
+        "behavioralAnchor": "Required activities are moved to remote operation only after the disruption occurs.",
+        "typicalEvidence": "Reactive reorganization after in-person activity is prohibited, with the first weeks remaining challenging.",
+        "empiricalEvidence": "After in-person teaching was prohibited, university employees reorganized courses, meetings, and other activities for remote operation; the first weeks in particular were described as challenging.",
+        "sourceReference": {
+          "sourceId": "krsmanovic-et-al-2024",
+          "locator": "Results, section 4.2.2(a), teaching-format measures, journal page 5"
+        }
+      },
+      {
+        "exampleId": "agi-01-4-b",
+        "behavioralAnchor": "Intensive problem solving begins after an initial paralysis.",
+        "typicalEvidence": "A delayed start followed by a rapid and intensive response from owners.",
+        "empiricalEvidence": "In the hospitality family businesses studied, an initial crisis paralysis was followed by rapidly initiated, intensive problem solving by owners.",
+        "sourceReference": {
+          "sourceId": "schwaiger-2022-dissertation",
+          "locator": "Chapter 6, section 6.4.2 'Personal traits', Participant 3, dissertation PDF page 129 (printed page 115)"
+        }
+      },
+      {
+        "exampleId": "agi-01-7-a",
+        "behavioralAnchor": "New requirements are learned quickly and implemented operationally.",
+        "typicalEvidence": "Rapid adoption of rules, return to duties, and immediate replanning.",
+        "empiricalEvidence": "Southwest employees learned new safety rules and procedures quickly, returned rapidly to their workplaces, and replanned flights.",
+        "sourceReference": {
+          "sourceId": "chen-et-al-2021",
+          "locator": "Table 4, article pages 9-10"
+        }
+      },
+      {
+        "exampleId": "agi-01-7-b",
+        "behavioralAnchor": "Short paths to key decision-makers enable rapid decisions.",
+        "typicalEvidence": "Direct access to the relevant decision-makers.",
+        "empiricalEvidence": "In a family-influenced case organization, key decision-makers were close both physically and organizationally, which enabled decisions to be made quickly.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.10.1, CS10, PDF page 200 (printed C-28)"
+        }
+      },
+      {
+        "exampleId": "agi-02-1-a",
+        "behavioralAnchor": "After the crisis, decision-makers see no alternative path.",
+        "typicalEvidence": "Strong path fixation and little ability to recognize alternative courses of action.",
+        "empiricalEvidence": "After a crisis, key CS1 decision-makers had considerable difficulty seeing any alternative path for the business.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.1.1, CS1, PDF page 175 (printed C-3)"
+        }
+      },
+      {
+        "exampleId": "agi-02-1-b",
+        "behavioralAnchor": "Critical suppliers and market alternatives have not been identified.",
+        "typicalEvidence": "No prepared substitute resources or sourcing options.",
+        "empiricalEvidence": "CS5 had identified neither critical supplies and suppliers nor possible alternatives in the market.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.5.1, CS5, PDF page 186 (printed C-14)"
+        }
+      },
+      {
+        "exampleId": "agi-02-4-a",
+        "behavioralAnchor": "A backup is established only after a critical weakness is recognized.",
+        "typicalEvidence": "Reactive protection of a single communications component.",
+        "empiricalEvidence": "One case organization identified the absence of a backup for an important communications package and duplicated it shortly before the study.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.6.1, CS6, PDF page 189 (printed C-17)"
+        }
+      },
+      {
+        "exampleId": "agi-02-4-b",
+        "behavioralAnchor": "The production configuration is relocated to reduce fixed costs.",
+        "typicalEvidence": "A long-term production alternative is implemented but remains limited to a single operational lever.",
+        "empiricalEvidence": "Among the group of Swedish textile SMEs studied, resilient production companies relocated manufacturing in order to reduce fixed costs.",
+        "sourceReference": {
+          "sourceId": "pal-2013-dissertation",
+          "locator": "Table 5.7, dissertation PDF pages 127-128 (printed pages 106-107), long-term sustenance strategies"
+        }
+      },
+      {
+        "exampleId": "agi-02-7-a",
+        "behavioralAnchor": "Financial and operational alternatives produce crisis coping capacity and competitive advantages.",
+        "typicalEvidence": "Alternative financing, cost design, process innovation, and shared resource contributions.",
+        "empiricalEvidence": "Southwest combined equity issuance, voluntary wage contributions, and an innovative short-haul cost model to translate crisis pressure into improved capacity to act.",
+        "sourceReference": {
+          "sourceId": "chen-et-al-2021",
+          "locator": "Table 4, article pages 8-9"
+        }
+      },
+      {
+        "exampleId": "agi-02-7-b",
+        "behavioralAnchor": "A new technological alternative resolves a bottleneck and remains usable over time.",
+        "typicalEvidence": "Algorithmically changed order allocation during labor and supply shortages.",
+        "empiricalEvidence": "SupplyCo reprogrammed its system so that all customers received partial quantities during shortages; the digital adaptation became an enduring capability.",
+        "sourceReference": {
+          "sourceId": "browder-et-al-2024",
+          "locator": "Section 4.3.1 'Enhanced crisis-preparedness', article pages 146-147, partial-order algorithm on page 147; Table 8, pages 146-147"
+        }
+      },
+      {
+        "exampleId": "agi-03-1-a",
+        "behavioralAnchor": "A crisis roster for mobilizing staff remains absent.",
+        "typicalEvidence": "No clear assignment of personnel to crisis duties.",
+        "empiricalEvidence": "CS2 had no established staff roster; this was a major problem during an actual crisis and remained unresolved one year later.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.2.1, CS2, PDF page 177 (printed C-5)"
+        }
+      },
+      {
+        "exampleId": "agi-03-1-b",
+        "behavioralAnchor": "Prepared sourcing alternatives for crises are absent.",
+        "typicalEvidence": "Only a few preferred supply arrangements for disruptions.",
+        "empiricalEvidence": "CS5 had only a few preferred supply arrangements that could be used during a crisis.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.5.1, CS5, PDF page 186 (printed C-14)"
+        }
+      },
+      {
+        "exampleId": "agi-03-4-a",
+        "behavioralAnchor": "A required substitute solution is implemented but remains cumbersome and time-consuming.",
+        "typicalEvidence": "A concrete workaround after the disruption occurs, with continuing process friction.",
+        "empiricalEvidence": "A university department replaced its paper-based signature process at short notice with an email and PDF workflow that functioned but remained cumbersome, frustrating, and time-consuming.",
+        "sourceReference": {
+          "sourceId": "krsmanovic-et-al-2024",
+          "locator": "Results, section 4.2.2(b), journal page 6"
+        }
+      },
+      {
+        "exampleId": "agi-03-4-b",
+        "behavioralAnchor": "One department has a concrete crisis capability while others do not.",
+        "typicalEvidence": "A local contact and redundancy solution without organization-wide expansion.",
+        "empiricalEvidence": "One department created and distributed a compact crisis contact list; this capability was not transferred to other departments.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.1.1, CS1, PDF page 175 (printed C-3)"
+        }
+      },
+      {
+        "exampleId": "agi-03-7-a",
+        "behavioralAnchor": "New rules and operational requirements are implemented rapidly.",
+        "typicalEvidence": "Rapid learning, immediate return, and fast reorganization.",
+        "empiricalEvidence": "Southwest implemented new safety procedures rapidly, mobilized employees, and replanned flight operations during the emergency.",
+        "sourceReference": {
+          "sourceId": "chen-et-al-2021",
+          "locator": "Table 4, article pages 9-10"
+        }
+      },
+      {
+        "exampleId": "agi-03-7-b",
+        "behavioralAnchor": "An existing technological resource is mobilized immediately for the required crisis action.",
+        "typicalEvidence": "An immediate change in work mode that successfully maintains the core service.",
+        "empiricalEvidence": "The university immediately moved social collaboration and teaching into its previously introduced Teams environment; the system worked from the start without major problems and safeguarded the courses.",
+        "sourceReference": {
+          "sourceId": "krsmanovic-et-al-2024",
+          "locator": "Results, section 4.2.1, journal page 5"
+        }
+      },
+      {
+        "exampleId": "int-01-1-a",
+        "behavioralAnchor": "Roles and responsibilities are unclear and poorly communicated.",
+        "typicalEvidence": "Limited role knowledge and dissatisfaction about responsibility and accountability.",
+        "empiricalEvidence": "At CS2, the reasons for responsibility were communicated inadequately, and knowledge of roles and responsibilities across the organization was weak.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.2.1, CS2, PDF page 178 (printed C-6)"
+        }
+      },
+      {
+        "exampleId": "int-01-1-b",
+        "behavioralAnchor": "Responsibility and decision authority are misaligned during a crisis.",
+        "typicalEvidence": "An assigned duty without sufficient authority, resulting in frustration.",
+        "empiricalEvidence": "During a crisis exercise, responsibility and decision authority were not aligned for parts of the staff, which caused substantial frustration.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.4.1, CS4, PDF page 182 (printed C-10)"
+        }
+      },
+      {
+        "exampleId": "int-01-4-a",
+        "behavioralAnchor": "Leadership mobilizes support, but implementation by supervisors remains uneven.",
+        "typicalEvidence": "Organizational resource support with inconsistencies in execution.",
+        "empiricalEvidence": "Senior management mobilized resources for employee assistance, while individual supervisors communicated and implemented support inconsistently.",
+        "sourceReference": {
+          "sourceId": "nilakant-et-al-2013",
+          "locator": "Section 'The Leadership Behaviour of Supervisors', journal PDF page 9"
+        }
+      },
+      {
+        "exampleId": "int-01-4-b",
+        "behavioralAnchor": "A majority, but not the entire workforce, is mission-driven.",
+        "typicalEvidence": "Broad commitment with an explicit limitation in scope.",
+        "empiricalEvidence": "A nonprofit case organization described the majority of its employees as driven by the mission and as carriers of the organization's spirit.",
+        "sourceReference": {
+          "sourceId": "witmer-mellinger-2016",
+          "locator": "Table 2, journal page 260"
+        }
+      },
+      {
+        "exampleId": "int-01-7-a",
+        "behavioralAnchor": "Employees return despite personal strain and safeguard necessary duties.",
+        "typicalEvidence": "Return to workplaces, operational replanning, loyalty, and commitment.",
+        "empiricalEvidence": "Despite their grief, Southwest employees returned to their workplaces and replanned flights in order to maintain route operations.",
+        "sourceReference": {
+          "sourceId": "chen-et-al-2021",
+          "locator": "Table 4, article page 9, employee-commitment evidence"
+        }
+      },
+      {
+        "exampleId": "int-01-7-b",
+        "behavioralAnchor": "Despite personal crisis strain, employees align their work with organizational requirements and assume additional responsibility.",
+        "typicalEvidence": "Fulfilling one's duties, going beyond requirements, taking initiative in unfamiliar situations, and adapting willingly.",
+        "empiricalEvidence": "In the highly engaged case organizations, employees aligned their work with organizational needs despite their own earthquake-related strain, fulfilled their duties, exceeded requirements, took initiative in unfamiliar situations, and adapted.",
+        "sourceReference": {
+          "sourceId": "walker-et-al-2014",
+          "locator": "Employee engagement findings, PDF page 13, paragraph beginning 'Positive patterns were also evident'"
+        }
+      },
+      {
+        "exampleId": "int-02-1-a",
+        "behavioralAnchor": "Departments act independently and may work against one another during a crisis.",
+        "typicalEvidence": "Silos, conflicting decisions, and absent organization-wide coordination.",
+        "empiricalEvidence": "At CS1, departments worked independently, so decision-makers from different areas could potentially act against one another during a crisis.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.1.1, CS1, PDF page 175 (printed C-3)"
+        }
+      },
+      {
+        "exampleId": "int-02-1-b",
+        "behavioralAnchor": "Internal communication fails to carry information effectively during a crisis.",
+        "typicalEvidence": "Blocked information flow and overlooked specialist knowledge.",
+        "empiricalEvidence": "At CS2, internal communication processes did not allow information to flow effectively through the organization during crisis periods.",
+        "sourceReference": {
+          "sourceId": "mcmanus-2008",
+          "locator": "Appendix C.2.2.1, CS2, PDF page 178 (printed C-6)"
+        }
+      },
+      {
+        "exampleId": "int-02-4-a",
+        "behavioralAnchor": "The organization as a whole shows high but incomplete engagement.",
+        "typicalEvidence": "Broad organization-wide engagement clearly below 100 percent.",
+        "empiricalEvidence": "One organization studied reported engagement of approximately 80 percent across the organization as a whole.",
+        "sourceReference": {
+          "sourceId": "walker-et-al-2014",
+          "locator": "Results, Senior Manager, PDF page 16, approximately 80 percent whole-organization engagement"
+        }
+      },
+      {
+        "exampleId": "int-02-4-b",
+        "behavioralAnchor": "Team practices are inconsistent and impede collaboration across areas.",
+        "typicalEvidence": "Effective cooperation in some teams and opposing practices in others.",
+        "empiricalEvidence": "At the university studied, team practices varied considerably; opposing approaches made collaboration with other professionals more difficult.",
+        "sourceReference": {
+          "sourceId": "krsmanovic-et-al-2024",
+          "locator": "Results, section 4.2.2(b), journal page 6, male administrative employee"
+        }
+      },
+      {
+        "exampleId": "int-02-7-a",
+        "behavioralAnchor": "Employees coordinate their actions directly to maintain shared operations.",
+        "typicalEvidence": "A shared return to respective workplaces and rapid operational replanning despite personal strain.",
+        "empiricalEvidence": "Despite their grief, Southwest employees rapidly returned to their respective workplaces and replanned flight connections to safeguard route operations.",
+        "sourceReference": { "sourceId": "chen-et-al-2021", "locator": "Table 4, article page 9" }
+      },
+      {
+        "exampleId": "int-02-7-b",
+        "behavioralAnchor": "Employees work across professions, teams, and organizations toward a shared crisis objective.",
+        "typicalEvidence": "A shared safety objective, multidisciplinary collaboration, and new communication channels across traditional boundaries.",
+        "empiricalEvidence": "In the qualitative study, all 20 respondents identified multidisciplinary teams and cross-boundary collaboration as central to the COVID response; the shared focus on employee and patient safety connected departments, teams, organizations, and health systems.",
+        "sourceReference": {
+          "sourceId": "khurshid-et-al-2021",
+          "locator": "Results, 'A collective way of working', article page 7; Discussion, shared health-system goal, article page 8"
+        }
+      }
+    ]
+  }
+}

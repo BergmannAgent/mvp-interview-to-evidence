@@ -1,0 +1,2855 @@
+{
+  "runId": "2026-10-01T19-38-07-094Z-1cd3d41e",
+  "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+  "model": "gpt-realtime-2.1",
+  "participantInput": "mocked_text",
+  "audioOutput": "real_generated_audio_automatically_received",
+  "failure": null,
+  "providerResponses": 99,
+  "connectionCount": 2,
+  "recoveredInterruptions": ["PROVIDER_RESPONSE_BUDGET_EXCEEDED"],
+  "planning": [
+    {
+      "intent": {
+        "clientEventId": "call_BASyd6ECo6JmBQeZ",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:097f42p182xlt1",
+        "spokenText": "Welche Verantwortung haben Sie innerhalb der Organisation?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:699820e5d63d7460f05ebe6654d1b1c8",
+        "workflowRunId": "workflow:realtime-intent:699820e5d63d7460f05ebe6654d1b1c8",
+        "text": "Welche Verantwortung haben Sie innerhalb der Organisation?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:097f42p182xlt1",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:097f42p182xlt1"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1292
+    },
+    {
+      "intent": {
+        "clientEventId": "call_5VVC0MA264GZkyV5",
+        "action": "ask_clarification_question",
+        "questionId": "main-question:v1:097f42p182xlt1",
+        "spokenText": "Welche konkreten Aufgaben oder Entscheidungsbefugnisse gehören in dieser B-Freigabespur zu Ihrer Verantwortung?",
+        "answerDisposition": "partial",
+        "missingAspect": "konkrete Aufgaben oder Entscheidungsbefugnisse innerhalb der beschriebenen B-Freigabespur",
+        "requestedEvidenceType": "responsibility",
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:2265ec9ad8cda336cb85e18d6d7e661d",
+        "workflowRunId": "workflow:realtime-intent:2265ec9ad8cda336cb85e18d6d7e661d",
+        "text": "Welche konkreten Aufgaben oder Entscheidungsbefugnisse gehören in dieser B-Freigabespur zu Ihrer Verantwortung?",
+        "turnType": "clarification_question",
+        "questionId": "main-question:v1:097f42p182xlt1",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:097f42p182xlt1"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2592
+    },
+    {
+      "intent": {
+        "clientEventId": "call_lzA5pTwKie4FICrm",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:0ax1lin094vpdv",
+        "spokenText": "Wie viele Mitarbeiter haben Sie unter sich?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:36641da50a3869a3666816b9eb24faaa",
+        "workflowRunId": "workflow:realtime-intent:36641da50a3869a3666816b9eb24faaa",
+        "text": "Wie viele Mitarbeiter haben Sie unter sich?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:0ax1lin094vpdv",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:0ax1lin094vpdv"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1157
+    },
+    {
+      "intent": {
+        "clientEventId": "call_jLxkfZCrtKpM4PdA",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:0anbuhs0p2ui8c",
+        "spokenText": "Was macht Ihre Organisation unter schwierigen Bedingungen, um ihre Position und Stabilität zu bewahren?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:dd4a4d366a7ee38d33f1619ef9f2f1fe",
+        "workflowRunId": "workflow:realtime-intent:dd4a4d366a7ee38d33f1619ef9f2f1fe",
+        "text": "Was macht Ihre Organisation unter schwierigen Bedingungen, um ihre Position und Stabilität zu bewahren?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:0anbuhs0p2ui8c",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1366
+    },
+    {
+      "intent": {
+        "clientEventId": "call_hxI2maSzsM09Qm4K",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1ddnjy2165cvt2",
+        "spokenText": "Welche zentralen Tätigkeiten liefen während dieser Situation weiter?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:3ff7fd5c6d2355bc83eb9def7a89dc17",
+        "workflowRunId": "workflow:realtime-intent:3ff7fd5c6d2355bc83eb9def7a89dc17",
+        "text": "Welche zentralen Tätigkeiten liefen während dieser Situation weiter?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1ddnjy2165cvt2",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1ddnjy2165cvt2"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2333
+    },
+    {
+      "intent": {
+        "clientEventId": "call_Ez2HZ7YcUHTLLXCn",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1n1i6xa0cbndky",
+        "spokenText": "Wo kam es in dieser Zeit zu Einschränkungen oder Ausfällen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:9e1642cee8240cd7d1c20f5d9d125d39",
+        "workflowRunId": "workflow:realtime-intent:9e1642cee8240cd7d1c20f5d9d125d39",
+        "text": "Wo kam es in dieser Zeit zu Einschränkungen oder Ausfällen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1n1i6xa0cbndky",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1n1i6xa0cbndky"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2053
+    },
+    {
+      "intent": {
+        "clientEventId": "call_SxUUJNk85m9td7Hl",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1d2upl005u3mxc",
+        "spokenText": "Über welchen Zeitraum hielt die Belastung an?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:b29edebdd605faa7257434ec973d17d2",
+        "workflowRunId": "workflow:realtime-intent:b29edebdd605faa7257434ec973d17d2",
+        "text": "Über welchen Zeitraum hielt die Belastung an?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1d2upl005u3mxc",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1d2upl005u3mxc"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1844
+    },
+    {
+      "intent": {
+        "clientEventId": "call_A5cLyRn6vNfDnW4a",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:0dptyat01lqzoh",
+        "spokenText": "Woran konnten Sie erkennen, wie stabil der Betrieb in dieser Zeit war?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:510e1a033db6646f87a2f61a72db8f14",
+        "workflowRunId": "workflow:realtime-intent:510e1a033db6646f87a2f61a72db8f14",
+        "text": "Woran konnten Sie erkennen, wie stabil der Betrieb in dieser Zeit war?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:0dptyat01lqzoh",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:0dptyat01lqzoh"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2011
+    },
+    {
+      "intent": {
+        "clientEventId": "call_EWGTB0EqohLFWe5j",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:0meks1h1r1gga9",
+        "spokenText": "Wie entwickelt Ihre Organisation unterschiedliche Lösungen, wenn sie mit schwierigen Herausforderungen konfrontiert ist?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:66d901b97a52d56c3b48673caa441e99",
+        "workflowRunId": "workflow:realtime-intent:66d901b97a52d56c3b48673caa441e99",
+        "text": "Wie entwickelt Ihre Organisation unterschiedliche Lösungen, wenn sie mit schwierigen Herausforderungen konfrontiert ist?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:0meks1h1r1gga9",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2754
+    },
+    {
+      "intent": {
+        "clientEventId": "call_PLdSPU3HgcunTxcs",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:11hwtrl047l4l9",
+        "spokenText": "Wie wurde der Einsatz dieser Lösungen zwischen den beteiligten Bereichen abgestimmt?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:8e50988c46bc1e8d4777213fcecb5dd7",
+        "workflowRunId": "workflow:realtime-intent:8e50988c46bc1e8d4777213fcecb5dd7",
+        "text": "Wie wurde der Einsatz dieser Lösungen zwischen den beteiligten Bereichen abgestimmt?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:11hwtrl047l4l9",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9",
+          "followUpQuestionId": "follow-up:v1:11hwtrl047l4l9"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2090
+    },
+    {
+      "intent": {
+        "clientEventId": "call_An0OiXso1CK3SFRV",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1qvkjgl0ertfup",
+        "spokenText": "Welche der eingesetzten Lösungen erwiesen sich in der Praxis als nutzbar?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:7fec8b890aa4203d4c77ec67e1db3ca0",
+        "workflowRunId": "workflow:realtime-intent:7fec8b890aa4203d4c77ec67e1db3ca0",
+        "text": "Welche der eingesetzten Lösungen erwiesen sich in der Praxis als nutzbar?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1qvkjgl0ertfup",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9",
+          "followUpQuestionId": "follow-up:v1:1qvkjgl0ertfup"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2137
+    },
+    {
+      "intent": {
+        "clientEventId": "call_133zt3iplNtVxjMw",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:0rvb65c1iamjdg",
+        "spokenText": "Wie verhält sich Ihre Organisation, wenn sie Gefahr läuft, etwas Wesentliches zu verlieren?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:66ebd1e2410b98bedbf945ad4d01052b",
+        "workflowRunId": "workflow:realtime-intent:66ebd1e2410b98bedbf945ad4d01052b",
+        "text": "Wie verhält sich Ihre Organisation, wenn sie Gefahr läuft, etwas Wesentliches zu verlieren?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:0rvb65c1iamjdg",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2196
+    },
+    {
+      "intent": {
+        "clientEventId": "call_iwQsE8cIpgBAVU4f",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:0scrgik1xgo1zs",
+        "spokenText": "Wie lange wurden diese Maßnahmen fortgeführt?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:34cc048b974c4932d56a101ed55e1ef7",
+        "workflowRunId": "workflow:realtime-intent:34cc048b974c4932d56a101ed55e1ef7",
+        "text": "Wie lange wurden diese Maßnahmen fortgeführt?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:0scrgik1xgo1zs",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:0scrgik1xgo1zs"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2304
+    },
+    {
+      "intent": {
+        "clientEventId": "call_AlKyL8IzkvcZmrLj",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1pc1ia819otug4",
+        "spokenText": "Was konnte dadurch erhalten werden?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:ed2b8b76969f0320f2d709e4f804a44b",
+        "workflowRunId": "workflow:realtime-intent:ed2b8b76969f0320f2d709e4f804a44b",
+        "text": "Was konnte dadurch erhalten werden?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1pc1ia819otug4",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:1pc1ia819otug4"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1782
+    },
+    {
+      "intent": {
+        "clientEventId": "call_ln9x2K3JmIAkRQLC",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:05q79kp1k0m1h9",
+        "spokenText": "Was ließ sich trotz dieser Maßnahmen nicht erhalten?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:638f355c3a796fec385d3b83544ed718",
+        "workflowRunId": "workflow:realtime-intent:638f355c3a796fec385d3b83544ed718",
+        "text": "Was ließ sich trotz dieser Maßnahmen nicht erhalten?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:05q79kp1k0m1h9",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:05q79kp1k0m1h9"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2139
+    },
+    {
+      "intent": {
+        "clientEventId": "call_MfXr1DD0DVTJmBcA",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:0bw9muu0xrw54i",
+        "spokenText": "Wie geht Ihre Organisation mit Rückschlägen und Schwierigkeiten um, wenn der bisherige Weg gefährdet ist?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:4a534e0c25293de6f41bf52ea6fe5394",
+        "workflowRunId": "workflow:realtime-intent:4a534e0c25293de6f41bf52ea6fe5394",
+        "text": "Wie geht Ihre Organisation mit Rückschlägen und Schwierigkeiten um, wenn der bisherige Weg gefährdet ist?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:0bw9muu0xrw54i",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2247
+    },
+    {
+      "intent": {
+        "clientEventId": "call_jPjedxYY74t1LrYk",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:05k91601flz6a4",
+        "spokenText": "Wie ging der Betrieb nach diesem Rückschlag tatsächlich weiter?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:9761285a7fd46b43de732e45f871d7ee",
+        "workflowRunId": "workflow:realtime-intent:9761285a7fd46b43de732e45f871d7ee",
+        "text": "Wie ging der Betrieb nach diesem Rückschlag tatsächlich weiter?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:05k91601flz6a4",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:05k91601flz6a4"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2237
+    },
+    {
+      "intent": {
+        "clientEventId": "call_ixznRnJXthw7mJKP",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:09tz8zv1yzpx9r",
+        "spokenText": "Welche Änderungen gab es beim weiteren Vorgehen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:ab6839eccf7cd167b828a6858a686102",
+        "workflowRunId": "workflow:realtime-intent:ab6839eccf7cd167b828a6858a686102",
+        "text": "Welche Änderungen gab es beim weiteren Vorgehen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:09tz8zv1yzpx9r",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:09tz8zv1yzpx9r"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2274
+    },
+    {
+      "intent": {
+        "clientEventId": "call_i9tg3dZl0ubRoAfK",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:13rdcmr0nqnukf",
+        "spokenText": "Welche Unterbrechungen oder Leistungseinbußen gab es dabei?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:4f548a962aab3483762a0c78badeca1a",
+        "workflowRunId": "workflow:realtime-intent:4f548a962aab3483762a0c78badeca1a",
+        "text": "Welche Unterbrechungen oder Leistungseinbußen gab es dabei?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:13rdcmr0nqnukf",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:13rdcmr0nqnukf"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2109
+    },
+    {
+      "intent": {
+        "clientEventId": "call_4GZtZOfxT3ljF8zP",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:0is8y461w9s8ki",
+        "spokenText": "Wie handelt Ihre Organisation, wenn schnelles Handeln erforderlich ist?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:b48e90636be93896a8c4b0e73a484f68",
+        "workflowRunId": "workflow:realtime-intent:b48e90636be93896a8c4b0e73a484f68",
+        "text": "Wie handelt Ihre Organisation, wenn schnelles Handeln erforderlich ist?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:0is8y461w9s8ki",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:0is8y461w9s8ki"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2312
+    },
+    {
+      "intent": {
+        "clientEventId": "call_ffK48le4C1qK3vXx",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:0u62ogt1f0j52x",
+        "spokenText": "An welchen Stellen kam es zu Verzögerungen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:6753cdd8f1da31cfa3f3714c7f59c4c3",
+        "workflowRunId": "workflow:realtime-intent:6753cdd8f1da31cfa3f3714c7f59c4c3",
+        "text": "An welchen Stellen kam es zu Verzögerungen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:0u62ogt1f0j52x",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:0is8y461w9s8ki",
+          "followUpQuestionId": "follow-up:v1:0u62ogt1f0j52x"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2228
+    },
+    {
+      "intent": {
+        "clientEventId": "call_HLZaz7BdjKWejxbq",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:01exw9903nyi4p",
+        "spokenText": "Wie entwickelt und nutzt Ihre Organisation Alternativen, um aus negativen Umständen handlungsfähig oder stärker hervorzugehen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:db760d67488fb307ee5e0d7a35d553e2",
+        "workflowRunId": "workflow:realtime-intent:db760d67488fb307ee5e0d7a35d553e2",
+        "text": "Wie entwickelt und nutzt Ihre Organisation Alternativen, um aus negativen Umständen handlungsfähig oder stärker hervorzugehen?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:01exw9903nyi4p",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2524
+    },
+    {
+      "intent": {
+        "clientEventId": "call_0xiQsGw6D7LFNtKd",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:0szgmi61yh4gia",
+        "spokenText": "Welche Alternative wurde als Reaktion auf die negative Situation tatsächlich eingesetzt?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:e7851c8a7c1a9ab7e76ef01059ac81ea",
+        "workflowRunId": "workflow:realtime-intent:e7851c8a7c1a9ab7e76ef01059ac81ea",
+        "text": "Welche Alternative wurde als Reaktion auf die negative Situation tatsächlich eingesetzt?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:0szgmi61yh4gia",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:0szgmi61yh4gia"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2371
+    },
+    {
+      "intent": {
+        "clientEventId": "call_83qzwKqMjnnEmYRH",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:09c5wat0g8jlyh",
+        "spokenText": "Falls mehrere Alternativen eingesetzt wurden: Wie wurden diese gegebenenfalls miteinander verbunden?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:75d9bac8717ade431787ad2ad58ef407",
+        "workflowRunId": "workflow:realtime-intent:75d9bac8717ade431787ad2ad58ef407",
+        "text": "Falls mehrere Alternativen eingesetzt wurden: Wie wurden diese gegebenenfalls miteinander verbunden?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:09c5wat0g8jlyh",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:09c5wat0g8jlyh"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2316
+    },
+    {
+      "intent": {
+        "clientEventId": "call_uCTvtEwR2RJQCwDI",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1sr0bes0ex91p4",
+        "spokenText": "Was veränderte sich durch den Einsatz dieser Alternativen gegenüber dem vorherigen Vorgehen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:5ab486e6ddfe7af93c5640d62e386fc1",
+        "workflowRunId": "workflow:realtime-intent:5ab486e6ddfe7af93c5640d62e386fc1",
+        "text": "Was veränderte sich durch den Einsatz dieser Alternativen gegenüber dem vorherigen Vorgehen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1sr0bes0ex91p4",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:1sr0bes0ex91p4"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2198
+    },
+    {
+      "intent": {
+        "clientEventId": "call_WAVeMEnq8LzCQnh0",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:0u8mndw1i3b3i0",
+        "spokenText": "Welche dieser Veränderungen blieben längerfristig bestehen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:39f2e73bffcc6210a9d4bee14fe2f397",
+        "workflowRunId": "workflow:realtime-intent:39f2e73bffcc6210a9d4bee14fe2f397",
+        "text": "Welche dieser Veränderungen blieben längerfristig bestehen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:0u8mndw1i3b3i0",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:0u8mndw1i3b3i0"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2201
+    },
+    {
+      "intent": {
+        "clientEventId": "call_EyvtWpODS4jeIbB6",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1qk6ebc0b674zo",
+        "spokenText": "Welche Nachteile oder Grenzen zeigten sich bei den gewählten Alternativen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:695d1be5a9b6b0f75ec6d2d1096fa9b4",
+        "workflowRunId": "workflow:realtime-intent:695d1be5a9b6b0f75ec6d2d1096fa9b4",
+        "text": "Welche Nachteile oder Grenzen zeigten sich bei den gewählten Alternativen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1qk6ebc0b674zo",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:1qk6ebc0b674zo"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2181
+    },
+    {
+      "intent": {
+        "clientEventId": "call_7sbBOngqeeK6HZPV",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:1ghxttf0z1e4fr",
+        "spokenText": "Wie passt Ihre Organisation ihr Handeln an, wenn sich die Situation verändert und konkrete Maßnahmen nötig werden?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:4160899236dc345be8ee3f0c9a35b137",
+        "workflowRunId": "workflow:realtime-intent:4160899236dc345be8ee3f0c9a35b137",
+        "text": "Wie passt Ihre Organisation ihr Handeln an, wenn sich die Situation verändert und konkrete Maßnahmen nötig werden?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:1ghxttf0z1e4fr",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2274
+    },
+    {
+      "intent": {
+        "clientEventId": "call_zsUgsSnExqaXiAUL",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:0cxdqwe07bmnky",
+        "spokenText": "Welche Aufgaben, Zuständigkeiten oder Ressourcen wurden daraufhin tatsächlich angepasst?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:0de34b5168ac1ebd090c725f6fce31d6",
+        "workflowRunId": "workflow:realtime-intent:0de34b5168ac1ebd090c725f6fce31d6",
+        "text": "Welche Aufgaben, Zuständigkeiten oder Ressourcen wurden daraufhin tatsächlich angepasst?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:0cxdqwe07bmnky",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:0cxdqwe07bmnky"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 3003
+    },
+    {
+      "intent": {
+        "clientEventId": "call_AN7KCEX6vp3EMRZL",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1ec7j9c021wroc",
+        "spokenText": "Wie wurden diese Anpassungen zwischen den betroffenen Bereichen abgestimmt?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:6f565659bd3c8863b176b27a0d8cbd38",
+        "workflowRunId": "workflow:realtime-intent:6f565659bd3c8863b176b27a0d8cbd38",
+        "text": "Wie wurden diese Anpassungen zwischen den betroffenen Bereichen abgestimmt?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1ec7j9c021wroc",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:1ec7j9c021wroc"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2024
+    },
+    {
+      "intent": {
+        "clientEventId": "call_237PXR6Uq58VmkTD",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:0a1kvsl0504nnd",
+        "spokenText": "Wo ließ sich eine erforderliche Anpassung nicht oder erst verspätet umsetzen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:5baa51ab0f12d0b06d90f2aaef9b354f",
+        "workflowRunId": "workflow:realtime-intent:5baa51ab0f12d0b06d90f2aaef9b354f",
+        "text": "Wo ließ sich eine erforderliche Anpassung nicht oder erst verspätet umsetzen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:0a1kvsl0504nnd",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:0a1kvsl0504nnd"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2532
+    },
+    {
+      "intent": {
+        "clientEventId": "call_wsQ9luLjXuncKieD",
+        "action": "ask_main_question",
+        "questionId": "main-question:v1:0oefj0103f4w6d",
+        "spokenText": "Wie setzen sich die Beschäftigten Ihrer Organisation in schwierigen Situationen dafür ein, das Erforderliche zu tun?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:c5e2aaaca2a23f3f285335447fd55fc1",
+        "workflowRunId": "workflow:realtime-intent:c5e2aaaca2a23f3f285335447fd55fc1",
+        "text": "Wie setzen sich die Beschäftigten Ihrer Organisation in schwierigen Situationen dafür ein, das Erforderliche zu tun?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:0oefj0103f4w6d",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1479
+    },
+    {
+      "intent": {
+        "clientEventId": "call_wK28KGofyLYeeVFC",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:154r8yy0gmog0e",
+        "spokenText": "Bei welchen Aufgaben gab es Schwierigkeiten oder fehlende Zuständigkeiten?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:5f4bc4957fdd6ee79c9ac4cb078f5ef0",
+        "workflowRunId": "workflow:realtime-intent:5f4bc4957fdd6ee79c9ac4cb078f5ef0",
+        "text": "Bei welchen Aufgaben gab es Schwierigkeiten oder fehlende Zuständigkeiten?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:154r8yy0gmog0e",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:154r8yy0gmog0e"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2412
+    },
+    {
+      "intent": {
+        "clientEventId": "call_v1OgW7h0QDPdP4Dl",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1bcr6vt10g2bd9",
+        "spokenText": "Wie wurde geklärt, wer für welche Aufgaben verantwortlich war?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:9d3a4c9c09007e741fb48221c706b6e9",
+        "workflowRunId": "workflow:realtime-intent:9d3a4c9c09007e741fb48221c706b6e9",
+        "text": "Wie wurde geklärt, wer für welche Aufgaben verantwortlich war?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1bcr6vt10g2bd9",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:1bcr6vt10g2bd9"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2081
+    },
+    {
+      "intent": {
+        "clientEventId": "call_gxmpm1GRWMrTsIo1",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1n9io7u09pqzwm",
+        "spokenText": "Wie unterschied sich die Aufgabenübernahme zwischen den Beschäftigtengruppen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:ac1c78c1b29c8b5e083df456af29d21c",
+        "workflowRunId": "workflow:realtime-intent:ac1c78c1b29c8b5e083df456af29d21c",
+        "text": "Wie unterschied sich die Aufgabenübernahme zwischen den Beschäftigtengruppen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1n9io7u09pqzwm",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:1n9io7u09pqzwm"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1877
+    },
+    {
+      "intent": {
+        "clientEventId": "call_Ng9SfPFGYyE5WxUD",
+        "action": "complete_interview",
+        "questionId": null,
+        "spokenText": "Vielen Dank für Ihre Antworten und die Einblicke, das war sehr hilfreich. Alles Gute für Sie.",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:7f06a8024e31eeec462a69f2bc2ab32f",
+        "workflowRunId": "workflow:realtime-intent:7f06a8024e31eeec462a69f2bc2ab32f",
+        "text": "Wie handelt Ihre Organisation gemeinsam mit ihren Beschäftigten, wenn abgestimmtes Vorgehen erforderlich ist?",
+        "turnType": "main_question",
+        "questionId": "main-question:v1:0nvnxu70s23htf",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1274
+    },
+    {
+      "intent": {
+        "clientEventId": "call_0bjTFzEjGaeRDj8J",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:127w8bi0ca100i",
+        "spokenText": "Wo kam es zwischen den beteiligten Bereichen zu unterschiedlichen Vorgehensweisen oder Abstimmungsproblemen?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:4e59fffabdce31f0868368abba2d894b",
+        "workflowRunId": "workflow:realtime-intent:4e59fffabdce31f0868368abba2d894b",
+        "text": "Wo kam es zwischen den beteiligten Bereichen zu unterschiedlichen Vorgehensweisen oder Abstimmungsproblemen?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:127w8bi0ca100i",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:127w8bi0ca100i"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2359
+    },
+    {
+      "intent": {
+        "clientEventId": "call_KnajwAOcuQkyjmAf",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:03zotvk0z72fak",
+        "spokenText": "Wie wurden gemeinsame Prioritäten zwischen diesen Bereichen abgestimmt?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:985e1899a4070830a7945f7e8ced9e0b",
+        "workflowRunId": "workflow:realtime-intent:985e1899a4070830a7945f7e8ced9e0b",
+        "text": "Wie wurden gemeinsame Prioritäten zwischen diesen Bereichen abgestimmt?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:03zotvk0z72fak",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:03zotvk0z72fak"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2212
+    },
+    {
+      "intent": {
+        "clientEventId": "call_z7UjYaGv6LcCjl2d",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:170gt381mqnphs",
+        "spokenText": "Wie sah die Zusammenarbeit bei einer konkreten gemeinsamen Entscheidung aus?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:fad1027edd1b9f21323f93313cd9c503",
+        "workflowRunId": "workflow:realtime-intent:fad1027edd1b9f21323f93313cd9c503",
+        "text": "Wie sah die Zusammenarbeit bei einer konkreten gemeinsamen Entscheidung aus?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:170gt381mqnphs",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:170gt381mqnphs"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 2426
+    },
+    {
+      "intent": {
+        "clientEventId": "call_IbVgpmX4AFxkIT6N",
+        "action": "ask_follow_up_question",
+        "questionId": "follow-up:v1:1469bze1kkzuoe",
+        "spokenText": "Welche Bereiche mussten in dieser Situation zusammenarbeiten?",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:0d21d7201cbd180d073ed6f9c9a26401",
+        "workflowRunId": "workflow:realtime-intent:0d21d7201cbd180d073ed6f9c9a26401",
+        "text": "Welche Bereiche mussten in dieser Situation zusammenarbeiten?",
+        "turnType": "follow_up_question",
+        "questionId": "follow-up:v1:1469bze1kkzuoe",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:1469bze1kkzuoe"
+        }
+      },
+      "rejection": null,
+      "latencyMs": 1942
+    },
+    {
+      "intent": {
+        "clientEventId": "call_gvgxdmk7UDAHW1rd",
+        "action": "complete_interview",
+        "questionId": null,
+        "spokenText": "Vielen Dank für Ihre Zeit und die präzisen Antworten, das war sehr aufschlussreich. Ich wünsche Ihnen weiterhin viel Erfolg.",
+        "answerDisposition": "answered",
+        "missingAspect": null,
+        "requestedEvidenceType": null,
+        "repairAttempt": 0
+      },
+      "acceptedPlan": {
+        "deliveryId": "delivery:realtime-intent:b8eeeda37ccd25ff581fef1ce3bfd62a",
+        "workflowRunId": "workflow:realtime-intent:b8eeeda37ccd25ff581fef1ce3bfd62a",
+        "text": "Vielen Dank fuer das Gespraech und Ihre Zeit.",
+        "turnType": "closing",
+        "questionId": null,
+        "guideReference": null
+      },
+      "rejection": null,
+      "latencyMs": 2797
+    }
+  ],
+  "audio": [
+    {
+      "deliveryId": "delivery:start:synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+      "transcript": "Guten Tag und vielen Dank, dass Sie sich Zeit fuer dieses Interview nehmen.",
+      "byteCount": 216000,
+      "latencyMs": 1646,
+      "file": "synthetic-audio/001.wav"
+    },
+    {
+      "deliveryId": "delivery:5b32df2f-25ae-47f8-86b3-c42475d447cd",
+      "transcript": "Welche Rolle haben Sie innerhalb der Organisation?",
+      "byteCount": 158400,
+      "latencyMs": 1256,
+      "file": "synthetic-audio/002.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:699820e5d63d7460f05ebe6654d1b1c8",
+      "transcript": "Welche Verantwortung haben Sie innerhalb der Organisation?",
+      "byteCount": 156000,
+      "latencyMs": 1233,
+      "file": "synthetic-audio/003.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:2265ec9ad8cda336cb85e18d6d7e661d",
+      "transcript": "Welche konkreten Aufgaben oder Entscheidungsbefugnisse gehören in dieser B-Freigabespur zu Ihrer Verantwortung?",
+      "byteCount": 324000,
+      "latencyMs": 2015,
+      "file": "synthetic-audio/004.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:36641da50a3869a3666816b9eb24faaa",
+      "transcript": "Wie viele Mitarbeiter haben Sie unter sich?",
+      "byteCount": 124800,
+      "latencyMs": 1664,
+      "file": "synthetic-audio/005.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:dd4a4d366a7ee38d33f1619ef9f2f1fe",
+      "transcript": "Was macht Ihre Organisation unter schwierigen Bedingungen, um ihre Position und Stabilität zu bewahren?",
+      "byteCount": 309600,
+      "latencyMs": 2064,
+      "file": "synthetic-audio/006.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:3ff7fd5c6d2355bc83eb9def7a89dc17",
+      "transcript": "Welche zentralen Tätigkeiten liefen während dieser Situation weiter?",
+      "byteCount": 199200,
+      "latencyMs": 1569,
+      "file": "synthetic-audio/007.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:9e1642cee8240cd7d1c20f5d9d125d39",
+      "transcript": "Wo kam es in dieser Zeit zu Einschränkungen oder Ausfällen?",
+      "byteCount": 201600,
+      "latencyMs": 1567,
+      "file": "synthetic-audio/008.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:b29edebdd605faa7257434ec973d17d2",
+      "transcript": "Über welchen Zeitraum hielt die Belastung an?",
+      "byteCount": 175200,
+      "latencyMs": 1271,
+      "file": "synthetic-audio/009.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:510e1a033db6646f87a2f61a72db8f14",
+      "transcript": "Woran konnten Sie erkennen, wie stabil der Betrieb in dieser Zeit war?",
+      "byteCount": 211200,
+      "latencyMs": 1554,
+      "file": "synthetic-audio/010.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:66d901b97a52d56c3b48673caa441e99",
+      "transcript": "Wie entwickelt Ihre Organisation unterschiedliche Lösungen, wenn sie mit schwierigen Herausforderungen konfrontiert ist?",
+      "byteCount": 307200,
+      "latencyMs": 1850,
+      "file": "synthetic-audio/011.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:8e50988c46bc1e8d4777213fcecb5dd7",
+      "transcript": "Wie wurde der Einsatz dieser Lösungen zwischen den beteiligten Bereichen abgestimmt?",
+      "byteCount": 218400,
+      "latencyMs": 1921,
+      "file": "synthetic-audio/012.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:7fec8b890aa4203d4c77ec67e1db3ca0",
+      "transcript": "Welche der eingesetzten Lösungen erwiesen sich in der Praxis als nutzbar?",
+      "byteCount": 242400,
+      "latencyMs": 1791,
+      "file": "synthetic-audio/013.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:66ebd1e2410b98bedbf945ad4d01052b",
+      "transcript": "Wie verhält sich Ihre Organisation, wenn sie Gefahr läuft, etwas Wesentliches zu verlieren?",
+      "byteCount": 314400,
+      "latencyMs": 1961,
+      "file": "synthetic-audio/014.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:34cc048b974c4932d56a101ed55e1ef7",
+      "transcript": "Wie lange wurden diese Maßnahmen fortgeführt?",
+      "byteCount": 153600,
+      "latencyMs": 1159,
+      "file": "synthetic-audio/015.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:ed2b8b76969f0320f2d709e4f804a44b",
+      "transcript": "Was konnte dadurch erhalten werden?",
+      "byteCount": 105600,
+      "latencyMs": 1115,
+      "file": "synthetic-audio/016.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:638f355c3a796fec385d3b83544ed718",
+      "transcript": "Was ließ sich trotz dieser Maßnahmen nicht erhalten?",
+      "byteCount": 146400,
+      "latencyMs": 1299,
+      "file": "synthetic-audio/017.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:4a534e0c25293de6f41bf52ea6fe5394",
+      "transcript": "Wie geht Ihre Organisation mit Rückschlägen und Schwierigkeiten um, wenn der bisherige Weg gefährdet ist?",
+      "byteCount": 309600,
+      "latencyMs": 1922,
+      "file": "synthetic-audio/018.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:9761285a7fd46b43de732e45f871d7ee",
+      "transcript": "Wie ging der Betrieb nach diesem Rückschlag tatsächlich weiter?",
+      "byteCount": 199200,
+      "latencyMs": 1499,
+      "file": "synthetic-audio/019.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:ab6839eccf7cd167b828a6858a686102",
+      "transcript": "Welche Änderungen gab es beim weiteren Vorgehen?",
+      "byteCount": 165600,
+      "latencyMs": 1368,
+      "file": "synthetic-audio/020.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:4f548a962aab3483762a0c78badeca1a",
+      "transcript": "Welche Unterbrechungen oder Leistungseinbußen gab es dabei?",
+      "byteCount": 196800,
+      "latencyMs": 1574,
+      "file": "synthetic-audio/021.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:b48e90636be93896a8c4b0e73a484f68",
+      "transcript": "Wie handelt Ihre Organisation, wenn schnelles Handeln erforderlich ist?",
+      "byteCount": 213600,
+      "latencyMs": 1578,
+      "file": "synthetic-audio/022.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:6753cdd8f1da31cfa3f3714c7f59c4c3",
+      "transcript": "An welchen Stellen kam es zu Verzögerungen?",
+      "byteCount": 151200,
+      "latencyMs": 1210,
+      "file": "synthetic-audio/023.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:db760d67488fb307ee5e0d7a35d553e2",
+      "transcript": "Wie entwickelt und nutzt Ihre Organisation Alternativen, um aus negativen Umständen handlungsfähig oder stärker hervorzugehen?",
+      "byteCount": 424800,
+      "latencyMs": 2768,
+      "file": "synthetic-audio/024.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:e7851c8a7c1a9ab7e76ef01059ac81ea",
+      "transcript": "Welche Alternative wurde als Reaktion auf die negative Situation tatsächlich eingesetzt?",
+      "byteCount": 285600,
+      "latencyMs": 2012,
+      "file": "synthetic-audio/025.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:75d9bac8717ade431787ad2ad58ef407",
+      "transcript": "Falls mehrere Alternativen eingesetzt wurden: Wie wurden diese gegebenenfalls miteinander verbunden?",
+      "byteCount": 295200,
+      "latencyMs": 1862,
+      "file": "synthetic-audio/026.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:5ab486e6ddfe7af93c5640d62e386fc1",
+      "transcript": "Was veränderte sich durch den Einsatz dieser Alternativen gegenüber dem vorherigen Vorgehen?",
+      "byteCount": 304800,
+      "latencyMs": 2161,
+      "file": "synthetic-audio/027.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:39f2e73bffcc6210a9d4bee14fe2f397",
+      "transcript": "Welche dieser Veränderungen blieben längerfristig bestehen?",
+      "byteCount": 180000,
+      "latencyMs": 1619,
+      "file": "synthetic-audio/028.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:695d1be5a9b6b0f75ec6d2d1096fa9b4",
+      "transcript": "Welche Nachteile oder Grenzen zeigten sich bei den gewählten Alternativen?",
+      "byteCount": 201600,
+      "latencyMs": 1450,
+      "file": "synthetic-audio/029.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:4160899236dc345be8ee3f0c9a35b137",
+      "transcript": "Wie passt Ihre Organisation ihr Handeln an, wenn sich die Situation verändert und konkrete Maßnahmen nötig werden?",
+      "byteCount": 316800,
+      "latencyMs": 2278,
+      "file": "synthetic-audio/030.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:0de34b5168ac1ebd090c725f6fce31d6",
+      "transcript": "Welche Aufgaben, Zuständigkeiten oder Ressourcen wurden daraufhin tatsächlich angepasst?",
+      "byteCount": 297600,
+      "latencyMs": 2201,
+      "file": "synthetic-audio/031.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:6f565659bd3c8863b176b27a0d8cbd38",
+      "transcript": "Wie wurden diese Anpassungen zwischen den betroffenen Bereichen abgestimmt?",
+      "byteCount": 211200,
+      "latencyMs": 1674,
+      "file": "synthetic-audio/032.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:5baa51ab0f12d0b06d90f2aaef9b354f",
+      "transcript": "Wo ließ sich eine erforderliche Anpassung nicht oder erst verspätet umsetzen?",
+      "byteCount": 259200,
+      "latencyMs": 1928,
+      "file": "synthetic-audio/033.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:c5e2aaaca2a23f3f285335447fd55fc1",
+      "transcript": "Wie setzen sich die Beschäftigten Ihrer Organisation in schwierigen Situationen dafür ein, das Erforderliche zu tun?",
+      "byteCount": 314400,
+      "latencyMs": 2138,
+      "file": "synthetic-audio/034.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:5f4bc4957fdd6ee79c9ac4cb078f5ef0",
+      "transcript": "Bei welchen Aufgaben gab es Schwierigkeiten oder fehlende Zuständigkeiten?",
+      "byteCount": 254400,
+      "latencyMs": 1752,
+      "file": "synthetic-audio/035.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:9d3a4c9c09007e741fb48221c706b6e9",
+      "transcript": "Wie wurde geklärt, wer für welche Aufgaben verantwortlich war?",
+      "byteCount": 208800,
+      "latencyMs": 1504,
+      "file": "synthetic-audio/036.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:ac1c78c1b29c8b5e083df456af29d21c",
+      "transcript": "Wie unterschied sich die Aufgabenübernahme zwischen den Beschäftigtengruppen?",
+      "byteCount": 206400,
+      "latencyMs": 1809,
+      "file": "synthetic-audio/037.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:7f06a8024e31eeec462a69f2bc2ab32f",
+      "transcript": "Wie handelt Ihre Organisation gemeinsam mit ihren Beschäftigten, wenn abgestimmtes Vorgehen erforderlich ist?",
+      "byteCount": 300000,
+      "latencyMs": 2008,
+      "file": "synthetic-audio/038.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:4e59fffabdce31f0868368abba2d894b",
+      "transcript": "Wo kam es zwischen den beteiligten Bereichen zu unterschiedlichen Vorgehensweisen oder Abstimmungsproblemen?",
+      "byteCount": 384000,
+      "latencyMs": 2378,
+      "file": "synthetic-audio/039.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:985e1899a4070830a7945f7e8ced9e0b",
+      "transcript": "Wie wurden gemeinsame Prioritäten zwischen diesen Bereichen abgestimmt?",
+      "byteCount": 225600,
+      "latencyMs": 1614,
+      "file": "synthetic-audio/040.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:fad1027edd1b9f21323f93313cd9c503",
+      "transcript": "Wie sah die Zusammenarbeit bei einer konkreten gemeinsamen Entscheidung aus?",
+      "byteCount": 240000,
+      "latencyMs": 1732,
+      "file": "synthetic-audio/041.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:0d21d7201cbd180d073ed6f9c9a26401",
+      "transcript": "Welche Bereiche mussten in dieser Situation zusammenarbeiten?",
+      "byteCount": 206400,
+      "latencyMs": 1542,
+      "file": "synthetic-audio/042.wav"
+    },
+    {
+      "deliveryId": "delivery:realtime-intent:b8eeeda37ccd25ff581fef1ce3bfd62a",
+      "transcript": "Vielen Dank fuer das Gespraech und Ihre Zeit.",
+      "byteCount": 153600,
+      "latencyMs": 1366,
+      "file": "synthetic-audio/043.wav"
+    }
+  ],
+  "session": {
+    "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+    "guideId": "guide:v1:05698mw1scqzt8",
+    "language": "de",
+    "guideTitle": "Interviewleitfaden: Organizational Resilience - 9 Items",
+    "status": "completed",
+    "stateVersion": 43,
+    "currentQuestionIndex": 51,
+    "totalQuestions": 51,
+    "currentQuestion": null,
+    "startedAt": "2026-10-01T19:38:07.148Z",
+    "endedAt": "2026-10-01T19:58:41.394Z",
+    "updatedAt": "2026-10-01T19:58:41.540Z",
+    "partialTranscript": null,
+    "transcript": [
+      {
+        "turnId": "turn:delivery:start:synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 1,
+        "speaker": "ai_interviewer",
+        "turnType": "greeting",
+        "text": "Guten Tag und vielen Dank, dass Sie sich Zeit fuer dieses Interview nehmen.",
+        "occurredAt": "2026-10-01T19:38:10.207Z",
+        "guideReference": null,
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:5b32df2f-25ae-47f8-86b3-c42475d447cd",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 2,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Welche Rolle haben Sie innerhalb der Organisation?",
+        "occurredAt": "2026-10-01T19:38:11.523Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:0b6rhb40ngnxyc"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_a5cd4abb52fc4952b9930832",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 3,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Ich bin Anna Kern, seit 2021 Betriebsleiterin der frei erfundenen Elbwerk Verpackungstechnik GmbH. Wir fertigen Verpackungskomponenten und haben 180 Beschaeftigte.",
+        "occurredAt": "2026-10-01T19:38:11.731Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:0b6rhb40ngnxyc"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:699820e5d63d7460f05ebe6654d1b1c8",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 4,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Welche Verantwortung haben Sie innerhalb der Organisation?",
+        "occurredAt": "2026-10-01T19:38:14.478Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:097f42p182xlt1"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_10993826f4fd47d9bc3ad8bd",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 5,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Bei mir laeuft das ueber unsere B-Freigabespur. So nennen wir das intern.",
+        "occurredAt": "2026-10-01T19:38:14.668Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:097f42p182xlt1"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:2265ec9ad8cda336cb85e18d6d7e661d",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 6,
+        "speaker": "ai_interviewer",
+        "turnType": "clarification_question",
+        "text": "Welche konkreten Aufgaben oder Entscheidungsbefugnisse gehören in dieser B-Freigabespur zu Ihrer Verantwortung?",
+        "occurredAt": "2026-10-01T19:38:19.528Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:097f42p182xlt1"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_27f5cab9f4c449938767fb5c",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 7,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Bei mir laeuft das ueber unsere B-Freigabespur. So nennen wir das intern. Ich verantworte Produktion, Instandhaltung, Lager und Versand. B-Spur bedeutet: Schicht- und Personaleinsatz sowie Ersatzbeschaffungen bis 25.000 Euro darf ich selbst freigeben. Hoehere Ausgaben und Vertragsaenderungen genehmigt die Geschaeftsfuehrung.",
+        "occurredAt": "2026-10-01T19:38:19.726Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:097f42p182xlt1"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:36641da50a3869a3666816b9eb24faaa",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 8,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie viele Mitarbeiter haben Sie unter sich?",
+        "occurredAt": "2026-10-01T19:38:22.766Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:0ax1lin094vpdv"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_115e2689c56d45e5a7ce5d94",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 9,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Fuenf Teamleitungen berichten direkt an mich. Insgesamt arbeiten 84 Beschaeftigte in meinem Verantwortungsbereich, von 180 im gesamten Unternehmen.",
+        "occurredAt": "2026-10-01T19:38:22.960Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:12fcs6q1ytr8x2",
+          "mainQuestionId": "main-question:v1:0ax1lin094vpdv"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:dd4a4d366a7ee38d33f1619ef9f2f1fe",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 10,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Was macht Ihre Organisation unter schwierigen Bedingungen, um ihre Position und Stabilität zu bewahren?",
+        "occurredAt": "2026-10-01T19:38:27.316Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_158eced127554c47904f815e",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 11,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Beim Ausfall der zentralen Druckluftversorgung im April 2026 priorisierten wir kritische Kundenauftraege, nutzten eine kleine unabhaengige Linie und versandten Lagerware. Unsere Lieferampel war meist gruen, obwohl wir nur 72 Prozent der normalen Stueckzahl fertigten.",
+        "occurredAt": "2026-10-01T19:38:27.515Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:3ff7fd5c6d2355bc83eb9def7a89dc17",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 12,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche zentralen Tätigkeiten liefen während dieser Situation weiter?",
+        "occurredAt": "2026-10-01T19:39:37.321Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1ddnjy2165cvt2"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_72fc49c9167e4638a9d84039",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 13,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die kleine Linie mit eigener Versorgung, Qualitaetspruefung, Lager, Versand, Kundenservice und Verwaltung arbeiteten weiter.",
+        "occurredAt": "2026-10-01T19:39:37.645Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1ddnjy2165cvt2"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:9e1642cee8240cd7d1c20f5d9d125d39",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 14,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wo kam es in dieser Zeit zu Einschränkungen oder Ausfällen?",
+        "occurredAt": "2026-10-01T19:39:41.791Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1n1i6xa0cbndky"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_3e7b189e983042fb90fa814d",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 15,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die grossen Linien standen zuerst sechs Stunden still. Danach lief eine Linie gedrosselt; die zweite blieb drei Tage aus. 46 unkritische Auftraege kamen verspaetet, zwei wurden storniert.",
+        "occurredAt": "2026-10-01T19:39:41.960Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1n1i6xa0cbndky"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:b29edebdd605faa7257434ec973d17d2",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 16,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Über welchen Zeitraum hielt die Belastung an?",
+        "occurredAt": "2026-10-01T19:39:45.488Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1d2upl005u3mxc"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_46ee46694655430e92b85a67",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 17,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die Belastung dauerte zwoelf Tage, vom 7. April bis zur Wiederherstellung am 19. April 2026.",
+        "occurredAt": "2026-10-01T19:39:45.713Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:1d2upl005u3mxc"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:510e1a033db6646f87a2f61a72db8f14",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 18,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Woran konnten Sie erkennen, wie stabil der Betrieb in dieser Zeit war?",
+        "occurredAt": "2026-10-01T19:39:49.754Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:0dptyat01lqzoh"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_fea675d595d942e7a9d488a8",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 19,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Unsere Lieferampel blieb an zehn von zwoelf Tagen gruen; zugleich erreichten wir nur 72 Prozent der normalen Stueckzahl.",
+        "occurredAt": "2026-10-01T19:39:49.954Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0anbuhs0p2ui8c",
+          "followUpQuestionId": "follow-up:v1:0dptyat01lqzoh"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:66d901b97a52d56c3b48673caa441e99",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 20,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie entwickelt Ihre Organisation unterschiedliche Lösungen, wenn sie mit schwierigen Herausforderungen konfrontiert ist?",
+        "occurredAt": "2026-10-01T19:41:00.242Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_42df6198a1334805b83e924d",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 21,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Produktion, Einkauf und Instandhaltung prueften einen Mietkompressor, Fremdfertigung und Zusatzschichten auf der unabhaengigen kleinen Linie. Wir setzten alle drei Wege ein, aber nicht fuer alle Formate.",
+        "occurredAt": "2026-10-01T19:41:00.455Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:8e50988c46bc1e8d4777213fcecb5dd7",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 22,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wie wurde der Einsatz dieser Lösungen zwischen den beteiligten Bereichen abgestimmt?",
+        "occurredAt": "2026-10-01T19:41:04.916Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9",
+          "followUpQuestionId": "follow-up:v1:11hwtrl047l4l9"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_cac11f83434c43df946df3d9",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 23,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Produktion, Einkauf, Qualitaet und Vertrieb glichen um 8 und 15 Uhr eine gemeinsame Kapazitaetsliste ab. Ich gab Schichten frei; Qualitaet genehmigte die externen Formate.",
+        "occurredAt": "2026-10-01T19:41:05.131Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9",
+          "followUpQuestionId": "follow-up:v1:11hwtrl047l4l9"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:7fec8b890aa4203d4c77ec67e1db3ca0",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 24,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche der eingesetzten Lösungen erwiesen sich in der Praxis als nutzbar?",
+        "occurredAt": "2026-10-01T19:41:09.498Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9",
+          "followUpQuestionId": "follow-up:v1:1qvkjgl0ertfup"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_b9ba567294c643679eb03ab6",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 25,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Der Mietkompressor war nach einem Geraetetausch nutzbar. Die kleine Linie konnte vier von acht Formaten verarbeiten, der Partner nur drei. Ein Format musste warten.",
+        "occurredAt": "2026-10-01T19:41:09.723Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0meks1h1r1gga9",
+          "followUpQuestionId": "follow-up:v1:1qvkjgl0ertfup"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:66ebd1e2410b98bedbf945ad4d01052b",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 26,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie verhält sich Ihre Organisation, wenn sie Gefahr läuft, etwas Wesentliches zu verlieren?",
+        "occurredAt": "2026-10-01T19:42:20.242Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_378f7b12ac1e4a4995e15690",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 27,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Gefaehrdet war der Liefervertrag mit unserem groessten Kunden. Wir reservierten Material und Kapazitaet fuer dessen kritische Auftraege und vereinbarten taegliche Teillieferungen. Den Vertrag erhielten wir, einzelne andere Auftraege gingen verloren.",
+        "occurredAt": "2026-10-01T19:42:20.455Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:34cc048b974c4932d56a101ed55e1ef7",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 28,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wie lange wurden diese Maßnahmen fortgeführt?",
+        "occurredAt": "2026-10-01T19:42:24.348Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:0scrgik1xgo1zs"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_96d48e6dec2449b5afc41914",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 29,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Diese Sondermassnahmen liefen vierzehn Tage, vom 7. bis zum 21. April, bis der Rueckstand kritischer Lieferungen abgearbeitet war.",
+        "occurredAt": "2026-10-01T19:42:24.573Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:0scrgik1xgo1zs"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:ed2b8b76969f0320f2d709e4f804a44b",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 30,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Was konnte dadurch erhalten werden?",
+        "occurredAt": "2026-10-01T19:42:27.897Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:1pc1ia819otug4"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_e188dcf35d744317bc4f9475",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 31,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Der Liefervertrag blieb bestehen. Beim Kunden gab es keinen durch unsere Komponenten verursachten Stillstand, und wir mussten keine Arbeitsplaetze abbauen.",
+        "occurredAt": "2026-10-01T19:42:28.123Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:1pc1ia819otug4"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:638f355c3a796fec385d3b83544ed718",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 32,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Was ließ sich trotz dieser Maßnahmen nicht erhalten?",
+        "occurredAt": "2026-10-01T19:43:37.306Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:05q79kp1k0m1h9"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_24c6caf7241a46be93c692d4",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 33,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Zwei andere Kunden stornierten Auftraege im Wert von zusammen 18.000 Euro. 46 weitere unkritische Auftraege wurden verspaetet ausgeliefert.",
+        "occurredAt": "2026-10-01T19:43:37.511Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0rvb65c1iamjdg",
+          "followUpQuestionId": "follow-up:v1:05q79kp1k0m1h9"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:4a534e0c25293de6f41bf52ea6fe5394",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 34,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie geht Ihre Organisation mit Rückschlägen und Schwierigkeiten um, wenn der bisherige Weg gefährdet ist?",
+        "occurredAt": "2026-10-01T19:43:42.099Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_cdb96a79d5384c54970e8415",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 35,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Am dritten Tag fiel auch der Mietkompressor aus. Wir fertigten auf der kleinen Linie weiter, nutzten Bestaende und Fremdfertigung und liessen das Mietgeraet austauschen. Die grosse Linie stand dabei weitere vier Stunden still.",
+        "occurredAt": "2026-10-01T19:43:42.328Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:9761285a7fd46b43de732e45f871d7ee",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 36,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wie ging der Betrieb nach diesem Rückschlag tatsächlich weiter?",
+        "occurredAt": "2026-10-01T19:44:51.827Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:05k91601flz6a4"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_3fefe4ea717043cfb6fb69ec",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 37,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die kleine Linie, Lager und Versand liefen weiter. Fuer kritische Lieferungen nutzten wir vorhandene Bestaende; der externe Partner begann wie vereinbart am vierten Tag.",
+        "occurredAt": "2026-10-01T19:44:52.050Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:05k91601flz6a4"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:ab6839eccf7cd167b828a6858a686102",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 38,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche Änderungen gab es beim weiteren Vorgehen?",
+        "occurredAt": "2026-10-01T19:44:56.130Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:09tz8zv1yzpx9r"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_38757dca5717433e90e936a7",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 39,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Wir tauschten das Mietgeraet aus und liessen danach jede Schicht Druck und Temperatur protokollieren. Die Prioritaetenliste wurde nach verfuegbarem Bestand neu geordnet.",
+        "occurredAt": "2026-10-01T19:44:56.359Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:09tz8zv1yzpx9r"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:4f548a962aab3483762a0c78badeca1a",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 40,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche Unterbrechungen oder Leistungseinbußen gab es dabei?",
+        "occurredAt": "2026-10-01T19:46:05.813Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:13rdcmr0nqnukf"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_62ed31ec82b74fbdaf318681",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 41,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die wieder angelaufene grosse Linie stand vier Stunden still und erreichte danach rund 60 Prozent ihrer normalen Leistung. Insgesamt blieben wir im Stoerungszeitraum bei 72 Prozent der normalen Stueckzahl.",
+        "occurredAt": "2026-10-01T19:46:06.040Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:1enhl4z0zc0ytj",
+          "mainQuestionId": "main-question:v1:0bw9muu0xrw54i",
+          "followUpQuestionId": "follow-up:v1:13rdcmr0nqnukf"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:b48e90636be93896a8c4b0e73a484f68",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 42,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie handelt Ihre Organisation, wenn schnelles Handeln erforderlich ist?",
+        "occurredAt": "2026-10-01T19:46:12.269Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:0is8y461w9s8ki"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_fb5248b06e254239a4a9b8e9",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 43,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Beim Kompressorausfall erkannte die Fruehschicht die Stoerung um 7:40 Uhr. Um 8:02 Uhr entschied ich die Verlagerung kritischer Auftraege; um 8:43 Uhr begann die erste angepasste Fertigung auf der kleinen Linie.",
+        "occurredAt": "2026-10-01T19:46:12.506Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:0is8y461w9s8ki"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:6753cdd8f1da31cfa3f3714c7f59c4c3",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 44,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "An welchen Stellen kam es zu Verzögerungen?",
+        "occurredAt": "2026-10-01T19:47:21.728Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:0is8y461w9s8ki",
+          "followUpQuestionId": "follow-up:v1:0u62ogt1f0j52x"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_6ae23b15626946749e17a442",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 45,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Auf den Mietkompressor warteten wir sechs Stunden. Die Freigabe des Fremdfertigungsvertrags durch die Geschaeftsfuehrung dauerte 90 Minuten, weil die Zeichnungsberechtigung zunaechst unklar war.",
+        "occurredAt": "2026-10-01T19:47:21.957Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:0is8y461w9s8ki",
+          "followUpQuestionId": "follow-up:v1:0u62ogt1f0j52x"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:db760d67488fb307ee5e0d7a35d553e2",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 46,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie entwickelt und nutzt Ihre Organisation Alternativen, um aus negativen Umständen handlungsfähig oder stärker hervorzugehen?",
+        "occurredAt": "2026-10-01T19:47:27.865Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_93952d3cead04d47b639c602",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 47,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Wir kombinierten die kleine Linie mit Fremdfertigung und Mietdruckluft. Danach behielten wir den geprueften Fertigungspartner und einen Mietrahmenvertrag. Das verringert Abhaengigkeiten, kostet aber Geld und deckt nicht jedes Format ab.",
+        "occurredAt": "2026-10-01T19:47:28.110Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:e7851c8a7c1a9ab7e76ef01059ac81ea",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 48,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche Alternative wurde als Reaktion auf die negative Situation tatsächlich eingesetzt?",
+        "occurredAt": "2026-10-01T19:47:32.920Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:0szgmi61yh4gia"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_f5685941fc4040b488510c4d",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 49,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Wir nutzten tatsaechlich die unabhaengige kleine Linie, Fremdfertigung fuer drei Formate und einen Mietkompressor fuer die grosse Linie.",
+        "occurredAt": "2026-10-01T19:47:33.149Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:0szgmi61yh4gia"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:75d9bac8717ade431787ad2ad58ef407",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 50,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Falls mehrere Alternativen eingesetzt wurden: Wie wurden diese gegebenenfalls miteinander verbunden?",
+        "occurredAt": "2026-10-01T19:48:43.084Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:09c5wat0g8jlyh"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_efdbb90366ec4814a506125a",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 51,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die kleine Linie uebernahm kurzfristige Auftraege; der Partner fertigte Serien, und die Mietdruckluft hielt eine grosse Linie in Betrieb. Eine gemeinsame Liste verteilte Auftraege und Material.",
+        "occurredAt": "2026-10-01T19:48:43.328Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:09c5wat0g8jlyh"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:5ab486e6ddfe7af93c5640d62e386fc1",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 52,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Was veränderte sich durch den Einsatz dieser Alternativen gegenüber dem vorherigen Vorgehen?",
+        "occurredAt": "2026-10-01T19:48:48.133Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:1sr0bes0ex91p4"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_60bba424aef64cc881f7370f",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 53,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Vorher fertigten wir alles selbst an einem Standort. Danach konnten wir drei Formate an einen geprueften Partner abgeben und kurzfristig Mietdruckluft bestellen.",
+        "occurredAt": "2026-10-01T19:48:48.395Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:1sr0bes0ex91p4"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:39f2e73bffcc6210a9d4bee14fe2f397",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 54,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche dieser Veränderungen blieben längerfristig bestehen?",
+        "occurredAt": "2026-10-01T19:49:57.870Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:0u8mndw1i3b3i0"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_6d13c9f7aa834d4f98a80ef2",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 55,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Auch fuenf Monate spaeter bestehen der Mietrahmenvertrag, die Freigabe des Partners und eine monatlich aktualisierte Liste der extern fertigbaren Formate.",
+        "occurredAt": "2026-10-01T19:49:58.103Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:0u8mndw1i3b3i0"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:695d1be5a9b6b0f75ec6d2d1096fa9b4",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 56,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche Nachteile oder Grenzen zeigten sich bei den gewählten Alternativen?",
+        "occurredAt": "2026-10-01T19:50:02.161Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:1qk6ebc0b674zo"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_f170f9257a294e55a56d3d12",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 57,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Fremdfertigung ist etwa 18 Prozent teurer. Der Partner deckt nur drei von acht Formaten ab, die kleine Linie vier; ein Format bleibt ausschliesslich von der grossen Linie abhaengig.",
+        "occurredAt": "2026-10-01T19:50:02.395Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:01exw9903nyi4p",
+          "followUpQuestionId": "follow-up:v1:1qk6ebc0b674zo"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:4160899236dc345be8ee3f0c9a35b137",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 58,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie passt Ihre Organisation ihr Handeln an, wenn sich die Situation verändert und konkrete Maßnahmen nötig werden?",
+        "occurredAt": "2026-10-01T19:51:12.650Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_4782c84eb157462f9f4cfc03",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 59,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Als der Mietkompressor am dritten Tag ausfiel, verlagerten wir Personal und Material erneut auf die kleine Linie und passten Lieferzusagen an. Acht Beschaeftigte wechselten die Schicht; die Freigabe eines externen Formats dauerte aber einen Tag laenger als geplant.",
+        "occurredAt": "2026-10-01T19:51:12.879Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:0de34b5168ac1ebd090c725f6fce31d6",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 60,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche Aufgaben, Zuständigkeiten oder Ressourcen wurden daraufhin tatsächlich angepasst?",
+        "occurredAt": "2026-10-01T19:51:18.653Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:0cxdqwe07bmnky"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_015ab9c732c04a298cce8627",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 61,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Acht Beschaeftigte wechselten zur kleinen Linie oder zum Versand. Einkauf beschaffte ein anderes Mietgeraet, und Vertrieb aenderte die Lieferzusagen fuer unkritische Auftraege.",
+        "occurredAt": "2026-10-01T19:51:18.891Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:0cxdqwe07bmnky"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:6f565659bd3c8863b176b27a0d8cbd38",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 62,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wie wurden diese Anpassungen zwischen den betroffenen Bereichen abgestimmt?",
+        "occurredAt": "2026-10-01T19:52:28.385Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:1ec7j9c021wroc"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_727206d0e4e34c96a0737667",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 63,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die vier Bereiche stimmten die neue Verteilung in der gemeinsamen Lagebesprechung ab. Ich gab die Personalwechsel frei, die jeweiligen Teamleitungen bestaetigten Material und Schichtbesetzung.",
+        "occurredAt": "2026-10-01T19:52:28.626Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:1ec7j9c021wroc"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:5baa51ab0f12d0b06d90f2aaef9b354f",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 64,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wo ließ sich eine erforderliche Anpassung nicht oder erst verspätet umsetzen?",
+        "occurredAt": "2026-10-01T19:52:33.533Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:0a1kvsl0504nnd"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_69e93ee628ca414b9ebbc1f2",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 65,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die Qualitaetsfreigabe fuer ein externes Format war einen Tag verspaetet, weil eine Prueflehre erst zum Partner transportiert werden musste.",
+        "occurredAt": "2026-10-01T19:52:33.801Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:05zr1z512vu4sd",
+          "mainQuestionId": "main-question:v1:1ghxttf0z1e4fr",
+          "followUpQuestionId": "follow-up:v1:0a1kvsl0504nnd"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:c5e2aaaca2a23f3f285335447fd55fc1",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 66,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie setzen sich die Beschäftigten Ihrer Organisation in schwierigen Situationen dafür ein, das Erforderliche zu tun?",
+        "occurredAt": "2026-10-01T19:54:44.256Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_ac897c96365e4fc9ae25df87",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 67,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Instandhaltung organisierte Ersatzgeraete, Produktion uebernahm Zusatzschichten, Lager und Versand bereiteten Teillieferungen vor. Teamleitungen verteilten Aufgaben mit Vertretungen. Bei Nachtschicht und Zeitarbeit waren die Einweisungen anfangs lueckenhaft.",
+        "occurredAt": "2026-10-01T19:54:44.501Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:5f4bc4957fdd6ee79c9ac4cb078f5ef0",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 68,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Bei welchen Aufgaben gab es Schwierigkeiten oder fehlende Zuständigkeiten?",
+        "occurredAt": "2026-10-01T19:54:49.102Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:154r8yy0gmog0e"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_10d755c8626247af8b7f8dd2",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 69,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "In der ersten Nachtschicht fehlte eine eingewiesene Vertretung fuer die Materialbuchung. Zeitarbeitskraefte mussten auf Einweisung warten; die Bestaende wurden erst morgens nachgetragen.",
+        "occurredAt": "2026-10-01T19:54:49.342Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:154r8yy0gmog0e"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:9d3a4c9c09007e741fb48221c706b6e9",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 70,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wie wurde geklärt, wer für welche Aufgaben verantwortlich war?",
+        "occurredAt": "2026-10-01T19:54:53.359Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:1bcr6vt10g2bd9"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_d77b12c60c504d42b28df19f",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 71,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Die fuenf Teamleitungen trugen Verantwortliche und Vertretungen in eine Schichtliste ein. Bei der taeglichen Uebergabe bestaetigte jede Person ihre Aufgabe.",
+        "occurredAt": "2026-10-01T19:54:53.625Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:1bcr6vt10g2bd9"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:ac1c78c1b29c8b5e083df456af29d21c",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 72,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wie unterschied sich die Aufgabenübernahme zwischen den Beschäftigtengruppen?",
+        "occurredAt": "2026-10-01T19:56:02.957Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:1n9io7u09pqzwm"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_9e5b92b609934a67b69f383b",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 73,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Stammkraefte uebernahmen Umruesten und Pruefungen. Zeitarbeitskraefte halfen bei Verpackung und Materialtransport. Verwaltung unterstuetzte die Lieferlisten, konnte aber keine Maschinen bedienen.",
+        "occurredAt": "2026-10-01T19:56:03.178Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0oefj0103f4w6d",
+          "followUpQuestionId": "follow-up:v1:1n9io7u09pqzwm"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:7f06a8024e31eeec462a69f2bc2ab32f",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 74,
+        "speaker": "ai_interviewer",
+        "turnType": "main_question",
+        "text": "Wie handelt Ihre Organisation gemeinsam mit ihren Beschäftigten, wenn abgestimmtes Vorgehen erforderlich ist?",
+        "occurredAt": "2026-10-01T19:56:06.893Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_96ea23ed66274806950064ea",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 75,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Produktion, Instandhaltung, Einkauf, Qualitaet, Versand und Vertrieb arbeiteten mit einer gemeinsamen Auftragsliste. Bei Lieferprioritaeten wurden Schichtvertretungen beteiligt. Zu Beginn versprach der Vertrieb jedoch Termine, die die Produktion nicht bestaetigt hatte.",
+        "occurredAt": "2026-10-01T19:56:07.135Z",
+        "guideReference": {
+          "kind": "main_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:4e59fffabdce31f0868368abba2d894b",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 76,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wo kam es zwischen den beteiligten Bereichen zu unterschiedlichen Vorgehensweisen oder Abstimmungsproblemen?",
+        "occurredAt": "2026-10-01T19:56:12.316Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:127w8bi0ca100i"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_32b629b1b78b44489736ec17",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 77,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Der Vertrieb versprach am ersten Tag zwei Termine ohne Bestaetigung der Produktion. Danach durfte er Lieferzusagen nur aus der freigegebenen Liste uebernehmen; nachts kamen Aktualisierungen anfangs noch verspaetet an.",
+        "occurredAt": "2026-10-01T19:56:12.564Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:127w8bi0ca100i"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:985e1899a4070830a7945f7e8ced9e0b",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 78,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wie wurden gemeinsame Prioritäten zwischen diesen Bereichen abgestimmt?",
+        "occurredAt": "2026-10-01T19:57:22.056Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:03zotvk0z72fak"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_fcb261ce9fe547888f7e53bf",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 79,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Wir priorisierten zuerst Auftraege, deren Ausfall einen Kundenstillstand verursacht haette. Danach kamen vertragliche Termine. Teamleitungen und Schichtvertretungen prueften taeglich die gemeinsame Liste.",
+        "occurredAt": "2026-10-01T19:57:22.482Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:03zotvk0z72fak"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:fad1027edd1b9f21323f93313cd9c503",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 80,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Wie sah die Zusammenarbeit bei einer konkreten gemeinsamen Entscheidung aus?",
+        "occurredAt": "2026-10-01T19:57:27.124Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:170gt381mqnphs"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_338f27f7822e45cdb18719c9",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 81,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Bei der zweiten Schicht schlug eine Schichtvertretung vor, zwei erfahrene Kraefte fuer das Umruesten zu behalten. Produktion passte den Plan an, Personal pruefte Ruhezeiten, und der Betriebsrat stimmte der Schichtregelung zu.",
+        "occurredAt": "2026-10-01T19:57:27.368Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:170gt381mqnphs"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:0d21d7201cbd180d073ed6f9c9a26401",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 82,
+        "speaker": "ai_interviewer",
+        "turnType": "follow_up_question",
+        "text": "Welche Bereiche mussten in dieser Situation zusammenarbeiten?",
+        "occurredAt": "2026-10-01T19:57:31.279Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:1469bze1kkzuoe"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "participant-turn:item_25c3d9a71c0b4a1d8c2c4218",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 83,
+        "speaker": "participant",
+        "turnType": "participant_answer",
+        "text": "Produktion, Instandhaltung, Einkauf, Qualitaet, Lager, Versand und Vertrieb mussten zusammenarbeiten. Fuer Zusatzschichten waren Personal und Betriebsrat beteiligt.",
+        "occurredAt": "2026-10-01T19:57:31.525Z",
+        "guideReference": {
+          "kind": "follow_up_question",
+          "guideId": "guide:v1:05698mw1scqzt8",
+          "sectionId": "section:v1:0v00pm21sik346",
+          "mainQuestionId": "main-question:v1:0nvnxu70s23htf",
+          "followUpQuestionId": "follow-up:v1:1469bze1kkzuoe"
+        },
+        "interrupted": false
+      },
+      {
+        "turnId": "turn:delivery:realtime-intent:b8eeeda37ccd25ff581fef1ce3bfd62a",
+        "interviewId": "synthetic-realtime-de-2026-10-01T19-38-07-094Z-1cd3d41e",
+        "sequenceNumber": 84,
+        "speaker": "ai_interviewer",
+        "turnType": "closing",
+        "text": "Vielen Dank fuer das Gespraech und Ihre Zeit.",
+        "occurredAt": "2026-10-01T19:58:41.394Z",
+        "guideReference": null,
+        "interrupted": false
+      }
+    ],
+    "technicalGaps": [],
+    "finalizedAt": "2026-10-01T19:58:41.540Z"
+  }
+}

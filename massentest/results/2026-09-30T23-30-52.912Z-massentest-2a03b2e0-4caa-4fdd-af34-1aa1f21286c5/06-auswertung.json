@@ -1,0 +1,1183 @@
+{
+  "index": 6,
+  "runId": "massentest-2a03b2e0-4caa-4fdd-af34-1aa1f21286c5-run-06",
+  "startedAt": "2026-09-30T23:34:50.313Z",
+  "endedAt": "2026-09-30T23:35:37.714Z",
+  "durationMs": 47401,
+  "providerCalls": 1,
+  "status": "completed",
+  "report": {
+    "schemaVersion": 4,
+    "reportKind": "evaluation_profile_report",
+    "evaluationId": "massentest-2a03b2e0-4caa-4fdd-af34-1aa1f21286c5-run-06",
+    "interviewId": "synthetic-lindenhafen-massentest-v1",
+    "profileId": "profile-default",
+    "profileName": "default",
+    "profileUpdatedAt": "2026-08-21T22:20:13.267Z",
+    "profileFingerprint": "8271bee70d141d66084ec12b7bb7327f7136edc4ec1ab02e99e854628a34ce4d",
+    "transcriptFingerprint": "be02ea2251c81c7093550668bcfce1681305828c36165e3c5c5a78312596d13e",
+    "language": "de",
+    "profileTranslation": null,
+    "promptVersion": "profile-evidence-coding-v4",
+    "model": {
+      "mode": "provider",
+      "provider": "openai",
+      "model": "openai/gpt-5.6-terra"
+    },
+    "profile": {
+      "profileId": "profile-default",
+      "name": "default",
+      "description": "Editierbares 1-bis-7-Evidenzprofil mit den neun derzeit verwendeten Organizational-Resilience-Items.",
+      "coderPrompt": "Bewerte die im Interview beobachtbare organisationale Resilienz fuer jedes Profilitem.\nBeruecksichtige sowohl unterstuetzende als auch entgegenstehende Evidenz und ordne die Aussagen dem am besten passenden Kriterium der Skala von 1 bis 7 zu.\nEine hohe Bewertung setzt konkrete, belastbare Praxisbelege voraus. Allgemeine Absichtserklaerungen oder rein hypothetische Aussagen sind schwaechere Evidenz.\nWenn die Aussagen keine tragfaehige Bewertung erlauben, verwende einen passenden Non-Score-Status und benenne die fehlende oder widerspruechliche Evidenz.",
+      "scale": {
+        "minimum": 1,
+        "maximum": 7
+      },
+      "dimensions": [
+        {
+          "dimensionId": "robustness",
+          "name": "Robustness",
+          "order": 0
+        },
+        {
+          "dimensionId": "agility",
+          "name": "Agility",
+          "order": 1
+        },
+        {
+          "dimensionId": "integrity",
+          "name": "Integrity",
+          "order": 2
+        }
+      ],
+      "items": [
+        {
+          "itemId": "rob-01",
+          "dimensionId": "robustness",
+          "name": "Was macht Ihre Organisation unter schwierigen Bedingungen, um ihre Position und Stabilität zu bewahren?",
+          "codingInstruction": "Kodiere nur beobachtbare Evidenz dazu, ob zentrale Position, Stabilität und Funktionsfähigkeit unter erheblicher Belastung erhalten bleiben. Eine spätere Erholung allein belegt den Erhalt während der Krise nicht.",
+          "order": 0,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Die bisherige finanzielle, strategische oder operative Position bricht unter der Belastung bis zur Existenzgefährdung ein."
+            },
+            {
+              "score": 2,
+              "criterion": "Mindestens eine begrenzte Funktion oder Stabilitätsressource bleibt erhalten, insgesamt dominieren aber Ausfälle und eine deutliche Gefährdung der bisherigen Position.\nAbgrenzung: Nicht verwenden, wenn keinerlei Erhalt belegt ist (1) oder mehrere zentrale Funktionen erkennbar fortbestehen (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Mehrere zentrale Funktionen oder Stabilitätsfaktoren bleiben erhalten, zugleich bestehen erhebliche Ausfälle; die Existenz ist nicht vollständig gefährdet, aber die Kontinuität bleibt unter dem mittleren Anker.\nAbgrenzung: Nicht verwenden, wenn nur eine isolierte Restfunktion bleibt (2) oder die Evidenz den partiellen Erhalt des Referenzankers 4 vollständig trifft."
+            },
+            {
+              "score": 4,
+              "criterion": "Einzelne Funktionen oder Stabilitätsfaktoren bleiben erhalten, aber die Kontinuität ist begrenzt oder nicht organisationsweit integriert."
+            },
+            {
+              "score": 5,
+              "criterion": "Position und die meisten zentralen Funktionen bleiben nachweislich stabil, jedoch besteht mindestens eine wesentliche Lücke bei Organisationsbreite, Dauer oder Ergebnisstabilität.\nAbgrenzung: Nicht verwenden, wenn nur einzelne Funktionen erhalten bleiben (4) oder nahezu vollständige Stabilität mit bloß kleiner Restlücke belegt ist (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Position, Stabilität und zentrale Funktionen bleiben auch unter erheblicher Belastung nahezu organisationsweit erhalten; nur eine klar begrenzte Restlücke verhindert den hohen Referenzanker.\nAbgrenzung: Nicht verwenden, wenn wesentliche Bereiche oder Ergebnisse instabil bleiben (5 oder niedriger) oder vollständiger Erhalt ohne relevante Lücke belegt ist (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Die Organisation erhält Position, zentrale Funktionen und Stabilität auch unter schwerer Belastung nachweislich."
+            }
+          ]
+        },
+        {
+          "itemId": "rob-02",
+          "dimensionId": "robustness",
+          "name": "Wie entwickelt Ihre Organisation unterschiedliche Lösungen, wenn sie mit schwierigen Herausforderungen konfrontiert ist?",
+          "codingInstruction": "Kodiere Breite, Unterschiedlichkeit und tatsächliche Nutzbarkeit von Lösungen. Einzelne Reaktionen oder vorhandene, aber nicht anwendbare Pläne rechtfertigen keinen hohen Wert.",
+          "order": 1,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Es fehlen tragfähige Alternativen und ein gemeinsamer organisationsweiter Lösungsraum."
+            },
+            {
+              "score": 2,
+              "criterion": "Eine einzelne fragile oder improvisierte Alternative ist erkennbar, während ein gemeinsamer Lösungsraum und weitere tragfähige Optionen weitgehend fehlen.\nAbgrenzung: Nicht verwenden, wenn gar keine Alternative vorliegt (1) oder mehrere nutzbare lokale Lösungen entwickelt werden (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Mehr als eine lokale oder vorläufige Lösung wird entwickelt, ihre Koordination, Übertragbarkeit oder Tragfähigkeit bleibt jedoch deutlich begrenzt.\nAbgrenzung: Nicht verwenden, wenn nur eine kaum tragfähige Einzeloption besteht (2) oder die reaktive Mehrlösungsfähigkeit dem mittleren Referenzanker entspricht (4)."
+            },
+            {
+              "score": 4,
+              "criterion": "Einzelne Lösungen oder Pläne bestehen, sind aber reaktiv, unkoordiniert oder schwer auf konkrete Krisen übertragbar."
+            },
+            {
+              "score": 5,
+              "criterion": "Mehrere unterschiedliche Lösungen werden koordiniert entwickelt oder eingesetzt, aber ihre Kombination, Erprobung oder organisationsweite Nutzung weist noch wesentliche Lücken auf.\nAbgrenzung: Nicht verwenden, wenn Lösungen überwiegend unkoordiniert bleiben (4) oder eine breit belegte kombinierte Lösungsfähigkeit mit nur kleiner Restlücke vorliegt (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Unterschiedliche finanzielle, operative, technologische oder organisatorische Lösungen werden nachweislich kombiniert; lediglich eine begrenzte Integrations- oder Ergebnislücke bleibt.\nAbgrenzung: Nicht verwenden, wenn die Kombination nur in Teilbereichen gelingt (5) oder mehrere Lösungsarten vollständig und belastbar kombiniert werden (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Die Organisation erzeugt und kombiniert nachweislich mehrere unterschiedliche finanzielle, operative, technologische oder organisatorische Lösungen."
+            }
+          ]
+        },
+        {
+          "itemId": "rob-03",
+          "dimensionId": "robustness",
+          "name": "Wie verhält sich Ihre Organisation, wenn sie Gefahr läuft, etwas Wesentliches zu verlieren?",
+          "codingInstruction": "Kodiere fortgesetzte, konkrete Anstrengungen zum Schutz von Überleben, Kernfunktionen, Beschäftigung oder zentralen Zielen. Ein bloßer Krisenzustand ohne beobachtetes Verhalten reicht nicht für einen hohen Wert.",
+          "order": 2,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Die Organisation beendet den Widerstand früh oder betroffene Organisationen scheitern unter der Belastung."
+            },
+            {
+              "score": 2,
+              "criterion": "Ein begrenzter oder kurzfristiger Widerstand ist belegt, bevor die Organisation weitgehend aufgibt oder wesentliche Ziele und Funktionen verliert.\nAbgrenzung: Nicht verwenden, wenn Widerstand vollständig fehlt (1) oder mehrere Funktionen über einen relevanten Zeitraum aktiv geschützt werden (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Die Organisation schützt mehrere Funktionen, Arbeitsplätze oder Dienste aktiv, doch Dauer, Umfang oder Erfolg bleiben unter dem mittleren Referenzanker.\nAbgrenzung: Nicht verwenden, wenn nur isolierter kurzfristiger Widerstand erkennbar ist (2) oder der aktive partielle Schutz dem Referenzanker 4 entspricht."
+            },
+            {
+              "score": 4,
+              "criterion": "Die Organisation schützt einzelne Funktionen, Arbeitsplätze oder Dienste aktiv, der Nachweis bleibt jedoch begrenzt oder auf Wiederherstellung gerichtet."
+            },
+            {
+              "score": 5,
+              "criterion": "Die Organisation hält unter starkem Druck anhaltend dagegen und sichert einen großen Teil zentraler Ziele; zugleich bleibt mindestens ein wesentliches Ziel oder eine Kernfunktion beobachtbar ungesichert.\nAbgrenzung: Nicht verwenden, wenn Schutz nur partiell oder wiederherstellungsorientiert bleibt (4) oder nahezu alle zentralen Ziele mit kleiner Restunsicherheit gesichert sind (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Anhaltender Widerstand unter schwerem Druck und die weitgehende Sicherung von Überleben oder zentralen Zielen sind belegt; nur ein klar begrenztes Ziel oder ein kleiner Organisationsbereich bleibt beobachtbar ungesichert.\nAbgrenzung: Nicht verwenden, wenn wesentliche Ziele ungesichert bleiben (5 oder niedriger) oder Überleben und zentrale Ziele vollständig nachgewiesen sind (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Die Organisation kämpft unter schwerem Druck anhaltend weiter und sichert Überleben oder zentrale Ziele nachweislich."
+            }
+          ]
+        },
+        {
+          "itemId": "rob-04",
+          "dimensionId": "robustness",
+          "name": "Wie geht Ihre Organisation mit Rückschlägen und Schwierigkeiten um, wenn der bisherige Weg gefährdet ist?",
+          "codingInstruction": "Kodiere beobachtete Fortführung von Betrieb, Kernmission oder bewusstem strategischem Pfad. Unkritische Pfadstarre ist nicht automatisch resilient; zulässige Anpassung kann zur Fortführung der Kernmission gehören.",
+          "order": 3,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Die Organisation oder ein klar definierter Fallbetrieb wird nach der Belastung beendet und der Pfad nicht fortgeführt."
+            },
+            {
+              "score": 2,
+              "criterion": "Der bisherige Pfad oder Betrieb wird überwiegend beendet, während nur eine isolierte Teilaktivität oder ein begrenzter Wiederanlauf fortgeführt wird.\nAbgrenzung: Nicht verwenden, wenn keinerlei Fortführung belegt ist (1) oder größere Teile trotz deutlicher Leistungseinbußen weiterarbeiten (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Wesentliche Teile arbeiten trotz Rückschlag weiter, jedoch mit starken Unterbrechungen, deutlichem Leistungsabfall oder unsicherem Fortbestand.\nAbgrenzung: Nicht verwenden, wenn nur isolierte Restaktivität bleibt (2) oder das partielle Durchhalten dem Referenzanker 4 entspricht."
+            },
+            {
+              "score": 4,
+              "criterion": "Die Organisation hält bei einem Rückschlag durch und arbeitet weiter, der Erfolg bleibt jedoch partiell oder die Leistung fällt zunächst deutlich ab."
+            },
+            {
+              "score": 5,
+              "criterion": "Betrieb oder Kernmission werden breit fortgeführt, aber relevante Unterbrechungen, Leistungsabfälle oder partielle Zielverfehlungen bleiben bestehen.\nAbgrenzung: Nicht verwenden, wenn die Fortführung nur partiell gelingt (4) oder die Kernmission nahezu durchgehend mit bloß kleiner Restlücke fortgeführt wird (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Betrieb oder Kernmission werden unter schwerer Krise nahezu durchgehend weitergeführt und Entscheidungen daran ausgerichtet; nur eine begrenzte Unterbrechung oder Ergebnislücke bleibt.\nAbgrenzung: Nicht verwenden, wenn relevante Teile der Kernmission beeinträchtigt bleiben (5 oder niedriger) oder die konsequente Fortführung vollständig belegt ist (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Die Organisation führt Betrieb oder Kernmission trotz schwerer Krise konsequent fort und richtet Entscheidungen daran aus."
+            }
+          ]
+        },
+        {
+          "itemId": "agi-01",
+          "dimensionId": "agility",
+          "name": "Wie handelt Ihre Organisation, wenn schnelles Handeln erforderlich ist?",
+          "codingInstruction": "Kodiere nachgewiesene Reaktions- und Umsetzungszeit. Absicht, bloße Problemerkennung oder späteres Handeln ohne zeitliche Evidenz sind nicht als schnell zu bewerten.",
+          "order": 0,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Entscheidungen und Reaktionen sind deutlich verzögert oder nachweislich zu langsam."
+            },
+            {
+              "score": 2,
+              "criterion": "Die Gesamtreaktion bleibt deutlich verzögert oder nachweislich zu langsam, jedoch wird eine einzelne zeitkritische Maßnahme noch rechtzeitig umgesetzt und begrenzt einen Teil des Schadens.\nAbgrenzung: Nicht verwenden, wenn sämtliche beobachteten Entscheidungen und Reaktionen deutlich verspätet oder zu langsam sind (1) oder mehrere relevante Maßnahmen nach der Verzögerung wirksam umgesetzt werden (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Die Organisation reagiert zunächst zu spät, setzt danach aber mehrere relevante Maßnahmen um; die anfängliche Verzögerung bleibt erheblicher als beim mittleren Referenzanker.\nAbgrenzung: Nicht verwenden, wenn die verspätete Reaktion kaum Wirkung entfaltet (2) oder die Reaktion dem Referenzanker 4 ohne zusätzliche schwere Verzögerung entspricht."
+            },
+            {
+              "score": 4,
+              "criterion": "Die Organisation reagiert und handelt, aber erst nach Eintritt oder nach einer anfänglichen Verzögerung."
+            },
+            {
+              "score": 5,
+              "criterion": "Notwendige Entscheidungen und Maßnahmen erfolgen überwiegend zeitnah, aber einzelne wesentliche Entscheidungs- oder Umsetzungsschritte bleiben verzögert.\nAbgrenzung: Nicht verwenden, wenn Handeln erst nach Eintritt oder anfänglicher Verzögerung beginnt (4) oder fast alle Schritte unter Zeitdruck schnell erfolgen (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Entscheidungen und Maßnahmen werden unter Zeitdruck fast durchgängig schnell umgesetzt; nur ein klar begrenzter Schritt oder Bereich weist Verzögerung auf.\nAbgrenzung: Nicht verwenden, wenn mehrere wesentliche Verzögerungen bestehen (5 oder niedriger) oder durchgängig schnelle Umsetzung vollständig belegt ist (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Die Organisation trifft notwendige Entscheidungen und setzt Maßnahmen unter Zeitdruck nachweislich schnell um."
+            }
+          ]
+        },
+        {
+          "itemId": "agi-02",
+          "dimensionId": "agility",
+          "name": "Wie entwickelt und nutzt Ihre Organisation Alternativen, um aus negativen Umständen handlungsfähig oder stärker hervorzugehen?",
+          "codingInstruction": "Kodiere nur Alternativen, die tatsächlich entwickelt oder eingesetzt werden und einen erkennbaren Nutzen aus der negativen Situation schaffen. Reine Fehlerkorrektur ohne Alternative oder Vorteil reicht nicht für einen hohen Wert.",
+          "order": 1,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Die Organisation erkennt oder bereitet keine tragfähigen Alternativen vor."
+            },
+            {
+              "score": 2,
+              "criterion": "Eine erste enge oder verspätete Alternative wird erkannt, bleibt aber kaum tragfähig und stellt die Handlungsfähigkeit nur minimal her.\nAbgrenzung: Nicht verwenden, wenn keine Alternative vorliegt (1) oder eine konkrete Alternative erkennbar nutzbar wird (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Eine konkrete und grundsätzlich nutzbare Alternative wird entwickelt, bleibt jedoch besonders eng, spät oder in ihrer Wirkung schwächer als der mittlere Referenzanker.\nAbgrenzung: Nicht verwenden, wenn die Alternative kaum tragfähig ist (2) oder eine umgesetzte reaktive Alternative dem Referenzanker 4 entspricht."
+            },
+            {
+              "score": 4,
+              "criterion": "Eine konkrete Alternative wird entwickelt oder umgesetzt, bleibt aber reaktiv, eng begrenzt oder ohne starken Vorteilsnachweis."
+            },
+            {
+              "score": 5,
+              "criterion": "Mehrere Alternativen oder eine dauerhafte neue Fähigkeit verbessern die Handlungsfähigkeit, doch ihre beobachtete Kombination, Reichweite oder Wirkung bleibt in wesentlichen Bereichen begrenzt.\nAbgrenzung: Nicht verwenden, wenn nur eine enge reaktive Alternative besteht (4) oder kombinierte Alternativen mit fast vollständig belegtem Dauervorteil vorliegen (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Mehrere Alternativen werden kombiniert und führen erkennbar zu dauerhafter Leistungsfähigkeit oder neuen Fähigkeiten; nur ein klar begrenzter Bereich zeigt noch eine beobachtete Reichweiten- oder Ergebnislücke.\nAbgrenzung: Nicht verwenden, wenn Kombination oder dauerhafte Wirkung wesentliche Lücken aufweist (5 oder niedriger) oder beides vollständig belegt ist (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Die Organisation kombiniert Alternativen und nutzt die negative Situation erkennbar für verbesserte Leistungsfähigkeit oder dauerhafte neue Fähigkeiten."
+            }
+          ]
+        },
+        {
+          "itemId": "agi-03",
+          "dimensionId": "agility",
+          "name": "Wie passt Ihre Organisation ihr Handeln an, wenn sich die Situation verändert und konkrete Maßnahmen nötig werden?",
+          "codingInstruction": "Kodiere, ob benötigte Maßnahmen situationsgerecht mobilisiert und umgesetzt werden. Strukturelle Voraussetzungen ohne beobachtete Aktion sind schwächere Evidenz als tatsächliche schnelle Anpassung.",
+          "order": 2,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Fehlende Rollen-, Personal- oder Ressourcenarrangements verhindern situationsgerechtes Handeln."
+            },
+            {
+              "score": 2,
+              "criterion": "Eine begrenzte Rollen-, Personal- oder Ressourcenanpassung gelingt, während strukturelle Blockaden das situationsgerechte Handeln weiterhin überwiegend verhindern.\nAbgrenzung: Nicht verwenden, wenn keinerlei wirksame Anpassung möglich ist (1) oder mehrere konkrete lokale Anpassungen umgesetzt werden (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Mehrere konkrete Anpassungen werden umgesetzt, bleiben aber stark reaktiv, langsam oder auf einen engen Teilbereich begrenzt.\nAbgrenzung: Nicht verwenden, wenn Blockaden trotz Einzelanpassung dominieren (2) oder lokale reaktive Anpassungsfähigkeit dem Referenzanker 4 entspricht."
+            },
+            {
+              "score": 4,
+              "criterion": "Konkrete Anpassungsfähigkeit besteht, ist aber reaktiv oder auf einzelne Abteilungen begrenzt."
+            },
+            {
+              "score": 5,
+              "criterion": "Aktionen werden über mehrere Bereiche hinweg koordiniert angepasst und delegiert, aber relevante Verzögerungen, Zuständigkeits- oder Ressourcenlücken bleiben bestehen.\nAbgrenzung: Nicht verwenden, wenn Anpassung auf einzelne Abteilungen begrenzt bleibt (4) oder nahezu organisationsweit schnell und flexibel erfolgt (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Erforderliche Aktionen werden nahezu organisationsweit schnell erkannt, flexibel delegiert und umgesetzt; nur eine klar begrenzte Zuständigkeits-, Ressourcen- oder Umsetzungslücke bleibt.\nAbgrenzung: Nicht verwenden, wenn mehrere wesentliche Koordinationslücken bestehen (5 oder niedriger) oder schnelle flexible Umsetzung vollständig belegt ist (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Erforderliche Aktionen werden schnell und flexibel erkannt, delegiert und umgesetzt."
+            }
+          ]
+        },
+        {
+          "itemId": "int-01",
+          "dimensionId": "integrity",
+          "name": "Wie setzen sich die Beschäftigten Ihrer Organisation in schwierigen Situationen dafür ein, das Erforderliche zu tun?",
+          "codingInstruction": "Kodiere beobachtete Aufgabenerfüllung, Rollenverständnis und Engagement der Beschäftigten. Aussagen über eine Mehrheit rechtfertigen wegen des Wortlauts 'all employees' höchstens einen mittleren Referenzwert.",
+          "order": 0,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Beschäftigte kennen benötigte Rollen nicht oder besitzen nicht das Mandat, ihre Verantwortung zu erfüllen."
+            },
+            {
+              "score": 2,
+              "criterion": "Einzelne Beschäftigte übernehmen erforderliche Aufgaben, während in den übrigen beobachteten Bereichen unklare Rollen oder fehlende Mandate die Aufgabenübernahme überwiegend verhindern.\nAbgrenzung: Nicht verwenden, wenn niemand wirksam Verantwortung übernehmen kann (1) oder Engagement in mehreren Teams erkennbar ist (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Engagement und Aufgabenübernahme sind in mehreren Teams belegt, bleiben aber wegen Rollen-, Mandats- oder Umsetzungsunterschieden deutlich ungleichmäßig.\nAbgrenzung: Nicht verwenden, wenn Engagement nur von Einzelpersonen getragen wird (2) oder die breite, aber nicht vollständige Unterstützung dem Referenzanker 4 entspricht."
+            },
+            {
+              "score": 4,
+              "criterion": "Engagement und Unterstützung sind breit, aber nicht bei allen Beschäftigten oder nicht gleichmäßig umgesetzt."
+            },
+            {
+              "score": 5,
+              "criterion": "Die meisten Beschäftigten übernehmen erforderliche Aufgaben und unterstützen einander auch unter Belastung, doch mindestens eine wesentliche Gruppe oder Mandatslücke bleibt.\nAbgrenzung: Nicht verwenden, wenn Engagement organisationsweit deutlich uneinheitlich bleibt (4) oder nahezu alle Beschäftigten mit nur kleiner Restlücke beitragen (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Erforderliche Aufgaben, Engagement und Kooperation sind unter starker Belastung nahezu durchgängig belegt; nur eine klar begrenzte Gruppe oder Situation bleibt offen.\nAbgrenzung: Nicht verwenden, wenn wesentliche Gruppen oder Aufgaben nicht getragen werden (5 oder niedriger) oder breite Erfüllung und Kooperation vollständig belegt sind (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Beschäftigte erfüllen erforderliche Aufgaben auch unter starker Belastung und zeigen breit belegtes Engagement und Kooperation."
+            }
+          ]
+        },
+        {
+          "itemId": "int-02",
+          "dimensionId": "integrity",
+          "name": "Wie handelt Ihre Organisation gemeinsam mit ihren Beschäftigten, wenn abgestimmtes Vorgehen erforderlich ist?",
+          "codingInstruction": "Kodiere organisationsweite Koordination, gemeinsame Orientierung und tatsächliches Zusammenwirken. Ein hoher Wert erfordert belastbare organisationsweite Evidenz und darf nicht allein aus einzelnen koordinierten Teams abgeleitet werden; eine Vollerhebung jedes Beschäftigten ist dafür nicht erforderlich.",
+          "order": 1,
+          "anchors": [
+            {
+              "score": 1,
+              "criterion": "Abteilungen oder Informationswege sind so fragmentiert, dass kein gemeinsames Handeln entsteht."
+            },
+            {
+              "score": 2,
+              "criterion": "Einzelne Teams oder Personen stimmen sich ab, während fragmentierte Abteilungen oder Informationswege gemeinsames Handeln insgesamt weiterhin verhindern.\nAbgrenzung: Nicht verwenden, wenn keinerlei gemeinsames Handeln entsteht (1) oder mehrere Teams erkennbar abgestimmt handeln (3 oder 4)."
+            },
+            {
+              "score": 3,
+              "criterion": "Mehrere Teams handeln abgestimmt, doch zentrale Schnittstellen oder Informationswege bleiben so uneinheitlich, dass organisationsweites gemeinsames Handeln deutlich eingeschränkt ist.\nAbgrenzung: Nicht verwenden, wenn nur isolierte Abstimmung besteht (2) oder Zusammenarbeit in großen Teilen dem Referenzanker 4 entspricht."
+            },
+            {
+              "score": 4,
+              "criterion": "Zusammenarbeit oder Engagement sind in großen Teilen vorhanden, aber nicht vollständig oder zwischen Teams uneinheitlich."
+            },
+            {
+              "score": 5,
+              "criterion": "Gemeinsame Ziele und abgestimmtes Handeln sind in den meisten Bereichen belegt, aber mindestens eine wesentliche Team- oder Informationsschnittstelle bleibt uneinheitlich.\nAbgrenzung: Nicht verwenden, wenn Zusammenarbeit nur in großen Teilen ohne breite Zielausrichtung besteht (4) oder nahezu organisationsweite Abstimmung mit kleiner Restlücke belegt ist (6)."
+            },
+            {
+              "score": 6,
+              "criterion": "Organisation und Beschäftigte richten Handlungen nahezu organisationsweit an gemeinsamen Zielen aus und tragen Entscheidungen oder Belastungen gemeinsam; nur eine klar begrenzte Schnittstelle bleibt offen.\nAbgrenzung: Nicht verwenden, wenn mehrere wesentliche Abstimmungslücken bestehen (5 oder niedriger) oder gemeinsame Ausrichtung und Lastentragung vollständig belegt sind (7)."
+            },
+            {
+              "score": 7,
+              "criterion": "Organisation und Beschäftigte richten Handlungen an gemeinsamen Zielen aus und tragen Entscheidungen oder Belastungen gemeinsam."
+            }
+          ]
+        }
+      ]
+    },
+    "dimensions": [
+      {
+        "dimensionId": "robustness",
+        "name": "Robustness",
+        "order": 0,
+        "aggregate": {
+          "status": "complete",
+          "score": 5,
+          "scoredItemCount": 4,
+          "unscoredItemCount": 0,
+          "totalItemCount": 4
+        },
+        "items": [
+          {
+            "itemId": "rob-01",
+            "dimensionId": "robustness",
+            "name": "Was macht Ihre Organisation unter schwierigen Bedingungen, um ihre Position und Stabilität zu bewahren?",
+            "codingInstruction": "Kodiere nur beobachtbare Evidenz dazu, ob zentrale Position, Stabilität und Funktionsfähigkeit unter erheblicher Belastung erhalten bleiben. Eine spätere Erholung allein belegt den Erhalt während der Krise nicht.",
+            "order": 0,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Die bisherige finanzielle, strategische oder operative Position bricht unter der Belastung bis zur Existenzgefährdung ein."
+              },
+              {
+                "score": 2,
+                "criterion": "Mindestens eine begrenzte Funktion oder Stabilitätsressource bleibt erhalten, insgesamt dominieren aber Ausfälle und eine deutliche Gefährdung der bisherigen Position.\nAbgrenzung: Nicht verwenden, wenn keinerlei Erhalt belegt ist (1) oder mehrere zentrale Funktionen erkennbar fortbestehen (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Mehrere zentrale Funktionen oder Stabilitätsfaktoren bleiben erhalten, zugleich bestehen erhebliche Ausfälle; die Existenz ist nicht vollständig gefährdet, aber die Kontinuität bleibt unter dem mittleren Anker.\nAbgrenzung: Nicht verwenden, wenn nur eine isolierte Restfunktion bleibt (2) oder die Evidenz den partiellen Erhalt des Referenzankers 4 vollständig trifft."
+              },
+              {
+                "score": 4,
+                "criterion": "Einzelne Funktionen oder Stabilitätsfaktoren bleiben erhalten, aber die Kontinuität ist begrenzt oder nicht organisationsweit integriert."
+              },
+              {
+                "score": 5,
+                "criterion": "Position und die meisten zentralen Funktionen bleiben nachweislich stabil, jedoch besteht mindestens eine wesentliche Lücke bei Organisationsbreite, Dauer oder Ergebnisstabilität.\nAbgrenzung: Nicht verwenden, wenn nur einzelne Funktionen erhalten bleiben (4) oder nahezu vollständige Stabilität mit bloß kleiner Restlücke belegt ist (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Position, Stabilität und zentrale Funktionen bleiben auch unter erheblicher Belastung nahezu organisationsweit erhalten; nur eine klar begrenzte Restlücke verhindert den hohen Referenzanker.\nAbgrenzung: Nicht verwenden, wenn wesentliche Bereiche oder Ergebnisse instabil bleiben (5 oder niedriger) oder vollständiger Erhalt ohne relevante Lücke belegt ist (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Die Organisation erhält Position, zentrale Funktionen und Stabilität auch unter schwerer Belastung nachweislich."
+              }
+            ],
+            "status": "scored",
+            "score": 5,
+            "appliedAnchor": {
+              "score": 5,
+              "criterion": "Position und die meisten zentralen Funktionen bleiben nachweislich stabil, jedoch besteht mindestens eine wesentliche Lücke bei Organisationsbreite, Dauer oder Ergebnisstabilität.\nAbgrenzung: Nicht verwenden, wenn nur einzelne Funktionen erhalten bleiben (4) oder nahezu vollständige Stabilität mit bloß kleiner Restlücke belegt ist (6)."
+            },
+            "confidence": 0.88,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-009",
+                "sequenceNumber": 9,
+                "verbatimExcerpt": "Zwei Linien, unser Ersatzteilversand und der Kundendienst liefen weiter.",
+                "evidenceType": "indirect",
+                "inference": "Mehrere zentrale operative Funktionen blieben während des Lieferausfalls funktionsfähig.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-021",
+                "sequenceNumber": 21,
+                "verbatimExcerpt": "Beide haben ihre laufenden Bestellungen bei uns gelassen.",
+                "evidenceType": "indirect",
+                "inference": "Die laufenden Großaufträge blieben trotz angedrohter Abwanderung erhalten.",
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-009",
+                "sequenceNumber": 9,
+                "verbatimExcerpt": "Die dritte Linie stand insgesamt fünf Arbeitstage still.",
+                "evidenceType": "indirect",
+                "inference": "Eine Montagelinie war für einen relevanten Zeitraum ausgefallen.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-021",
+                "sequenceNumber": 21,
+                "verbatimExcerpt": "Außerdem mussten wir Preisnachlässe und drei Expresslieferungen bezahlen. Diese Kosten waren in dem Quartal nicht durch andere Aufträge auszugleichen.",
+                "evidenceType": "indirect",
+                "inference": "Die Stabilität war mit nicht ausgeglichenen zusätzlichen Kosten verbunden.",
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Die meisten zentralen Funktionen und die Großaufträge blieben erhalten, jedoch bestanden erhebliche operative und wirtschaftliche Lücken."
+          },
+          {
+            "itemId": "rob-02",
+            "dimensionId": "robustness",
+            "name": "Wie entwickelt Ihre Organisation unterschiedliche Lösungen, wenn sie mit schwierigen Herausforderungen konfrontiert ist?",
+            "codingInstruction": "Kodiere Breite, Unterschiedlichkeit und tatsächliche Nutzbarkeit von Lösungen. Einzelne Reaktionen oder vorhandene, aber nicht anwendbare Pläne rechtfertigen keinen hohen Wert.",
+            "order": 1,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Es fehlen tragfähige Alternativen und ein gemeinsamer organisationsweiter Lösungsraum."
+              },
+              {
+                "score": 2,
+                "criterion": "Eine einzelne fragile oder improvisierte Alternative ist erkennbar, während ein gemeinsamer Lösungsraum und weitere tragfähige Optionen weitgehend fehlen.\nAbgrenzung: Nicht verwenden, wenn gar keine Alternative vorliegt (1) oder mehrere nutzbare lokale Lösungen entwickelt werden (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Mehr als eine lokale oder vorläufige Lösung wird entwickelt, ihre Koordination, Übertragbarkeit oder Tragfähigkeit bleibt jedoch deutlich begrenzt.\nAbgrenzung: Nicht verwenden, wenn nur eine kaum tragfähige Einzeloption besteht (2) oder die reaktive Mehrlösungsfähigkeit dem mittleren Referenzanker entspricht (4)."
+              },
+              {
+                "score": 4,
+                "criterion": "Einzelne Lösungen oder Pläne bestehen, sind aber reaktiv, unkoordiniert oder schwer auf konkrete Krisen übertragbar."
+              },
+              {
+                "score": 5,
+                "criterion": "Mehrere unterschiedliche Lösungen werden koordiniert entwickelt oder eingesetzt, aber ihre Kombination, Erprobung oder organisationsweite Nutzung weist noch wesentliche Lücken auf.\nAbgrenzung: Nicht verwenden, wenn Lösungen überwiegend unkoordiniert bleiben (4) oder eine breit belegte kombinierte Lösungsfähigkeit mit nur kleiner Restlücke vorliegt (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Unterschiedliche finanzielle, operative, technologische oder organisatorische Lösungen werden nachweislich kombiniert; lediglich eine begrenzte Integrations- oder Ergebnislücke bleibt.\nAbgrenzung: Nicht verwenden, wenn die Kombination nur in Teilbereichen gelingt (5) oder mehrere Lösungsarten vollständig und belastbar kombiniert werden (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Die Organisation erzeugt und kombiniert nachweislich mehrere unterschiedliche finanzielle, operative, technologische oder organisatorische Lösungen."
+              }
+            ],
+            "status": "scored",
+            "score": 5,
+            "appliedAnchor": {
+              "score": 5,
+              "criterion": "Mehrere unterschiedliche Lösungen werden koordiniert entwickelt oder eingesetzt, aber ihre Kombination, Erprobung oder organisationsweite Nutzung weist noch wesentliche Lücken auf.\nAbgrenzung: Nicht verwenden, wenn Lösungen überwiegend unkoordiniert bleiben (4) oder eine breit belegte kombinierte Lösungsfähigkeit mit nur kleiner Restlücke vorliegt (6)."
+            },
+            "confidence": 0.87,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-015",
+                "sequenceNumber": 15,
+                "verbatimExcerpt": "Wir haben in der ersten Lagebesprechung drei Wege gesammelt: die Restbestände auf wichtige Aufträge verteilen, einen anderen Controller testen und fertige Baugruppen von einem Montagepartner zukaufen.",
+                "evidenceType": "indirect",
+                "inference": "Es wurden drei unterschiedliche operative Lösungswege entwickelt und geprüft.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-015",
+                "sequenceNumber": 15,
+                "verbatimExcerpt": "Die Restbestände haben wir sofort anders eingeplant. Für zwei Standardgeräte konnten wir einen anderen Controller einsetzen, nachdem die Software angepasst war.",
+                "evidenceType": "indirect",
+                "inference": "Zwei unterschiedliche Lösungen wurden tatsächlich eingesetzt: Umplanung von Beständen und ein angepasster Ersatzcontroller.",
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-015",
+                "sequenceNumber": 15,
+                "verbatimExcerpt": "Den Zukauf haben wir verworfen, weil der Partner zunächst sechs Wochen Vorlauf nannte. Für unsere Sondergeräte blieb uns nichts anderes übrig, als auf den bisherigen Lieferanten zu warten.",
+                "evidenceType": "indirect",
+                "inference": "Eine weitere Option war nicht nutzbar, und für Sondergeräte bestand keine alternative Lösung.",
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Mehrere Lösungsarten wurden koordiniert entwickelt und teils eingesetzt; für Sondergeräte und den Zukauf blieben wesentliche Nutzbarkeitslücken."
+          },
+          {
+            "itemId": "rob-03",
+            "dimensionId": "robustness",
+            "name": "Wie verhält sich Ihre Organisation, wenn sie Gefahr läuft, etwas Wesentliches zu verlieren?",
+            "codingInstruction": "Kodiere fortgesetzte, konkrete Anstrengungen zum Schutz von Überleben, Kernfunktionen, Beschäftigung oder zentralen Zielen. Ein bloßer Krisenzustand ohne beobachtetes Verhalten reicht nicht für einen hohen Wert.",
+            "order": 2,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Die Organisation beendet den Widerstand früh oder betroffene Organisationen scheitern unter der Belastung."
+              },
+              {
+                "score": 2,
+                "criterion": "Ein begrenzter oder kurzfristiger Widerstand ist belegt, bevor die Organisation weitgehend aufgibt oder wesentliche Ziele und Funktionen verliert.\nAbgrenzung: Nicht verwenden, wenn Widerstand vollständig fehlt (1) oder mehrere Funktionen über einen relevanten Zeitraum aktiv geschützt werden (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Die Organisation schützt mehrere Funktionen, Arbeitsplätze oder Dienste aktiv, doch Dauer, Umfang oder Erfolg bleiben unter dem mittleren Referenzanker.\nAbgrenzung: Nicht verwenden, wenn nur isolierter kurzfristiger Widerstand erkennbar ist (2) oder der aktive partielle Schutz dem Referenzanker 4 entspricht."
+              },
+              {
+                "score": 4,
+                "criterion": "Die Organisation schützt einzelne Funktionen, Arbeitsplätze oder Dienste aktiv, der Nachweis bleibt jedoch begrenzt oder auf Wiederherstellung gerichtet."
+              },
+              {
+                "score": 5,
+                "criterion": "Die Organisation hält unter starkem Druck anhaltend dagegen und sichert einen großen Teil zentraler Ziele; zugleich bleibt mindestens ein wesentliches Ziel oder eine Kernfunktion beobachtbar ungesichert.\nAbgrenzung: Nicht verwenden, wenn Schutz nur partiell oder wiederherstellungsorientiert bleibt (4) oder nahezu alle zentralen Ziele mit kleiner Restunsicherheit gesichert sind (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Anhaltender Widerstand unter schwerem Druck und die weitgehende Sicherung von Überleben oder zentralen Zielen sind belegt; nur ein klar begrenztes Ziel oder ein kleiner Organisationsbereich bleibt beobachtbar ungesichert.\nAbgrenzung: Nicht verwenden, wenn wesentliche Ziele ungesichert bleiben (5 oder niedriger) oder Überleben und zentrale Ziele vollständig nachgewiesen sind (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Die Organisation kämpft unter schwerem Druck anhaltend weiter und sichert Überleben oder zentrale Ziele nachweislich."
+              }
+            ],
+            "status": "scored",
+            "score": 5,
+            "appliedAnchor": {
+              "score": 5,
+              "criterion": "Die Organisation hält unter starkem Druck anhaltend dagegen und sichert einen großen Teil zentraler Ziele; zugleich bleibt mindestens ein wesentliches Ziel oder eine Kernfunktion beobachtbar ungesichert.\nAbgrenzung: Nicht verwenden, wenn Schutz nur partiell oder wiederherstellungsorientiert bleibt (4) oder nahezu alle zentralen Ziele mit kleiner Restunsicherheit gesichert sind (6)."
+            },
+            "confidence": 0.84,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-021",
+                "sequenceNumber": 21,
+                "verbatimExcerpt": "Wir haben die verfügbaren Controller zunächst für deren dringendste Geräte genutzt und mit beiden Teillieferungen vereinbart. Der Vertrieb telefonierte jeden zweiten Tag mit ihnen. Diese Abstimmung lief ungefähr vier Wochen.",
+                "evidenceType": "indirect",
+                "inference": "Die Organisation schützte wichtige Kundenaufträge über mehrere Wochen aktiv durch Priorisierung und fortlaufende Abstimmung.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-021",
+                "sequenceNumber": 21,
+                "verbatimExcerpt": "Beide haben ihre laufenden Bestellungen bei uns gelassen.",
+                "evidenceType": "indirect",
+                "inference": "Die Schutzmaßnahmen sicherten die bestehenden Großaufträge.",
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-025",
+                "sequenceNumber": 25,
+                "verbatimExcerpt": "Beim kleineren Folgeauftrag fehlten später acht Geräte in der Bestellung.",
+                "evidenceType": "indirect",
+                "inference": "Ein Teil eines Folgegeschäfts ging trotz der Maßnahmen verloren.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-027",
+                "sequenceNumber": 27,
+                "verbatimExcerpt": "Zwei Sonderaufträge blieben bis zur Lieferung der ursprünglichen Bauteile liegen.",
+                "evidenceType": "indirect",
+                "inference": "Zentrale Aufträge für Sondergeräte konnten nicht aktiv abgesichert werden.",
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Anhaltende Schutzmaßnahmen sicherten die laufenden Großaufträge, aber ein Folgeauftrag wurde kleiner und Sonderaufträge blieben offen."
+          },
+          {
+            "itemId": "rob-04",
+            "dimensionId": "robustness",
+            "name": "Wie geht Ihre Organisation mit Rückschlägen und Schwierigkeiten um, wenn der bisherige Weg gefährdet ist?",
+            "codingInstruction": "Kodiere beobachtete Fortführung von Betrieb, Kernmission oder bewusstem strategischem Pfad. Unkritische Pfadstarre ist nicht automatisch resilient; zulässige Anpassung kann zur Fortführung der Kernmission gehören.",
+            "order": 3,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Die Organisation oder ein klar definierter Fallbetrieb wird nach der Belastung beendet und der Pfad nicht fortgeführt."
+              },
+              {
+                "score": 2,
+                "criterion": "Der bisherige Pfad oder Betrieb wird überwiegend beendet, während nur eine isolierte Teilaktivität oder ein begrenzter Wiederanlauf fortgeführt wird.\nAbgrenzung: Nicht verwenden, wenn keinerlei Fortführung belegt ist (1) oder größere Teile trotz deutlicher Leistungseinbußen weiterarbeiten (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Wesentliche Teile arbeiten trotz Rückschlag weiter, jedoch mit starken Unterbrechungen, deutlichem Leistungsabfall oder unsicherem Fortbestand.\nAbgrenzung: Nicht verwenden, wenn nur isolierte Restaktivität bleibt (2) oder das partielle Durchhalten dem Referenzanker 4 entspricht."
+              },
+              {
+                "score": 4,
+                "criterion": "Die Organisation hält bei einem Rückschlag durch und arbeitet weiter, der Erfolg bleibt jedoch partiell oder die Leistung fällt zunächst deutlich ab."
+              },
+              {
+                "score": 5,
+                "criterion": "Betrieb oder Kernmission werden breit fortgeführt, aber relevante Unterbrechungen, Leistungsabfälle oder partielle Zielverfehlungen bleiben bestehen.\nAbgrenzung: Nicht verwenden, wenn die Fortführung nur partiell gelingt (4) oder die Kernmission nahezu durchgehend mit bloß kleiner Restlücke fortgeführt wird (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Betrieb oder Kernmission werden unter schwerer Krise nahezu durchgehend weitergeführt und Entscheidungen daran ausgerichtet; nur eine begrenzte Unterbrechung oder Ergebnislücke bleibt.\nAbgrenzung: Nicht verwenden, wenn relevante Teile der Kernmission beeinträchtigt bleiben (5 oder niedriger) oder die konsequente Fortführung vollständig belegt ist (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Die Organisation führt Betrieb oder Kernmission trotz schwerer Krise konsequent fort und richtet Entscheidungen daran aus."
+              }
+            ],
+            "status": "scored",
+            "score": 5,
+            "appliedAnchor": {
+              "score": 5,
+              "criterion": "Betrieb oder Kernmission werden breit fortgeführt, aber relevante Unterbrechungen, Leistungsabfälle oder partielle Zielverfehlungen bleiben bestehen.\nAbgrenzung: Nicht verwenden, wenn die Fortführung nur partiell gelingt (4) oder die Kernmission nahezu durchgehend mit bloß kleiner Restlücke fortgeführt wird (6)."
+            },
+            "confidence": 0.9,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-009",
+                "sequenceNumber": 9,
+                "verbatimExcerpt": "Zwei Linien, unser Ersatzteilversand und der Kundendienst liefen weiter.",
+                "evidenceType": "indirect",
+                "inference": "Der Betrieb wurde in wesentlichen Bereichen trotz des Rückschlags fortgeführt.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-009",
+                "sequenceNumber": 9,
+                "verbatimExcerpt": "Nach sechs Wochen war der Rückstand abgearbeitet.",
+                "evidenceType": "indirect",
+                "inference": "Die Organisation führte den Betrieb fort und arbeitete den entstandenen Rückstand ab.",
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-009",
+                "sequenceNumber": 9,
+                "verbatimExcerpt": "Die dritte Linie stand insgesamt fünf Arbeitstage still.",
+                "evidenceType": "indirect",
+                "inference": "Die Fortführung war durch einen mehrtägigen Ausfall einer Montagelinie unterbrochen.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-031",
+                "sequenceNumber": 31,
+                "verbatimExcerpt": "Die Sondergeräte blieben zurück, und in zwei Wochen mussten wir geplante Servicetermine mit unseren Kunden verschieben, weil dieselben Techniker in der Prüfung gebraucht wurden.",
+                "evidenceType": "indirect",
+                "inference": "Teile der Kernleistung und geplante Serviceleistungen waren weiterhin beeinträchtigt.",
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Der Betrieb lief breit weiter und der Rückstand wurde abgearbeitet, jedoch mit Stillstand, Rückständen und verschobenen Services."
+          }
+        ]
+      },
+      {
+        "dimensionId": "agility",
+        "name": "Agility",
+        "order": 1,
+        "aggregate": {
+          "status": "complete",
+          "score": 5,
+          "scoredItemCount": 3,
+          "unscoredItemCount": 0,
+          "totalItemCount": 3
+        },
+        "items": [
+          {
+            "itemId": "agi-01",
+            "dimensionId": "agility",
+            "name": "Wie handelt Ihre Organisation, wenn schnelles Handeln erforderlich ist?",
+            "codingInstruction": "Kodiere nachgewiesene Reaktions- und Umsetzungszeit. Absicht, bloße Problemerkennung oder späteres Handeln ohne zeitliche Evidenz sind nicht als schnell zu bewerten.",
+            "order": 0,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Entscheidungen und Reaktionen sind deutlich verzögert oder nachweislich zu langsam."
+              },
+              {
+                "score": 2,
+                "criterion": "Die Gesamtreaktion bleibt deutlich verzögert oder nachweislich zu langsam, jedoch wird eine einzelne zeitkritische Maßnahme noch rechtzeitig umgesetzt und begrenzt einen Teil des Schadens.\nAbgrenzung: Nicht verwenden, wenn sämtliche beobachteten Entscheidungen und Reaktionen deutlich verspätet oder zu langsam sind (1) oder mehrere relevante Maßnahmen nach der Verzögerung wirksam umgesetzt werden (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Die Organisation reagiert zunächst zu spät, setzt danach aber mehrere relevante Maßnahmen um; die anfängliche Verzögerung bleibt erheblicher als beim mittleren Referenzanker.\nAbgrenzung: Nicht verwenden, wenn die verspätete Reaktion kaum Wirkung entfaltet (2) oder die Reaktion dem Referenzanker 4 ohne zusätzliche schwere Verzögerung entspricht."
+              },
+              {
+                "score": 4,
+                "criterion": "Die Organisation reagiert und handelt, aber erst nach Eintritt oder nach einer anfänglichen Verzögerung."
+              },
+              {
+                "score": 5,
+                "criterion": "Notwendige Entscheidungen und Maßnahmen erfolgen überwiegend zeitnah, aber einzelne wesentliche Entscheidungs- oder Umsetzungsschritte bleiben verzögert.\nAbgrenzung: Nicht verwenden, wenn Handeln erst nach Eintritt oder anfänglicher Verzögerung beginnt (4) oder fast alle Schritte unter Zeitdruck schnell erfolgen (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Entscheidungen und Maßnahmen werden unter Zeitdruck fast durchgängig schnell umgesetzt; nur ein klar begrenzter Schritt oder Bereich weist Verzögerung auf.\nAbgrenzung: Nicht verwenden, wenn mehrere wesentliche Verzögerungen bestehen (5 oder niedriger) oder durchgängig schnelle Umsetzung vollständig belegt ist (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Die Organisation trifft notwendige Entscheidungen und setzt Maßnahmen unter Zeitdruck nachweislich schnell um."
+              }
+            ],
+            "status": "scored",
+            "score": 5,
+            "appliedAnchor": {
+              "score": 5,
+              "criterion": "Notwendige Entscheidungen und Maßnahmen erfolgen überwiegend zeitnah, aber einzelne wesentliche Entscheidungs- oder Umsetzungsschritte bleiben verzögert.\nAbgrenzung: Nicht verwenden, wenn Handeln erst nach Eintritt oder anfänglicher Verzögerung beginnt (4) oder fast alle Schritte unter Zeitdruck schnell erfolgen (6)."
+            },
+            "confidence": 0.89,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-033",
+                "sequenceNumber": 33,
+                "verbatimExcerpt": "Etwa drei Stunden später war entschieden, die Restbestände zu verteilen und den Ersatzcontroller zu testen. Zwei Stunden nach der Entscheidung war die neue Auftragsreihenfolge in der Montage angekommen.",
+                "evidenceType": "indirect",
+                "inference": "Zentrale erste Entscheidungen und die Umsetzung der neuen Reihenfolge erfolgten innerhalb weniger Stunden.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-033",
+                "sequenceNumber": 33,
+                "verbatimExcerpt": "Bei einer späteren Mengenänderung schafften sie die Umplanung noch in derselben Schicht.",
+                "evidenceType": "indirect",
+                "inference": "Teamleitungen setzten eine spätere Anpassung innerhalb derselben Schicht um.",
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-035",
+                "sequenceNumber": 35,
+                "verbatimExcerpt": "Die Kostenfreigabe hat die Bestellung um einen halben Tag verzögert. Beim ersten Ersatzcontroller brauchten Technik und Qualität zusätzlich bis zum nächsten Nachmittag für ihre Freigabe.",
+                "evidenceType": "indirect",
+                "inference": "Kosten- und Technikfreigaben verzögerten wesentliche Schritte der Reaktion.",
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Die erste Entscheidung und Umplanung erfolgten zeitnah, doch Freigaben verzögerten wichtige Beschaffungs- und Einsatzschritte."
+          },
+          {
+            "itemId": "agi-02",
+            "dimensionId": "agility",
+            "name": "Wie entwickelt und nutzt Ihre Organisation Alternativen, um aus negativen Umständen handlungsfähig oder stärker hervorzugehen?",
+            "codingInstruction": "Kodiere nur Alternativen, die tatsächlich entwickelt oder eingesetzt werden und einen erkennbaren Nutzen aus der negativen Situation schaffen. Reine Fehlerkorrektur ohne Alternative oder Vorteil reicht nicht für einen hohen Wert.",
+            "order": 1,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Die Organisation erkennt oder bereitet keine tragfähigen Alternativen vor."
+              },
+              {
+                "score": 2,
+                "criterion": "Eine erste enge oder verspätete Alternative wird erkannt, bleibt aber kaum tragfähig und stellt die Handlungsfähigkeit nur minimal her.\nAbgrenzung: Nicht verwenden, wenn keine Alternative vorliegt (1) oder eine konkrete Alternative erkennbar nutzbar wird (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Eine konkrete und grundsätzlich nutzbare Alternative wird entwickelt, bleibt jedoch besonders eng, spät oder in ihrer Wirkung schwächer als der mittlere Referenzanker.\nAbgrenzung: Nicht verwenden, wenn die Alternative kaum tragfähig ist (2) oder eine umgesetzte reaktive Alternative dem Referenzanker 4 entspricht."
+              },
+              {
+                "score": 4,
+                "criterion": "Eine konkrete Alternative wird entwickelt oder umgesetzt, bleibt aber reaktiv, eng begrenzt oder ohne starken Vorteilsnachweis."
+              },
+              {
+                "score": 5,
+                "criterion": "Mehrere Alternativen oder eine dauerhafte neue Fähigkeit verbessern die Handlungsfähigkeit, doch ihre beobachtete Kombination, Reichweite oder Wirkung bleibt in wesentlichen Bereichen begrenzt.\nAbgrenzung: Nicht verwenden, wenn nur eine enge reaktive Alternative besteht (4) oder kombinierte Alternativen mit fast vollständig belegtem Dauervorteil vorliegen (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Mehrere Alternativen werden kombiniert und führen erkennbar zu dauerhafter Leistungsfähigkeit oder neuen Fähigkeiten; nur ein klar begrenzter Bereich zeigt noch eine beobachtete Reichweiten- oder Ergebnislücke.\nAbgrenzung: Nicht verwenden, wenn Kombination oder dauerhafte Wirkung wesentliche Lücken aufweist (5 oder niedriger) oder beides vollständig belegt ist (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Die Organisation kombiniert Alternativen und nutzt die negative Situation erkennbar für verbesserte Leistungsfähigkeit oder dauerhafte neue Fähigkeiten."
+              }
+            ],
+            "status": "scored",
+            "score": 5,
+            "appliedAnchor": {
+              "score": 5,
+              "criterion": "Mehrere Alternativen oder eine dauerhafte neue Fähigkeit verbessern die Handlungsfähigkeit, doch ihre beobachtete Kombination, Reichweite oder Wirkung bleibt in wesentlichen Bereichen begrenzt.\nAbgrenzung: Nicht verwenden, wenn nur eine enge reaktive Alternative besteht (4) oder kombinierte Alternativen mit fast vollständig belegtem Dauervorteil vorliegen (6)."
+            },
+            "confidence": 0.85,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-037",
+                "sequenceNumber": 37,
+                "verbatimExcerpt": "Für die freigegebenen Produkte gibt es dadurch eine weitere Bezugsquelle. Einkauf prüft deren Bestände jetzt jeden Monat.",
+                "evidenceType": "indirect",
+                "inference": "Aus der Störung entstand für freigegebene Produkte eine dauerhaft genutzte zusätzliche Beschaffungsfähigkeit.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-039",
+                "sequenceNumber": 39,
+                "verbatimExcerpt": "Die zweite Bezugsquelle wird seit sieben Monaten genutzt. Es gab seitdem einen kleineren Lieferverzug; bei den zwei Standardgeräten konnten wir ihn mit der anderen Quelle ausgleichen.",
+                "evidenceType": "indirect",
+                "inference": "Die neue Alternative wurde dauerhaft genutzt und glich später einen weiteren Lieferverzug für zwei Standardgeräte aus.",
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-037",
+                "sequenceNumber": 37,
+                "verbatimExcerpt": "Drei unserer acht Gerätefamilien brauchen weiterhin ausschließlich das bisherige Teil. Für diese Familien haben wir nur den Lagerbestand erhöht, keinen zweiten Lieferanten.",
+                "evidenceType": "indirect",
+                "inference": "Die dauerhafte Alternative deckt nicht alle Gerätefamilien ab.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-041",
+                "sequenceNumber": 41,
+                "verbatimExcerpt": "Einen allgemeinen Kostenvorteil kann ich deshalb nicht behaupten.",
+                "evidenceType": "indirect",
+                "inference": "Ein allgemeiner wirtschaftlicher Vorteil der Alternative ist nicht belegt.",
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Eine dauerhaft genutzte zweite Quelle erhöhte die Handlungsfähigkeit für Standardgeräte, ihre Reichweite und ihr wirtschaftlicher Nutzen blieben jedoch begrenzt."
+          },
+          {
+            "itemId": "agi-03",
+            "dimensionId": "agility",
+            "name": "Wie passt Ihre Organisation ihr Handeln an, wenn sich die Situation verändert und konkrete Maßnahmen nötig werden?",
+            "codingInstruction": "Kodiere, ob benötigte Maßnahmen situationsgerecht mobilisiert und umgesetzt werden. Strukturelle Voraussetzungen ohne beobachtete Aktion sind schwächere Evidenz als tatsächliche schnelle Anpassung.",
+            "order": 2,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Fehlende Rollen-, Personal- oder Ressourcenarrangements verhindern situationsgerechtes Handeln."
+              },
+              {
+                "score": 2,
+                "criterion": "Eine begrenzte Rollen-, Personal- oder Ressourcenanpassung gelingt, während strukturelle Blockaden das situationsgerechte Handeln weiterhin überwiegend verhindern.\nAbgrenzung: Nicht verwenden, wenn keinerlei wirksame Anpassung möglich ist (1) oder mehrere konkrete lokale Anpassungen umgesetzt werden (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Mehrere konkrete Anpassungen werden umgesetzt, bleiben aber stark reaktiv, langsam oder auf einen engen Teilbereich begrenzt.\nAbgrenzung: Nicht verwenden, wenn Blockaden trotz Einzelanpassung dominieren (2) oder lokale reaktive Anpassungsfähigkeit dem Referenzanker 4 entspricht."
+              },
+              {
+                "score": 4,
+                "criterion": "Konkrete Anpassungsfähigkeit besteht, ist aber reaktiv oder auf einzelne Abteilungen begrenzt."
+              },
+              {
+                "score": 5,
+                "criterion": "Aktionen werden über mehrere Bereiche hinweg koordiniert angepasst und delegiert, aber relevante Verzögerungen, Zuständigkeits- oder Ressourcenlücken bleiben bestehen.\nAbgrenzung: Nicht verwenden, wenn Anpassung auf einzelne Abteilungen begrenzt bleibt (4) oder nahezu organisationsweit schnell und flexibel erfolgt (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Erforderliche Aktionen werden nahezu organisationsweit schnell erkannt, flexibel delegiert und umgesetzt; nur eine klar begrenzte Zuständigkeits-, Ressourcen- oder Umsetzungslücke bleibt.\nAbgrenzung: Nicht verwenden, wenn mehrere wesentliche Koordinationslücken bestehen (5 oder niedriger) oder schnelle flexible Umsetzung vollständig belegt ist (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Erforderliche Aktionen werden schnell und flexibel erkannt, delegiert und umgesetzt."
+              }
+            ],
+            "status": "scored",
+            "score": 5,
+            "appliedAnchor": {
+              "score": 5,
+              "criterion": "Aktionen werden über mehrere Bereiche hinweg koordiniert angepasst und delegiert, aber relevante Verzögerungen, Zuständigkeits- oder Ressourcenlücken bleiben bestehen.\nAbgrenzung: Nicht verwenden, wenn Anpassung auf einzelne Abteilungen begrenzt bleibt (4) oder nahezu organisationsweit schnell und flexibel erfolgt (6)."
+            },
+            "confidence": 0.86,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-043",
+                "sequenceNumber": 43,
+                "verbatimExcerpt": "Wir haben daraufhin drei Beschäftigte vorübergehend aus einer anderen Linie in die Prüfung versetzt und die Aufträge kleiner geschnitten. Eine Einkäuferin kümmerte sich nur noch um die Ersatzteile.",
+                "evidenceType": "indirect",
+                "inference": "Personal, Arbeitszuschnitt und Beschaffung wurden konkret an die veränderte Lage angepasst.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-043",
+                "sequenceNumber": 43,
+                "verbatimExcerpt": "In zwei Frühschichten funktionierte das direkt.",
+                "evidenceType": "indirect",
+                "inference": "Die angepasste Arbeitsweise wurde in zwei Frühschichten unmittelbar umgesetzt.",
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-043",
+                "sequenceNumber": 43,
+                "verbatimExcerpt": "Die Spätschicht bekam eine Änderung einmal erst nach vier Stunden; bis dahin hatte sie ein anderes Los vorbereitet. Die Daten im Materialsystem wurden erst am nächsten Tag geändert.",
+                "evidenceType": "indirect",
+                "inference": "Informations- und Systemanpassungen waren teils deutlich verzögert.",
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-045",
+                "sequenceNumber": 45,
+                "verbatimExcerpt": "Für deren Servicetermine fanden wir keine Vertretung, deshalb mussten wir zwei Termine verschieben.",
+                "evidenceType": "indirect",
+                "inference": "Für die durch Umverteilung betroffenen Techniker fehlte eine Ressourcenvertretung.",
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Mehrere Bereiche passten Personal und Arbeitsabläufe konkret an, doch Informationswege, Systempflege und Vertretungsressourcen blieben lückenhaft."
+          }
+        ]
+      },
+      {
+        "dimensionId": "integrity",
+        "name": "Integrity",
+        "order": 2,
+        "aggregate": {
+          "status": "complete",
+          "score": 4.5,
+          "scoredItemCount": 2,
+          "unscoredItemCount": 0,
+          "totalItemCount": 2
+        },
+        "items": [
+          {
+            "itemId": "int-01",
+            "dimensionId": "integrity",
+            "name": "Wie setzen sich die Beschäftigten Ihrer Organisation in schwierigen Situationen dafür ein, das Erforderliche zu tun?",
+            "codingInstruction": "Kodiere beobachtete Aufgabenerfüllung, Rollenverständnis und Engagement der Beschäftigten. Aussagen über eine Mehrheit rechtfertigen wegen des Wortlauts 'all employees' höchstens einen mittleren Referenzwert.",
+            "order": 0,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Beschäftigte kennen benötigte Rollen nicht oder besitzen nicht das Mandat, ihre Verantwortung zu erfüllen."
+              },
+              {
+                "score": 2,
+                "criterion": "Einzelne Beschäftigte übernehmen erforderliche Aufgaben, während in den übrigen beobachteten Bereichen unklare Rollen oder fehlende Mandate die Aufgabenübernahme überwiegend verhindern.\nAbgrenzung: Nicht verwenden, wenn niemand wirksam Verantwortung übernehmen kann (1) oder Engagement in mehreren Teams erkennbar ist (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Engagement und Aufgabenübernahme sind in mehreren Teams belegt, bleiben aber wegen Rollen-, Mandats- oder Umsetzungsunterschieden deutlich ungleichmäßig.\nAbgrenzung: Nicht verwenden, wenn Engagement nur von Einzelpersonen getragen wird (2) oder die breite, aber nicht vollständige Unterstützung dem Referenzanker 4 entspricht."
+              },
+              {
+                "score": 4,
+                "criterion": "Engagement und Unterstützung sind breit, aber nicht bei allen Beschäftigten oder nicht gleichmäßig umgesetzt."
+              },
+              {
+                "score": 5,
+                "criterion": "Die meisten Beschäftigten übernehmen erforderliche Aufgaben und unterstützen einander auch unter Belastung, doch mindestens eine wesentliche Gruppe oder Mandatslücke bleibt.\nAbgrenzung: Nicht verwenden, wenn Engagement organisationsweit deutlich uneinheitlich bleibt (4) oder nahezu alle Beschäftigten mit nur kleiner Restlücke beitragen (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Erforderliche Aufgaben, Engagement und Kooperation sind unter starker Belastung nahezu durchgängig belegt; nur eine klar begrenzte Gruppe oder Situation bleibt offen.\nAbgrenzung: Nicht verwenden, wenn wesentliche Gruppen oder Aufgaben nicht getragen werden (5 oder niedriger) oder breite Erfüllung und Kooperation vollständig belegt sind (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Beschäftigte erfüllen erforderliche Aufgaben auch unter starker Belastung und zeigen breit belegtes Engagement und Kooperation."
+              }
+            ],
+            "status": "scored",
+            "score": 4,
+            "appliedAnchor": {
+              "score": 4,
+              "criterion": "Engagement und Unterstützung sind breit, aber nicht bei allen Beschäftigten oder nicht gleichmäßig umgesetzt."
+            },
+            "confidence": 0.88,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-049",
+                "sequenceNumber": 49,
+                "verbatimExcerpt": "Viele Beschäftigte halfen über ihre normale Aufgabe hinaus. Drei Kolleginnen und Kollegen aus der Montage übernahmen die zusätzlichen Prüfungen, ein Lagerteam stellte abends die Teilmengen für den Versand zusammen, und zwei erfahrene Einrichter halfen der Technik bei den Versuchen.",
+                "evidenceType": "direct",
+                "inference": null,
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-049",
+                "sequenceNumber": 49,
+                "verbatimExcerpt": "Die Teamleitungen verteilten die wichtigsten Aufgaben mit Namen und Terminen.",
+                "evidenceType": "direct",
+                "inference": null,
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-049",
+                "sequenceNumber": 49,
+                "verbatimExcerpt": "Es machten aber nicht alle Teams in gleicher Weise mit. Ein Team wartete auf die formale Freigabe, bevor jemand zur Prüfung wechselte.",
+                "evidenceType": "direct",
+                "inference": null,
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-049",
+                "sequenceNumber": 49,
+                "verbatimExcerpt": "Bei der Freigabe gesperrter Teile war in der Spätschicht niemand eindeutig zuständig. Eine Sendung blieb deshalb über Nacht liegen.",
+                "evidenceType": "direct",
+                "inference": null,
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Engagement und zusätzliche Aufgabenübernahme waren über mehrere Beschäftigte und Teams sichtbar, aber nicht alle Teams handelten gleich und einzelne Zuständigkeiten blieben unklar."
+          },
+          {
+            "itemId": "int-02",
+            "dimensionId": "integrity",
+            "name": "Wie handelt Ihre Organisation gemeinsam mit ihren Beschäftigten, wenn abgestimmtes Vorgehen erforderlich ist?",
+            "codingInstruction": "Kodiere organisationsweite Koordination, gemeinsame Orientierung und tatsächliches Zusammenwirken. Ein hoher Wert erfordert belastbare organisationsweite Evidenz und darf nicht allein aus einzelnen koordinierten Teams abgeleitet werden; eine Vollerhebung jedes Beschäftigten ist dafür nicht erforderlich.",
+            "order": 1,
+            "anchors": [
+              {
+                "score": 1,
+                "criterion": "Abteilungen oder Informationswege sind so fragmentiert, dass kein gemeinsames Handeln entsteht."
+              },
+              {
+                "score": 2,
+                "criterion": "Einzelne Teams oder Personen stimmen sich ab, während fragmentierte Abteilungen oder Informationswege gemeinsames Handeln insgesamt weiterhin verhindern.\nAbgrenzung: Nicht verwenden, wenn keinerlei gemeinsames Handeln entsteht (1) oder mehrere Teams erkennbar abgestimmt handeln (3 oder 4)."
+              },
+              {
+                "score": 3,
+                "criterion": "Mehrere Teams handeln abgestimmt, doch zentrale Schnittstellen oder Informationswege bleiben so uneinheitlich, dass organisationsweites gemeinsames Handeln deutlich eingeschränkt ist.\nAbgrenzung: Nicht verwenden, wenn nur isolierte Abstimmung besteht (2) oder Zusammenarbeit in großen Teilen dem Referenzanker 4 entspricht."
+              },
+              {
+                "score": 4,
+                "criterion": "Zusammenarbeit oder Engagement sind in großen Teilen vorhanden, aber nicht vollständig oder zwischen Teams uneinheitlich."
+              },
+              {
+                "score": 5,
+                "criterion": "Gemeinsame Ziele und abgestimmtes Handeln sind in den meisten Bereichen belegt, aber mindestens eine wesentliche Team- oder Informationsschnittstelle bleibt uneinheitlich.\nAbgrenzung: Nicht verwenden, wenn Zusammenarbeit nur in großen Teilen ohne breite Zielausrichtung besteht (4) oder nahezu organisationsweite Abstimmung mit kleiner Restlücke belegt ist (6)."
+              },
+              {
+                "score": 6,
+                "criterion": "Organisation und Beschäftigte richten Handlungen nahezu organisationsweit an gemeinsamen Zielen aus und tragen Entscheidungen oder Belastungen gemeinsam; nur eine klar begrenzte Schnittstelle bleibt offen.\nAbgrenzung: Nicht verwenden, wenn mehrere wesentliche Abstimmungslücken bestehen (5 oder niedriger) oder gemeinsame Ausrichtung und Lastentragung vollständig belegt sind (7)."
+              },
+              {
+                "score": 7,
+                "criterion": "Organisation und Beschäftigte richten Handlungen an gemeinsamen Zielen aus und tragen Entscheidungen oder Belastungen gemeinsam."
+              }
+            ],
+            "status": "scored",
+            "score": 5,
+            "appliedAnchor": {
+              "score": 5,
+              "criterion": "Gemeinsame Ziele und abgestimmtes Handeln sind in den meisten Bereichen belegt, aber mindestens eine wesentliche Team- oder Informationsschnittstelle bleibt uneinheitlich.\nAbgrenzung: Nicht verwenden, wenn Zusammenarbeit nur in großen Teilen ohne breite Zielausrichtung besteht (4) oder nahezu organisationsweite Abstimmung mit kleiner Restlücke belegt ist (6)."
+            },
+            "confidence": 0.88,
+            "supportingEvidence": [
+              {
+                "turnId": "lindenhafen-turn-055",
+                "sequenceNumber": 55,
+                "verbatimExcerpt": "Wir haben jeden Morgen Einkauf, Produktion, Technik, Qualität und Vertrieb zusammengebracht. Die Teamleitungen konnten dabei sagen, was ihre Schichten tatsächlich schaffen. So haben wir die verfügbaren Teile und die Reihenfolge der Kundenaufträge gemeinsam festgelegt.",
+                "evidenceType": "direct",
+                "inference": null,
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-057",
+                "sequenceNumber": 57,
+                "verbatimExcerpt": "Wir einigten uns auf Einzelprüfungen und kleine Freigabelose. Die Montageleitung erklärte, wie viele Prüfplätze und Leute sie dafür bereitstellen konnte. So wurden die fehlerfreien Teile eingesetzt, während der Rest gesperrt blieb.",
+                "evidenceType": "direct",
+                "inference": null,
+                "additionalSources": []
+              }
+            ],
+            "counterEvidence": [
+              {
+                "turnId": "lindenhafen-turn-055",
+                "sequenceNumber": 55,
+                "verbatimExcerpt": "Kundendienst und Lager wurden über ihre Leitungen informiert, saßen aber nicht regelmäßig mit am Tisch. Eine Kundenbeschwerde und eine Änderung der verfügbaren Verpackungen kamen dadurch verspätet an.",
+                "evidenceType": "direct",
+                "inference": null,
+                "additionalSources": []
+              },
+              {
+                "turnId": "lindenhafen-turn-059",
+                "sequenceNumber": 59,
+                "verbatimExcerpt": "Der Vertrieb sagte einmal eine Menge zu, bevor die Produktion sie bestätigt hatte. In der Spätschicht blieb eine alte Reihenfolge in Umlauf.",
+                "evidenceType": "direct",
+                "inference": null,
+                "additionalSources": []
+              }
+            ],
+            "missingInformation": [],
+            "rationale": "Die meisten beteiligten Funktionen stimmten Prioritäten und Maßnahmen gemeinsam ab, aber wichtige Informationsschnittstellen und die Umsetzung in einzelnen Schichten blieben uneinheitlich."
+          }
+        ]
+      }
+    ],
+    "overallAggregate": {
+      "status": "complete",
+      "score": 4.89,
+      "scoredItemCount": 9,
+      "unscoredItemCount": 0,
+      "totalItemCount": 9
+    },
+    "rationale": "Die Bewertung beruht ausschließlich auf dem dokumentierten Lieferausfall und trennt belegte Maßnahmen von beobachteten Funktions-, Koordinations- und Ergebnislücken.",
+    "evaluatedAt": "2026-09-30T23:35:37.713Z",
+    "participantDetails": {
+      "age": {
+        "value": "47 Jahre alt",
+        "source": {
+          "turnId": "lindenhafen-turn-003",
+          "sequenceNumber": 3,
+          "verbatimExcerpt": "bin 47 Jahre alt"
+        }
+      },
+      "position": {
+        "value": "leite seit sechs Jahren Operations bei der Lindenhafen Gerätebau GmbH",
+        "source": {
+          "turnId": "lindenhafen-turn-003",
+          "sequenceNumber": 3,
+          "verbatimExcerpt": "leite seit sechs Jahren Operations bei der Lindenhafen Gerätebau GmbH"
+        }
+      }
+    }
+  }
+}

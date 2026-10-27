@@ -1,0 +1,40 @@
+.interview-directory-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30px;
+  gap: 3px;
+  align-items: start;
+  min-width: 0;
+}
+
+.interview-directory-item .interview-directory-row {
+  width: 100%;
+  min-width: 0;
+}
+
+.interview-directory-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 8px;
+}
+
+.interview-directory-actions .icon-button {
+  width: 28px;
+  height: 28px;
+}
+
+.interview-management-identity {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.interview-management-identity strong,
+.interview-management-identity code {
+  overflow-wrap: anywhere;
+}
+
+.interview-management-identity code {
+  color: var(--muted);
+  font-size: 11px;
+}

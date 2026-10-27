@@ -1,0 +1,31 @@
+:root {
+  color-scheme: light;
+  --os-color-canvas: #f3f5f4;
+  --os-color-surface: #ffffff;
+  --os-color-surface-subtle: #edf1ef;
+  --os-color-surface-strong: #dfe6e3;
+  --os-color-border: #c6cfcb;
+  --os-color-border-strong: #8f9d97;
+  --os-color-text: #16201c;
+  --os-color-text-muted: #56645e;
+  --os-color-accent: #176b54;
+  --os-color-accent-hover: #0f5844;
+  --os-color-accent-soft: #dcefe8;
+  --os-color-danger: #b42318;
+  --os-color-danger-soft: #fee4e2;
+  --os-color-warning: #9a6700;
+  --os-color-warning-soft: #fff0c2;
+  --os-color-info: #175cd3;
+  --os-color-info-soft: #e4edff;
+  --os-color-focus: #0067c0;
+  --os-shadow-panel: 0 1px 2px rgb(22 32 28 / 10%);
+  --os-radius-small: 4px;
+  --os-radius-medium: 6px;
+  --os-space-1: 0.25rem;
+  --os-space-2: 0.5rem;
+  --os-space-3: 0.75rem;
+  --os-space-4: 1rem;
+  --os-space-5: 1.5rem;
+  --os-space-6: 2rem;
+  --os-control-height: 2.5rem;
+}

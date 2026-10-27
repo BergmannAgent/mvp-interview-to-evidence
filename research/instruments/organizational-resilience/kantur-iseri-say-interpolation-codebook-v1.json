@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "codebookId": "or-evidence-interpolation-codebook",
+  "codebookVersion": "1.0.0",
+  "classification": "derived_interpolation_guidance",
+  "approvalStatus": "pilot_only",
+  "appliesTo": {
+    "instrumentId": "kantur-iseri-say-evidence-rating",
+    "instrumentVersion": "1.0.0",
+    "instrumentFingerprintSha256": "5664be7211e3818f62b7a6d73e0e333e1176172b2633355593f08a4129d9dc61",
+    "referenceScores": [1, 4, 7]
+  },
+  "safeguards": {
+    "intermediateScoresAreNotReferenceAnchors": true,
+    "missingEvidenceIsNotIntermediateScore": true,
+    "requiresBothAdjacentAnchors": true,
+    "noRoundingOrClamping": true
+  },
+  "items": [
+    {
+      "itemId": "rob-01",
+      "rules": [
+        {
+          "ruleId": "rob-01-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Mindestens eine begrenzte Funktion oder Stabilitätsressource bleibt erhalten, insgesamt dominieren aber Ausfälle und eine deutliche Gefährdung der bisherigen Position.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn keinerlei Erhalt belegt ist (1) oder mehrere zentrale Funktionen erkennbar fortbestehen (3 oder 4)."
+        },
+        {
+          "ruleId": "rob-01-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Mehrere zentrale Funktionen oder Stabilitätsfaktoren bleiben erhalten, zugleich bestehen erhebliche Ausfälle; die Existenz ist nicht vollständig gefährdet, aber die Kontinuität bleibt unter dem mittleren Anker.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn nur eine isolierte Restfunktion bleibt (2) oder die Evidenz den partiellen Erhalt des Referenzankers 4 vollständig trifft."
+        },
+        {
+          "ruleId": "rob-01-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Position und die meisten zentralen Funktionen bleiben nachweislich stabil, jedoch besteht mindestens eine wesentliche Lücke bei Organisationsbreite, Dauer oder Ergebnisstabilität.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn nur einzelne Funktionen erhalten bleiben (4) oder nahezu vollständige Stabilität mit bloß kleiner Restlücke belegt ist (6)."
+        },
+        {
+          "ruleId": "rob-01-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Position, Stabilität und zentrale Funktionen bleiben auch unter erheblicher Belastung nahezu organisationsweit erhalten; nur eine klar begrenzte Restlücke verhindert den hohen Referenzanker.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn wesentliche Bereiche oder Ergebnisse instabil bleiben (5 oder niedriger) oder vollständiger Erhalt ohne relevante Lücke belegt ist (7)."
+        }
+      ]
+    },
+    {
+      "itemId": "rob-02",
+      "rules": [
+        {
+          "ruleId": "rob-02-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Eine einzelne fragile oder improvisierte Alternative ist erkennbar, während ein gemeinsamer Lösungsraum und weitere tragfähige Optionen weitgehend fehlen.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn gar keine Alternative vorliegt (1) oder mehrere nutzbare lokale Lösungen entwickelt werden (3 oder 4)."
+        },
+        {
+          "ruleId": "rob-02-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Mehr als eine lokale oder vorläufige Lösung wird entwickelt, ihre Koordination, Übertragbarkeit oder Tragfähigkeit bleibt jedoch deutlich begrenzt.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn nur eine kaum tragfähige Einzeloption besteht (2) oder die reaktive Mehrlösungsfähigkeit dem mittleren Referenzanker entspricht (4)."
+        },
+        {
+          "ruleId": "rob-02-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Mehrere unterschiedliche Lösungen werden koordiniert entwickelt oder eingesetzt, aber ihre Kombination, Erprobung oder organisationsweite Nutzung weist noch wesentliche Lücken auf.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Lösungen überwiegend unkoordiniert bleiben (4) oder eine breit belegte kombinierte Lösungsfähigkeit mit nur kleiner Restlücke vorliegt (6)."
+        },
+        {
+          "ruleId": "rob-02-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Unterschiedliche finanzielle, operative, technologische oder organisatorische Lösungen werden nachweislich kombiniert; lediglich eine begrenzte Integrations- oder Ergebnislücke bleibt.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn die Kombination nur in Teilbereichen gelingt (5) oder mehrere Lösungsarten vollständig und belastbar kombiniert werden (7)."
+        }
+      ]
+    },
+    {
+      "itemId": "rob-03",
+      "rules": [
+        {
+          "ruleId": "rob-03-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Ein begrenzter oder kurzfristiger Widerstand ist belegt, bevor die Organisation weitgehend aufgibt oder wesentliche Ziele und Funktionen verliert.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Widerstand vollständig fehlt (1) oder mehrere Funktionen über einen relevanten Zeitraum aktiv geschützt werden (3 oder 4)."
+        },
+        {
+          "ruleId": "rob-03-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Die Organisation schützt mehrere Funktionen, Arbeitsplätze oder Dienste aktiv, doch Dauer, Umfang oder Erfolg bleiben unter dem mittleren Referenzanker.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn nur isolierter kurzfristiger Widerstand erkennbar ist (2) oder der aktive partielle Schutz dem Referenzanker 4 entspricht."
+        },
+        {
+          "ruleId": "rob-03-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Die Organisation hält unter starkem Druck anhaltend dagegen und sichert einen großen Teil zentraler Ziele; zugleich bleibt mindestens ein wesentliches Ziel oder eine Kernfunktion beobachtbar ungesichert.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Schutz nur partiell oder wiederherstellungsorientiert bleibt (4) oder nahezu alle zentralen Ziele mit kleiner Restunsicherheit gesichert sind (6)."
+        },
+        {
+          "ruleId": "rob-03-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Anhaltender Widerstand unter schwerem Druck und die weitgehende Sicherung von Überleben oder zentralen Zielen sind belegt; nur ein klar begrenztes Ziel oder ein kleiner Organisationsbereich bleibt beobachtbar ungesichert.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn wesentliche Ziele ungesichert bleiben (5 oder niedriger) oder Überleben und zentrale Ziele vollständig nachgewiesen sind (7)."
+        }
+      ]
+    },
+    {
+      "itemId": "rob-04",
+      "rules": [
+        {
+          "ruleId": "rob-04-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Der bisherige Pfad oder Betrieb wird überwiegend beendet, während nur eine isolierte Teilaktivität oder ein begrenzter Wiederanlauf fortgeführt wird.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn keinerlei Fortführung belegt ist (1) oder größere Teile trotz deutlicher Leistungseinbußen weiterarbeiten (3 oder 4)."
+        },
+        {
+          "ruleId": "rob-04-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Wesentliche Teile arbeiten trotz Rückschlag weiter, jedoch mit starken Unterbrechungen, deutlichem Leistungsabfall oder unsicherem Fortbestand.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn nur isolierte Restaktivität bleibt (2) oder das partielle Durchhalten dem Referenzanker 4 entspricht."
+        },
+        {
+          "ruleId": "rob-04-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Betrieb oder Kernmission werden breit fortgeführt, aber relevante Unterbrechungen, Leistungsabfälle oder partielle Zielverfehlungen bleiben bestehen.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn die Fortführung nur partiell gelingt (4) oder die Kernmission nahezu durchgehend mit bloß kleiner Restlücke fortgeführt wird (6)."
+        },
+        {
+          "ruleId": "rob-04-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Betrieb oder Kernmission werden unter schwerer Krise nahezu durchgehend weitergeführt und Entscheidungen daran ausgerichtet; nur eine begrenzte Unterbrechung oder Ergebnislücke bleibt.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn relevante Teile der Kernmission beeinträchtigt bleiben (5 oder niedriger) oder die konsequente Fortführung vollständig belegt ist (7)."
+        }
+      ]
+    },
+    {
+      "itemId": "agi-01",
+      "rules": [
+        {
+          "ruleId": "agi-01-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Die Gesamtreaktion bleibt deutlich verzögert oder nachweislich zu langsam, jedoch wird eine einzelne zeitkritische Maßnahme noch rechtzeitig umgesetzt und begrenzt einen Teil des Schadens.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn sämtliche beobachteten Entscheidungen und Reaktionen deutlich verspätet oder zu langsam sind (1) oder mehrere relevante Maßnahmen nach der Verzögerung wirksam umgesetzt werden (3 oder 4)."
+        },
+        {
+          "ruleId": "agi-01-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Die Organisation reagiert zunächst zu spät, setzt danach aber mehrere relevante Maßnahmen um; die anfängliche Verzögerung bleibt erheblicher als beim mittleren Referenzanker.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn die verspätete Reaktion kaum Wirkung entfaltet (2) oder die Reaktion dem Referenzanker 4 ohne zusätzliche schwere Verzögerung entspricht."
+        },
+        {
+          "ruleId": "agi-01-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Notwendige Entscheidungen und Maßnahmen erfolgen überwiegend zeitnah, aber einzelne wesentliche Entscheidungs- oder Umsetzungsschritte bleiben verzögert.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Handeln erst nach Eintritt oder anfänglicher Verzögerung beginnt (4) oder fast alle Schritte unter Zeitdruck schnell erfolgen (6)."
+        },
+        {
+          "ruleId": "agi-01-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Entscheidungen und Maßnahmen werden unter Zeitdruck fast durchgängig schnell umgesetzt; nur ein klar begrenzter Schritt oder Bereich weist Verzögerung auf.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn mehrere wesentliche Verzögerungen bestehen (5 oder niedriger) oder durchgängig schnelle Umsetzung vollständig belegt ist (7)."
+        }
+      ]
+    },
+    {
+      "itemId": "agi-02",
+      "rules": [
+        {
+          "ruleId": "agi-02-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Eine erste enge oder verspätete Alternative wird erkannt, bleibt aber kaum tragfähig und stellt die Handlungsfähigkeit nur minimal her.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn keine Alternative vorliegt (1) oder eine konkrete Alternative erkennbar nutzbar wird (3 oder 4)."
+        },
+        {
+          "ruleId": "agi-02-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Eine konkrete und grundsätzlich nutzbare Alternative wird entwickelt, bleibt jedoch besonders eng, spät oder in ihrer Wirkung schwächer als der mittlere Referenzanker.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn die Alternative kaum tragfähig ist (2) oder eine umgesetzte reaktive Alternative dem Referenzanker 4 entspricht."
+        },
+        {
+          "ruleId": "agi-02-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Mehrere Alternativen oder eine dauerhafte neue Fähigkeit verbessern die Handlungsfähigkeit, doch ihre beobachtete Kombination, Reichweite oder Wirkung bleibt in wesentlichen Bereichen begrenzt.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn nur eine enge reaktive Alternative besteht (4) oder kombinierte Alternativen mit fast vollständig belegtem Dauervorteil vorliegen (6)."
+        },
+        {
+          "ruleId": "agi-02-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Mehrere Alternativen werden kombiniert und führen erkennbar zu dauerhafter Leistungsfähigkeit oder neuen Fähigkeiten; nur ein klar begrenzter Bereich zeigt noch eine beobachtete Reichweiten- oder Ergebnislücke.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Kombination oder dauerhafte Wirkung wesentliche Lücken aufweist (5 oder niedriger) oder beides vollständig belegt ist (7)."
+        }
+      ]
+    },
+    {
+      "itemId": "agi-03",
+      "rules": [
+        {
+          "ruleId": "agi-03-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Eine begrenzte Rollen-, Personal- oder Ressourcenanpassung gelingt, während strukturelle Blockaden das situationsgerechte Handeln weiterhin überwiegend verhindern.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn keinerlei wirksame Anpassung möglich ist (1) oder mehrere konkrete lokale Anpassungen umgesetzt werden (3 oder 4)."
+        },
+        {
+          "ruleId": "agi-03-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Mehrere konkrete Anpassungen werden umgesetzt, bleiben aber stark reaktiv, langsam oder auf einen engen Teilbereich begrenzt.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Blockaden trotz Einzelanpassung dominieren (2) oder lokale reaktive Anpassungsfähigkeit dem Referenzanker 4 entspricht."
+        },
+        {
+          "ruleId": "agi-03-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Aktionen werden über mehrere Bereiche hinweg koordiniert angepasst und delegiert, aber relevante Verzögerungen, Zuständigkeits- oder Ressourcenlücken bleiben bestehen.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Anpassung auf einzelne Abteilungen begrenzt bleibt (4) oder nahezu organisationsweit schnell und flexibel erfolgt (6)."
+        },
+        {
+          "ruleId": "agi-03-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Erforderliche Aktionen werden nahezu organisationsweit schnell erkannt, flexibel delegiert und umgesetzt; nur eine klar begrenzte Zuständigkeits-, Ressourcen- oder Umsetzungslücke bleibt.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn mehrere wesentliche Koordinationslücken bestehen (5 oder niedriger) oder schnelle flexible Umsetzung vollständig belegt ist (7)."
+        }
+      ]
+    },
+    {
+      "itemId": "int-01",
+      "rules": [
+        {
+          "ruleId": "int-01-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Einzelne Beschäftigte übernehmen erforderliche Aufgaben, während in den übrigen beobachteten Bereichen unklare Rollen oder fehlende Mandate die Aufgabenübernahme überwiegend verhindern.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn niemand wirksam Verantwortung übernehmen kann (1) oder Engagement in mehreren Teams erkennbar ist (3 oder 4)."
+        },
+        {
+          "ruleId": "int-01-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Engagement und Aufgabenübernahme sind in mehreren Teams belegt, bleiben aber wegen Rollen-, Mandats- oder Umsetzungsunterschieden deutlich ungleichmäßig.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Engagement nur von Einzelpersonen getragen wird (2) oder die breite, aber nicht vollständige Unterstützung dem Referenzanker 4 entspricht."
+        },
+        {
+          "ruleId": "int-01-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Die meisten Beschäftigten übernehmen erforderliche Aufgaben und unterstützen einander auch unter Belastung, doch mindestens eine wesentliche Gruppe oder Mandatslücke bleibt.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Engagement organisationsweit deutlich uneinheitlich bleibt (4) oder nahezu alle Beschäftigten mit nur kleiner Restlücke beitragen (6)."
+        },
+        {
+          "ruleId": "int-01-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Erforderliche Aufgaben, Engagement und Kooperation sind unter starker Belastung nahezu durchgängig belegt; nur eine klar begrenzte Gruppe oder Situation bleibt offen.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn wesentliche Gruppen oder Aufgaben nicht getragen werden (5 oder niedriger) oder breite Erfüllung und Kooperation vollständig belegt sind (7)."
+        }
+      ]
+    },
+    {
+      "itemId": "int-02",
+      "rules": [
+        {
+          "ruleId": "int-02-score-2",
+          "score": 2,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "lower",
+          "decisionCriterionDe": "Einzelne Teams oder Personen stimmen sich ab, während fragmentierte Abteilungen oder Informationswege gemeinsames Handeln insgesamt weiterhin verhindern.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn keinerlei gemeinsames Handeln entsteht (1) oder mehrere Teams erkennbar abgestimmt handeln (3 oder 4)."
+        },
+        {
+          "ruleId": "int-02-score-3",
+          "score": 3,
+          "adjacentReferenceScores": [1, 4],
+          "proximity": "upper",
+          "decisionCriterionDe": "Mehrere Teams handeln abgestimmt, doch zentrale Schnittstellen oder Informationswege bleiben so uneinheitlich, dass organisationsweites gemeinsames Handeln deutlich eingeschränkt ist.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn nur isolierte Abstimmung besteht (2) oder Zusammenarbeit in großen Teilen dem Referenzanker 4 entspricht."
+        },
+        {
+          "ruleId": "int-02-score-5",
+          "score": 5,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "lower",
+          "decisionCriterionDe": "Gemeinsame Ziele und abgestimmtes Handeln sind in den meisten Bereichen belegt, aber mindestens eine wesentliche Team- oder Informationsschnittstelle bleibt uneinheitlich.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn Zusammenarbeit nur in großen Teilen ohne breite Zielausrichtung besteht (4) oder nahezu organisationsweite Abstimmung mit kleiner Restlücke belegt ist (6)."
+        },
+        {
+          "ruleId": "int-02-score-6",
+          "score": 6,
+          "adjacentReferenceScores": [4, 7],
+          "proximity": "upper",
+          "decisionCriterionDe": "Organisation und Beschäftigte richten Handlungen nahezu organisationsweit an gemeinsamen Zielen aus und tragen Entscheidungen oder Belastungen gemeinsam; nur eine klar begrenzte Schnittstelle bleibt offen.",
+          "exclusionCriterionDe": "Nicht verwenden, wenn mehrere wesentliche Abstimmungslücken bestehen (5 oder niedriger) oder gemeinsame Ausrichtung und Lastentragung vollständig belegt sind (7)."
+        }
+      ]
+    }
+  ]
+}

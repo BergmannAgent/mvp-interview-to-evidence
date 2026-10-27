@@ -1,0 +1,24 @@
+{
+  "batchId": "massentest-2a03b2e0-4caa-4fdd-af34-1aa1f21286c5",
+  "startedAt": "2026-09-30T23:30:52.913Z",
+  "sourceInput": "massentest/fixtures/lindenhafen-session.de.json",
+  "profileName": "default",
+  "profileId": "profile-default",
+  "profileUpdatedAt": "2026-08-21T22:20:13.267Z",
+  "profileFingerprint": "8271bee70d141d66084ec12b7bb7327f7136edc4ec1ab02e99e854628a34ce4d",
+  "transcriptFingerprint": "be02ea2251c81c7093550668bcfce1681305828c36165e3c5c5a78312596d13e",
+  "promptVersion": "profile-evidence-coding-v4",
+  "model": {
+    "mode": "provider",
+    "provider": "openai",
+    "model": "openai/gpt-5.6-terra"
+  },
+  "evaluationTimeoutMs": 120000,
+  "plannedRuns": 10,
+  "productDatabaseWrites": false,
+  "status": "completed",
+  "completedAt": "2026-09-30T23:38:13.121Z",
+  "completedRuns": 10,
+  "failedRuns": 0,
+  "actualProviderCalls": 11
+}

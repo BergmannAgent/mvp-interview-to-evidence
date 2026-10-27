@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "fixtureId": "or-evidence-calibration-cases",
+  "fixtureVersion": "1.0.0",
+  "classification": "synthetic_pilot_calibration_vignettes",
+  "appliesTo": {
+    "instrumentId": "kantur-iseri-say-evidence-rating",
+    "instrumentVersion": "1.0.0",
+    "instrumentFingerprintSha256": "5664be7211e3818f62b7a6d73e0e333e1176172b2633355593f08a4129d9dc61",
+    "interpolationCodebookId": "or-evidence-interpolation-codebook",
+    "interpolationCodebookVersion": "1.0.0",
+    "interpolationCodebookFingerprintSha256": "caeffe44c7874e49e84063a5f90f42ee810c60918dcddc729bd8a193860800f3"
+  },
+  "itemId": "rob-01",
+  "cases": [
+    {
+      "caseId": "rob-01-reference-1",
+      "participantTurns": [
+        "Beim sechswöchigen Lieferausfall brachen Produktion und Zahlungsfähigkeit ein; wir standen kurz vor der Insolvenz und konnten keine Kernfunktion durchgehend aufrechterhalten."
+      ],
+      "expectedStatus": "scored",
+      "expectedScore": 1,
+      "expectedMatchedReferenceScores": [1],
+      "expectedRuleId": null,
+      "evidence": [
+        {
+          "turnIndex": 0,
+          "direction": "counter",
+          "excerpt": "Produktion und Zahlungsfähigkeit ein; wir standen kurz vor der Insolvenz"
+        }
+      ],
+      "calibrationRationaleDe": "Existenzgefährdung und der Ausfall sämtlicher Kernfunktionen entsprechen dem unteren Referenzanker."
+    },
+    {
+      "caseId": "rob-01-intermediate-2",
+      "participantTurns": [
+        "Produktion und Kundenservice fielen vier Wochen vollständig aus. Nur die Lohnabrechnung lief als Notbetrieb; Liquidität und Marktposition waren ernsthaft gefährdet."
+      ],
+      "expectedStatus": "scored",
+      "expectedScore": 2,
+      "expectedMatchedReferenceScores": [1, 4],
+      "expectedRuleId": "rob-01-score-2",
+      "evidence": [
+        {
+          "turnIndex": 0,
+          "direction": "supporting",
+          "excerpt": "Nur die Lohnabrechnung lief als Notbetrieb"
+        },
+        {
+          "turnIndex": 0,
+          "direction": "counter",
+          "excerpt": "Produktion und Kundenservice fielen vier Wochen vollständig aus"
+        }
+      ],
+      "calibrationRationaleDe": "Eine isolierte Restfunktion liegt über 1, die dominierenden Ausfälle ordnen den Fall näher am unteren Anker ein."
+    },
+    {
+      "caseId": "rob-01-intermediate-3",
+      "participantTurns": [
+        "Lohnabrechnung und ein Kernservice liefen weiter, Produktion und Vertrieb fielen zwei Wochen aus. Die Stabilität war deutlich geschwächt, die Existenz aber nicht gefährdet."
+      ],
+      "expectedStatus": "scored",
+      "expectedScore": 3,
+      "expectedMatchedReferenceScores": [1, 4],
+      "expectedRuleId": "rob-01-score-3",
+      "evidence": [
+        {
+          "turnIndex": 0,
+          "direction": "supporting",
+          "excerpt": "Lohnabrechnung und ein Kernservice liefen weiter"
+        },
+        {
+          "turnIndex": 0,
+          "direction": "counter",
+          "excerpt": "Produktion und Vertrieb fielen zwei Wochen aus"
+        }
+      ],
+      "calibrationRationaleDe": "Mehrere erhaltene Kernfunktionen liegen näher an 4, erhebliche Ausfälle verhindern den exakten mittleren Anker."
+    },
+    {
+      "caseId": "rob-01-reference-4",
+      "participantTurns": [
+        "Einzelne zentrale Funktionen blieben erhalten, aber nur in zwei Bereichen; eine organisationsweite Kontinuität gab es nicht."
+      ],
+      "expectedStatus": "scored",
+      "expectedScore": 4,
+      "expectedMatchedReferenceScores": [4],
+      "expectedRuleId": null,
+      "evidence": [
+        {
+          "turnIndex": 0,
+          "direction": "supporting",
+          "excerpt": "Einzelne zentrale Funktionen blieben erhalten, aber nur in zwei Bereichen"
+        }
+      ],
+      "calibrationRationaleDe": "Partieller Funktionserhalt ohne organisationsweite Kontinuität entspricht dem mittleren Referenzanker."
+    },
+    {
+      "caseId": "rob-01-intermediate-5",
+      "participantTurns": [
+        "Produktion, Vertrieb und Zahlungsfähigkeit blieben stabil; ein wichtiger Standort fiel zwei Tage aus und wurde manuell überbrückt. Die meisten, aber nicht alle Bereiche blieben kontinuierlich arbeitsfähig."
+      ],
+      "expectedStatus": "scored",
+      "expectedScore": 5,
+      "expectedMatchedReferenceScores": [4, 7],
+      "expectedRuleId": "rob-01-score-5",
+      "evidence": [
+        {
+          "turnIndex": 0,
+          "direction": "supporting",
+          "excerpt": "Produktion, Vertrieb und Zahlungsfähigkeit blieben stabil"
+        },
+        {
+          "turnIndex": 0,
+          "direction": "counter",
+          "excerpt": "ein wichtiger Standort fiel zwei Tage aus"
+        }
+      ],
+      "calibrationRationaleDe": "Breiter Stabilitätserhalt liegt über 4, der wesentliche Standortausfall hält den Fall näher am unteren Anker."
+    },
+    {
+      "caseId": "rob-01-intermediate-6",
+      "participantTurns": [
+        "Acht von neun Standorten hielten alle zentralen Funktionen und die finanzielle Stabilität ohne Unterbrechung aufrecht; am neunten Standort war der Betrieb einen Tag eingeschränkt."
+      ],
+      "expectedStatus": "scored",
+      "expectedScore": 6,
+      "expectedMatchedReferenceScores": [4, 7],
+      "expectedRuleId": "rob-01-score-6",
+      "evidence": [
+        {
+          "turnIndex": 0,
+          "direction": "supporting",
+          "excerpt": "Acht von neun Standorten hielten alle zentralen Funktionen und die finanzielle Stabilität ohne Unterbrechung aufrecht"
+        },
+        {
+          "turnIndex": 0,
+          "direction": "counter",
+          "excerpt": "am neunten Standort war der Betrieb einen Tag eingeschränkt"
+        }
+      ],
+      "calibrationRationaleDe": "Nahezu vollständiger organisationsweiter Erhalt liegt näher an 7, die klar begrenzte Standortlücke verhindert den exakten hohen Anker."
+    },
+    {
+      "caseId": "rob-01-reference-7",
+      "participantTurns": [
+        "Alle Standorte führten ihre zentralen Funktionen ohne Unterbrechung fort; Liquidität, Lieferfähigkeit und Marktposition blieben während der schweren Belastung anhand unserer Kennzahlen stabil."
+      ],
+      "expectedStatus": "scored",
+      "expectedScore": 7,
+      "expectedMatchedReferenceScores": [7],
+      "expectedRuleId": null,
+      "evidence": [
+        {
+          "turnIndex": 0,
+          "direction": "supporting",
+          "excerpt": "Alle Standorte führten ihre zentralen Funktionen ohne Unterbrechung fort"
+        }
+      ],
+      "calibrationRationaleDe": "Vollständiger Funktionserhalt und stabile Ergebnisindikatoren unter schwerer Belastung entsprechen dem hohen Referenzanker."
+    },
+    {
+      "caseId": "rob-01-insufficient",
+      "participantTurns": [
+        "Beim Lieferausfall war ich nicht in den betroffenen Bereichen und kann nicht sagen, welche Funktionen stabil blieben."
+      ],
+      "expectedStatus": "insufficient_evidence",
+      "expectedScore": null,
+      "expectedMatchedReferenceScores": [],
+      "expectedRuleId": null,
+      "evidence": [],
+      "calibrationRationaleDe": "Die Person nennt keine beobachtbare Information zum Funktionserhalt; fehlende Evidenz ist kein niedriger oder mittlerer Wert."
+    },
+    {
+      "caseId": "rob-01-conflicting",
+      "participantTurns": [
+        "Alle Standorte hielten sämtliche Kernfunktionen ohne Unterbrechung aufrecht.",
+        "Tatsächlich standen Produktion und Auftragsbearbeitung drei Wochen still und die Liquidität war gefährdet."
+      ],
+      "expectedStatus": "conflicting",
+      "expectedScore": null,
+      "expectedMatchedReferenceScores": [],
+      "expectedRuleId": null,
+      "evidence": [
+        {
+          "turnIndex": 0,
+          "direction": "supporting",
+          "excerpt": "Alle Standorte hielten sämtliche Kernfunktionen ohne Unterbrechung aufrecht"
+        },
+        {
+          "turnIndex": 1,
+          "direction": "counter",
+          "excerpt": "Produktion und Auftragsbearbeitung drei Wochen still und die Liquidität war gefährdet"
+        }
+      ],
+      "calibrationRationaleDe": "Direkt widersprüchliche Aussagen bleiben ein eigener Nicht-Score-Status und werden nicht zu einem Mittelwert verrechnet."
+    }
+  ]
+}

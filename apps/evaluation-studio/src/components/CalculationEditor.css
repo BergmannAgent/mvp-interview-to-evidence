@@ -1,0 +1,225 @@
+.calculation-section {
+  min-width: 0;
+  padding: 22px 0;
+  border-top: 2px solid var(--border-strong);
+}
+
+.calculation-section .section-heading {
+  margin-bottom: 14px;
+}
+
+.calculation-mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--os-radius-small);
+  overflow: hidden;
+}
+
+.calculation-mode button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: var(--os-control-height);
+  padding: 7px 12px;
+  border: 0;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.calculation-mode button + button {
+  border-left: 1px solid var(--border);
+}
+
+.calculation-mode button[aria-pressed='true'] {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.formula-editor {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.formula-editor textarea {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.formula-reference-toolbar {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.formula-reference-toolbar select {
+  width: 100%;
+  min-width: 0;
+  height: var(--os-control-height);
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--os-radius-small);
+  color: var(--text);
+  background: var(--surface);
+  font-size: 11px;
+}
+
+.formula-reference-toolbar .icon-button {
+  height: var(--os-control-height);
+}
+
+.calculation-policies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin: 18px 0;
+}
+
+.calculation-policies div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.calculation-policies dt,
+.calculation-preview-header output span {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.calculation-policies dd {
+  margin: 0;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.calculation-preview {
+  border-top: 1px solid var(--border);
+}
+
+.calculation-preview > summary {
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.calculation-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 2px 0 14px;
+}
+
+.calculation-preview-header output {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.calculation-preview-header output strong {
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.calculation-preview-values {
+  display: grid;
+  gap: 16px;
+}
+
+.calculation-preview-values section {
+  min-width: 0;
+}
+
+.calculation-preview-values section > header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-strong);
+  font-size: 11px;
+}
+
+.calculation-preview-values section > header span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.calculation-preview-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, auto) 100px;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.calculation-preview-row label {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  font-size: 11px;
+}
+
+.calculation-preview-row code {
+  color: var(--muted);
+  font-size: 9px;
+  overflow-wrap: anywhere;
+}
+
+.preview-effective-weight {
+  color: var(--muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.calculation-preview-row input {
+  width: 100%;
+  min-width: 0;
+  height: var(--os-control-height);
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--os-radius-small);
+  color: var(--text);
+  background: var(--surface);
+  font-size: 11px;
+}
+
+.calculation-preview-row input[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+@media (max-width: 620px) {
+  .formula-reference-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .formula-reference-toolbar > label:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .calculation-preview-row {
+    grid-template-columns: minmax(0, 1fr) 85px;
+    gap: 7px 10px;
+  }
+
+  .preview-effective-weight {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .calculation-preview-row input {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+}

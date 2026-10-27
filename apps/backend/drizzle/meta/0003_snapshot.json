@@ -1,0 +1,3789 @@
+{
+  "id": "a782474b-307d-4910-b549-4a5d9ae3c6be",
+  "prevId": "8752d469-c706-4867-aa58-ddef3132b2f9",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "app.agent_runs": {
+      "name": "agent_runs",
+      "schema": "app",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "workflow_run_id": {
+          "name": "workflow_run_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "agent_name": {
+          "name": "agent_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "invocation_number": {
+          "name": "invocation_number",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "retry_count": {
+          "name": "retry_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "model_mode": {
+          "name": "model_mode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "model_provider": {
+          "name": "model_provider",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "model_name": {
+          "name": "model_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "started_at": {
+          "name": "started_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ended_at": {
+          "name": "ended_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "duration_ms": {
+          "name": "duration_ms",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_code": {
+          "name": "error_code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_message": {
+          "name": "error_message",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_retryable": {
+          "name": "error_retryable",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "input": {
+          "name": "input",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "output": {
+          "name": "output",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "agent_runs_workflow_idx": {
+          "name": "agent_runs_workflow_idx",
+          "columns": [
+            {
+              "expression": "workflow_run_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "started_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "agent_runs_workflow_fk": {
+          "name": "agent_runs_workflow_fk",
+          "tableFrom": "agent_runs",
+          "tableTo": "workflow_runs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "workflow_run_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "agent_runs_interview_id_unique": {
+          "name": "agent_runs_interview_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "id"
+          ]
+        },
+        "agent_runs_workflow_scope_unique": {
+          "name": "agent_runs_workflow_scope_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "workflow_run_id",
+            "id"
+          ]
+        },
+        "agent_runs_invocation_unique": {
+          "name": "agent_runs_invocation_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "workflow_run_id",
+            "agent_name",
+            "invocation_number"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "agent_runs_name_valid": {
+          "name": "agent_runs_name_valid",
+          "value": "\"app\".\"agent_runs\".\"agent_name\" in ('coverage_analysis', 'consistency_analysis', 'interview_decision', 'interview_conductor', 'transcript_finalization')"
+        },
+        "agent_runs_status_valid": {
+          "name": "agent_runs_status_valid",
+          "value": "\"app\".\"agent_runs\".\"status\" in ('waiting', 'running', 'succeeded', 'failed', 'retrying', 'skipped')"
+        },
+        "agent_runs_numbers_valid": {
+          "name": "agent_runs_numbers_valid",
+          "value": "\"app\".\"agent_runs\".\"invocation_number\" > 0 and \"app\".\"agent_runs\".\"retry_count\" >= 0"
+        },
+        "agent_runs_timing_valid": {
+          "name": "agent_runs_timing_valid",
+          "value": "\n        (\"app\".\"agent_runs\".\"status\" = 'waiting' and \"app\".\"agent_runs\".\"started_at\" is null and \"app\".\"agent_runs\".\"ended_at\" is null and \"app\".\"agent_runs\".\"duration_ms\" is null)\n        or (\"app\".\"agent_runs\".\"status\" in ('running', 'retrying') and \"app\".\"agent_runs\".\"started_at\" is not null and \"app\".\"agent_runs\".\"ended_at\" is null and \"app\".\"agent_runs\".\"duration_ms\" is null)\n        or (\"app\".\"agent_runs\".\"status\" in ('succeeded', 'failed', 'skipped') and \"app\".\"agent_runs\".\"started_at\" is not null and \"app\".\"agent_runs\".\"ended_at\" is not null and \"app\".\"agent_runs\".\"ended_at\" >= \"app\".\"agent_runs\".\"started_at\" and \"app\".\"agent_runs\".\"duration_ms\" is not null and \"app\".\"agent_runs\".\"duration_ms\" >= 0)\n      "
+        },
+        "agent_runs_error_shape": {
+          "name": "agent_runs_error_shape",
+          "value": "(\"app\".\"agent_runs\".\"status\" = 'failed' and \"app\".\"agent_runs\".\"error_code\" is not null and \"app\".\"agent_runs\".\"error_message\" is not null and \"app\".\"agent_runs\".\"error_retryable\" is not null) or (\"app\".\"agent_runs\".\"status\" <> 'failed' and \"app\".\"agent_runs\".\"error_code\" is null and \"app\".\"agent_runs\".\"error_message\" is null and \"app\".\"agent_runs\".\"error_retryable\" is null)"
+        },
+        "agent_runs_output_shape": {
+          "name": "agent_runs_output_shape",
+          "value": "(\"app\".\"agent_runs\".\"status\" = 'succeeded' and \"app\".\"agent_runs\".\"output\" is not null) or (\"app\".\"agent_runs\".\"status\" <> 'succeeded')"
+        },
+        "agent_runs_model_valid": {
+          "name": "agent_runs_model_valid",
+          "value": "(\"app\".\"agent_runs\".\"model_mode\" = 'demo' and \"app\".\"agent_runs\".\"model_provider\" is null and \"app\".\"agent_runs\".\"model_name\" is null) or (\"app\".\"agent_runs\".\"model_mode\" = 'provider' and \"app\".\"agent_runs\".\"model_provider\" is not null and \"app\".\"agent_runs\".\"model_name\" is not null)"
+        },
+        "agent_runs_json_objects": {
+          "name": "agent_runs_json_objects",
+          "value": "jsonb_typeof(\"app\".\"agent_runs\".\"input\") = 'object' and (\"app\".\"agent_runs\".\"output\" is null or jsonb_typeof(\"app\".\"agent_runs\".\"output\") = 'object')"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.ai_turn_deliveries": {
+      "name": "ai_turn_deliveries",
+      "schema": "app",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "job_id": {
+          "name": "job_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "workflow_run_id": {
+          "name": "workflow_run_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "turn_id": {
+          "name": "turn_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "utterance_id": {
+          "name": "utterance_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "reserved_sequence_number": {
+          "name": "reserved_sequence_number",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "turn_type": {
+          "name": "turn_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "guide_id": {
+          "name": "guide_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "question_id": {
+          "name": "question_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "proposed_text": {
+          "name": "proposed_text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider": {
+          "name": "provider",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "provider_delivery_event_id": {
+          "name": "provider_delivery_event_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "confirmed_spoken_text": {
+          "name": "confirmed_spoken_text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "resolved_at": {
+          "name": "resolved_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "interrupted_at": {
+          "name": "interrupted_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "ai_turn_deliveries_provider_event_unique": {
+          "name": "ai_turn_deliveries_provider_event_unique",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "provider",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "provider_delivery_event_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\" is not null",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "ai_turn_deliveries_one_pending_per_interview": {
+          "name": "ai_turn_deliveries_one_pending_per_interview",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"ai_turn_deliveries\".\"status\" = 'pending'",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "ai_turn_deliveries_pending_idx": {
+          "name": "ai_turn_deliveries_pending_idx",
+          "columns": [
+            {
+              "expression": "status",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "created_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "ai_turn_deliveries_job_fk": {
+          "name": "ai_turn_deliveries_job_fk",
+          "tableFrom": "ai_turn_deliveries",
+          "tableTo": "durable_jobs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "job_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "ai_turn_deliveries_workflow_job_fk": {
+          "name": "ai_turn_deliveries_workflow_job_fk",
+          "tableFrom": "ai_turn_deliveries",
+          "tableTo": "workflow_runs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "workflow_run_id",
+            "job_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id",
+            "job_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "ai_turn_deliveries_interview_guide_fk": {
+          "name": "ai_turn_deliveries_interview_guide_fk",
+          "tableFrom": "ai_turn_deliveries",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "guide_id"
+          ],
+          "columnsTo": [
+            "id",
+            "guide_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        },
+        "ai_turn_deliveries_question_fk": {
+          "name": "ai_turn_deliveries_question_fk",
+          "tableFrom": "ai_turn_deliveries",
+          "tableTo": "guide_questions",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "guide_id",
+            "question_id"
+          ],
+          "columnsTo": [
+            "guide_id",
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "ai_turn_deliveries_pk": {
+          "name": "ai_turn_deliveries_pk",
+          "columns": [
+            "interview_id",
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "ai_turn_deliveries_turn_scope_unique": {
+          "name": "ai_turn_deliveries_turn_scope_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "id",
+            "turn_id"
+          ]
+        },
+        "ai_turn_deliveries_sequence_unique": {
+          "name": "ai_turn_deliveries_sequence_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "reserved_sequence_number"
+          ]
+        },
+        "ai_turn_deliveries_turn_unique": {
+          "name": "ai_turn_deliveries_turn_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "turn_id"
+          ]
+        },
+        "ai_turn_deliveries_utterance_unique": {
+          "name": "ai_turn_deliveries_utterance_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "utterance_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "ai_turn_deliveries_sequence_positive": {
+          "name": "ai_turn_deliveries_sequence_positive",
+          "value": "\"app\".\"ai_turn_deliveries\".\"reserved_sequence_number\" > 0"
+        },
+        "ai_turn_deliveries_internal_ids_valid": {
+          "name": "ai_turn_deliveries_internal_ids_valid",
+          "value": "\n        \"app\".\"ai_turn_deliveries\".\"id\" ~ '^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$'\n        and \"app\".\"ai_turn_deliveries\".\"job_id\" ~ '^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$'\n        and \"app\".\"ai_turn_deliveries\".\"workflow_run_id\" ~ '^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$'\n        and \"app\".\"ai_turn_deliveries\".\"turn_id\" ~ '^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$'\n        and \"app\".\"ai_turn_deliveries\".\"utterance_id\" ~ '^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$'\n      "
+        },
+        "ai_turn_deliveries_text_valid": {
+          "name": "ai_turn_deliveries_text_valid",
+          "value": "\"app\".\"ai_turn_deliveries\".\"proposed_text\" !~ U&'^[\\0009-\\000D\\0020\\00A0\\1680\\2000-\\200A\\2028\\2029\\202F\\205F\\3000\\FEFF]*$' and char_length(\"app\".\"ai_turn_deliveries\".\"proposed_text\") <= 20000"
+        },
+        "ai_turn_deliveries_provider_identifiers_valid": {
+          "name": "ai_turn_deliveries_provider_identifiers_valid",
+          "value": "\n        (\"app\".\"ai_turn_deliveries\".\"provider\" is null or (\"app\".\"ai_turn_deliveries\".\"provider\" !~ U&'^[\\0009-\\000D\\0020\\00A0\\1680\\2000-\\200A\\2028\\2029\\202F\\205F\\3000\\FEFF]' and \"app\".\"ai_turn_deliveries\".\"provider\" !~ U&'[\\0009-\\000D\\0020\\00A0\\1680\\2000-\\200A\\2028\\2029\\202F\\205F\\3000\\FEFF]$' and char_length(\"app\".\"ai_turn_deliveries\".\"provider\") between 1 and 100))\n        and (\"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\" is null or (\"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\" !~ U&'^[\\0009-\\000D\\0020\\00A0\\1680\\2000-\\200A\\2028\\2029\\202F\\205F\\3000\\FEFF]' and \"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\" !~ U&'[\\0009-\\000D\\0020\\00A0\\1680\\2000-\\200A\\2028\\2029\\202F\\205F\\3000\\FEFF]$' and char_length(\"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\") between 1 and 300))\n      "
+        },
+        "ai_turn_deliveries_confirmed_text_valid": {
+          "name": "ai_turn_deliveries_confirmed_text_valid",
+          "value": "\"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\" is null or (\"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\" !~ U&'^[\\0009-\\000D\\0020\\00A0\\1680\\2000-\\200A\\2028\\2029\\202F\\205F\\3000\\FEFF]*$' and char_length(\"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\") <= 20000)"
+        },
+        "ai_turn_deliveries_turn_type_valid": {
+          "name": "ai_turn_deliveries_turn_type_valid",
+          "value": "\"app\".\"ai_turn_deliveries\".\"turn_type\" in ('greeting', 'main_question', 'follow_up_question', 'clarification_question', 'transition', 'closing')"
+        },
+        "ai_turn_deliveries_guide_reference_shape": {
+          "name": "ai_turn_deliveries_guide_reference_shape",
+          "value": "\n        (\"app\".\"ai_turn_deliveries\".\"turn_type\" in ('greeting', 'closing') and \"app\".\"ai_turn_deliveries\".\"guide_id\" is null and \"app\".\"ai_turn_deliveries\".\"question_id\" is null)\n        or (\"app\".\"ai_turn_deliveries\".\"turn_type\" in ('main_question', 'follow_up_question', 'clarification_question') and \"app\".\"ai_turn_deliveries\".\"guide_id\" is not null and \"app\".\"ai_turn_deliveries\".\"question_id\" is not null)\n        or (\"app\".\"ai_turn_deliveries\".\"turn_type\" = 'transition' and ((\"app\".\"ai_turn_deliveries\".\"guide_id\" is null and \"app\".\"ai_turn_deliveries\".\"question_id\" is null) or (\"app\".\"ai_turn_deliveries\".\"guide_id\" is not null and \"app\".\"ai_turn_deliveries\".\"question_id\" is not null)))\n      "
+        },
+        "ai_turn_deliveries_resolution_shape": {
+          "name": "ai_turn_deliveries_resolution_shape",
+          "value": "\n        (\"app\".\"ai_turn_deliveries\".\"status\" = 'pending' and \"app\".\"ai_turn_deliveries\".\"provider\" is null and \"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\" is null and \"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\" is null and \"app\".\"ai_turn_deliveries\".\"resolved_at\" is null and \"app\".\"ai_turn_deliveries\".\"interrupted_at\" is null)\n        or (\"app\".\"ai_turn_deliveries\".\"status\" = 'complete' and \"app\".\"ai_turn_deliveries\".\"provider\" is not null and btrim(\"app\".\"ai_turn_deliveries\".\"provider\") <> '' and \"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\" is not null and btrim(\"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\") <> '' and \"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\" is not null and btrim(\"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\") <> '' and \"app\".\"ai_turn_deliveries\".\"resolved_at\" is not null and \"app\".\"ai_turn_deliveries\".\"interrupted_at\" is null)\n        or (\"app\".\"ai_turn_deliveries\".\"status\" = 'interrupted' and \"app\".\"ai_turn_deliveries\".\"provider\" is not null and btrim(\"app\".\"ai_turn_deliveries\".\"provider\") <> '' and \"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\" is not null and btrim(\"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\") <> '' and \"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\" is not null and \"app\".\"ai_turn_deliveries\".\"resolved_at\" is not null and \"app\".\"ai_turn_deliveries\".\"interrupted_at\" is not null)\n        or (\"app\".\"ai_turn_deliveries\".\"status\" in ('gapped', 'cancelled') and \"app\".\"ai_turn_deliveries\".\"provider\" is null and \"app\".\"ai_turn_deliveries\".\"provider_delivery_event_id\" is null and \"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\" is null and \"app\".\"ai_turn_deliveries\".\"resolved_at\" is not null and \"app\".\"ai_turn_deliveries\".\"interrupted_at\" is null)\n      "
+        },
+        "ai_turn_deliveries_time_order": {
+          "name": "ai_turn_deliveries_time_order",
+          "value": "(\"app\".\"ai_turn_deliveries\".\"resolved_at\" is null or \"app\".\"ai_turn_deliveries\".\"resolved_at\" >= \"app\".\"ai_turn_deliveries\".\"created_at\") and (\"app\".\"ai_turn_deliveries\".\"interrupted_at\" is null or (\"app\".\"ai_turn_deliveries\".\"interrupted_at\" >= \"app\".\"ai_turn_deliveries\".\"created_at\" and \"app\".\"ai_turn_deliveries\".\"resolved_at\" is not null and \"app\".\"ai_turn_deliveries\".\"interrupted_at\" <= \"app\".\"ai_turn_deliveries\".\"resolved_at\"))"
+        },
+        "ai_turn_deliveries_confirmed_prefix": {
+          "name": "ai_turn_deliveries_confirmed_prefix",
+          "value": "\"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\" is null or left(\"app\".\"ai_turn_deliveries\".\"proposed_text\", char_length(\"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\")) = \"app\".\"ai_turn_deliveries\".\"confirmed_spoken_text\""
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.command_receipts": {
+      "name": "command_receipts",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "command_type": {
+          "name": "command_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "idempotency_key": {
+          "name": "idempotency_key",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "request_fingerprint": {
+          "name": "request_fingerprint",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "result_resource_id": {
+          "name": "result_resource_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "result_state_version": {
+          "name": "result_state_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "command_receipts_interview_fk": {
+          "name": "command_receipts_interview_fk",
+          "tableFrom": "command_receipts",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "command_receipts_pk": {
+          "name": "command_receipts_pk",
+          "columns": [
+            "interview_id",
+            "command_type",
+            "idempotency_key"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "command_receipts_type_not_blank": {
+          "name": "command_receipts_type_not_blank",
+          "value": "btrim(\"app\".\"command_receipts\".\"command_type\") <> ''"
+        },
+        "command_receipts_key_not_blank": {
+          "name": "command_receipts_key_not_blank",
+          "value": "btrim(\"app\".\"command_receipts\".\"idempotency_key\") <> ''"
+        },
+        "command_receipts_fingerprint_sha256": {
+          "name": "command_receipts_fingerprint_sha256",
+          "value": "\"app\".\"command_receipts\".\"request_fingerprint\" ~ '^[0-9a-f]{64}$'"
+        },
+        "command_receipts_result_version_nonnegative": {
+          "name": "command_receipts_result_version_nonnegative",
+          "value": "\"app\".\"command_receipts\".\"result_state_version\" is null or \"app\".\"command_receipts\".\"result_state_version\" >= 0"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.contradiction_turn_references": {
+      "name": "contradiction_turn_references",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "contradiction_id": {
+          "name": "contradiction_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "turn_id": {
+          "name": "turn_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "contradiction_turn_references_turn_idx": {
+          "name": "contradiction_turn_references_turn_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "turn_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "contradiction_turn_references_contradiction_fk": {
+          "name": "contradiction_turn_references_contradiction_fk",
+          "tableFrom": "contradiction_turn_references",
+          "tableTo": "contradictions",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "contradiction_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "contradiction_turn_references_turn_fk": {
+          "name": "contradiction_turn_references_turn_fk",
+          "tableFrom": "contradiction_turn_references",
+          "tableTo": "transcript_turns",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "turn_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "turn_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "contradiction_turn_references_pk": {
+          "name": "contradiction_turn_references_pk",
+          "columns": [
+            "interview_id",
+            "contradiction_id",
+            "turn_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "app.contradictions": {
+      "name": "contradictions",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "workflow_run_id": {
+          "name": "workflow_run_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "agent_run_id": {
+          "name": "agent_run_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "suggested_clarification_question": {
+          "name": "suggested_clarification_question",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "should_clarify": {
+          "name": "should_clarify",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rationale": {
+          "name": "rationale",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "asked_turn_id": {
+          "name": "asked_turn_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "contradictions_status_idx": {
+          "name": "contradictions_status_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "status",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "created_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "contradictions_workflow_fk": {
+          "name": "contradictions_workflow_fk",
+          "tableFrom": "contradictions",
+          "tableTo": "workflow_runs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "workflow_run_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "contradictions_workflow_agent_fk": {
+          "name": "contradictions_workflow_agent_fk",
+          "tableFrom": "contradictions",
+          "tableTo": "agent_runs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "workflow_run_id",
+            "agent_run_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "workflow_run_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "contradictions_asked_turn_fk": {
+          "name": "contradictions_asked_turn_fk",
+          "tableFrom": "contradictions",
+          "tableTo": "transcript_turns",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "asked_turn_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "turn_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "contradictions_pk": {
+          "name": "contradictions_pk",
+          "columns": [
+            "interview_id",
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "contradictions_status_valid": {
+          "name": "contradictions_status_valid",
+          "value": "\"app\".\"contradictions\".\"status\" in ('detected', 'asked', 'dismissed', 'resolved')"
+        },
+        "contradictions_description_not_blank": {
+          "name": "contradictions_description_not_blank",
+          "value": "btrim(\"app\".\"contradictions\".\"description\") <> ''"
+        },
+        "contradictions_clarification_single_question": {
+          "name": "contradictions_clarification_single_question",
+          "value": "right(btrim(\"app\".\"contradictions\".\"suggested_clarification_question\"), 1) = '?' and length(\"app\".\"contradictions\".\"suggested_clarification_question\") - length(replace(\"app\".\"contradictions\".\"suggested_clarification_question\", '?', '')) = 1"
+        },
+        "contradictions_asked_turn_shape": {
+          "name": "contradictions_asked_turn_shape",
+          "value": "(\"app\".\"contradictions\".\"status\" = 'asked' and \"app\".\"contradictions\".\"asked_turn_id\" is not null) or (\"app\".\"contradictions\".\"status\" <> 'asked')"
+        },
+        "contradictions_time_order": {
+          "name": "contradictions_time_order",
+          "value": "\"app\".\"contradictions\".\"updated_at\" >= \"app\".\"contradictions\".\"created_at\""
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.coverage_turn_references": {
+      "name": "coverage_turn_references",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "question_id": {
+          "name": "question_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "turn_id": {
+          "name": "turn_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "coverage_turn_references_turn_idx": {
+          "name": "coverage_turn_references_turn_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "turn_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "coverage_turn_references_coverage_fk": {
+          "name": "coverage_turn_references_coverage_fk",
+          "tableFrom": "coverage_turn_references",
+          "tableTo": "question_coverage",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "question_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "question_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "coverage_turn_references_turn_fk": {
+          "name": "coverage_turn_references_turn_fk",
+          "tableFrom": "coverage_turn_references",
+          "tableTo": "transcript_turns",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "turn_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "turn_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "coverage_turn_references_pk": {
+          "name": "coverage_turn_references_pk",
+          "columns": [
+            "interview_id",
+            "question_id",
+            "turn_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "app.durable_jobs": {
+      "name": "durable_jobs",
+      "schema": "app",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "idempotency_key": {
+          "name": "idempotency_key",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "source_turn_id": {
+          "name": "source_turn_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "expected_state_version": {
+          "name": "expected_state_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "attempt_count": {
+          "name": "attempt_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "maximum_attempts": {
+          "name": "maximum_attempts",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 3
+        },
+        "initial_delay_ms": {
+          "name": "initial_delay_ms",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "available_at": {
+          "name": "available_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lease_owner": {
+          "name": "lease_owner",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "lease_token": {
+          "name": "lease_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "lease_expires_at": {
+          "name": "lease_expires_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "last_error_code": {
+          "name": "last_error_code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "last_error_message": {
+          "name": "last_error_message",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "last_error_retryable": {
+          "name": "last_error_retryable",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "last_error_occurred_at": {
+          "name": "last_error_occurred_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cancellation_reason": {
+          "name": "cancellation_reason",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "result_delivery_id": {
+          "name": "result_delivery_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "applied_state_version": {
+          "name": "applied_state_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "completed_at": {
+          "name": "completed_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "durable_jobs_one_active_per_interview": {
+          "name": "durable_jobs_one_active_per_interview",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"durable_jobs\".\"status\" in ('queued', 'running')",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "durable_jobs_claim_idx": {
+          "name": "durable_jobs_claim_idx",
+          "columns": [
+            {
+              "expression": "status",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "available_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "created_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "durable_jobs_interview_fk": {
+          "name": "durable_jobs_interview_fk",
+          "tableFrom": "durable_jobs",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "durable_jobs_source_final_segment_fk": {
+          "name": "durable_jobs_source_final_segment_fk",
+          "tableFrom": "durable_jobs",
+          "tableTo": "transcript_final_segments",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "source_turn_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "turn_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "durable_jobs_interview_id_unique": {
+          "name": "durable_jobs_interview_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "id"
+          ]
+        },
+        "durable_jobs_idempotency_unique": {
+          "name": "durable_jobs_idempotency_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "idempotency_key"
+          ]
+        },
+        "durable_jobs_lease_token_unique": {
+          "name": "durable_jobs_lease_token_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "lease_token"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "durable_jobs_type_valid": {
+          "name": "durable_jobs_type_valid",
+          "value": "\"app\".\"durable_jobs\".\"type\" in ('start_interview', 'participant_turn', 'finish_interview')"
+        },
+        "durable_jobs_source_shape": {
+          "name": "durable_jobs_source_shape",
+          "value": "(\"app\".\"durable_jobs\".\"type\" = 'participant_turn' and \"app\".\"durable_jobs\".\"source_turn_id\" is not null) or (\"app\".\"durable_jobs\".\"type\" in ('start_interview', 'finish_interview') and \"app\".\"durable_jobs\".\"source_turn_id\" is null)"
+        },
+        "durable_jobs_status_valid": {
+          "name": "durable_jobs_status_valid",
+          "value": "\"app\".\"durable_jobs\".\"status\" in ('queued', 'running', 'succeeded', 'failed', 'cancelled')"
+        },
+        "durable_jobs_attempts_valid": {
+          "name": "durable_jobs_attempts_valid",
+          "value": "\"app\".\"durable_jobs\".\"attempt_count\" >= 0 and \"app\".\"durable_jobs\".\"maximum_attempts\" > 0 and \"app\".\"durable_jobs\".\"attempt_count\" <= \"app\".\"durable_jobs\".\"maximum_attempts\""
+        },
+        "durable_jobs_initial_delay_valid": {
+          "name": "durable_jobs_initial_delay_valid",
+          "value": "\"app\".\"durable_jobs\".\"initial_delay_ms\" >= 0 and \"app\".\"durable_jobs\".\"initial_delay_ms\" <= 900000"
+        },
+        "durable_jobs_expected_version_nonnegative": {
+          "name": "durable_jobs_expected_version_nonnegative",
+          "value": "\"app\".\"durable_jobs\".\"expected_state_version\" >= 0"
+        },
+        "durable_jobs_lease_shape": {
+          "name": "durable_jobs_lease_shape",
+          "value": "(\"app\".\"durable_jobs\".\"status\" = 'running' and \"app\".\"durable_jobs\".\"lease_owner\" is not null and \"app\".\"durable_jobs\".\"lease_token\" is not null and \"app\".\"durable_jobs\".\"lease_expires_at\" is not null) or (\"app\".\"durable_jobs\".\"status\" <> 'running' and \"app\".\"durable_jobs\".\"lease_owner\" is null and \"app\".\"durable_jobs\".\"lease_expires_at\" is null)"
+        },
+        "durable_jobs_initial_lease_token_null": {
+          "name": "durable_jobs_initial_lease_token_null",
+          "value": "\"app\".\"durable_jobs\".\"status\" <> 'queued' or \"app\".\"durable_jobs\".\"attempt_count\" > 0 or \"app\".\"durable_jobs\".\"lease_token\" is null"
+        },
+        "durable_jobs_terminal_shape": {
+          "name": "durable_jobs_terminal_shape",
+          "value": "(\"app\".\"durable_jobs\".\"status\" in ('queued', 'running') and \"app\".\"durable_jobs\".\"completed_at\" is null) or (\"app\".\"durable_jobs\".\"status\" in ('succeeded', 'failed', 'cancelled') and \"app\".\"durable_jobs\".\"completed_at\" is not null)"
+        },
+        "durable_jobs_cancellation_shape": {
+          "name": "durable_jobs_cancellation_shape",
+          "value": "(\"app\".\"durable_jobs\".\"status\" = 'cancelled' and \"app\".\"durable_jobs\".\"cancellation_reason\" is not null) or (\"app\".\"durable_jobs\".\"status\" <> 'cancelled' and \"app\".\"durable_jobs\".\"cancellation_reason\" is null)"
+        },
+        "durable_jobs_applied_version_shape": {
+          "name": "durable_jobs_applied_version_shape",
+          "value": "(\"app\".\"durable_jobs\".\"status\" = 'succeeded' and \"app\".\"durable_jobs\".\"applied_state_version\" is not null and \"app\".\"durable_jobs\".\"applied_state_version\" >= 0) or (\"app\".\"durable_jobs\".\"status\" <> 'succeeded' and \"app\".\"durable_jobs\".\"applied_state_version\" is null)"
+        },
+        "durable_jobs_last_error_shape": {
+          "name": "durable_jobs_last_error_shape",
+          "value": "(\"app\".\"durable_jobs\".\"last_error_code\" is null and \"app\".\"durable_jobs\".\"last_error_message\" is null and \"app\".\"durable_jobs\".\"last_error_retryable\" is null and \"app\".\"durable_jobs\".\"last_error_occurred_at\" is null) or (\"app\".\"durable_jobs\".\"last_error_code\" is not null and \"app\".\"durable_jobs\".\"last_error_message\" is not null and \"app\".\"durable_jobs\".\"last_error_retryable\" is not null and \"app\".\"durable_jobs\".\"last_error_occurred_at\" is not null)"
+        },
+        "durable_jobs_time_order": {
+          "name": "durable_jobs_time_order",
+          "value": "\"app\".\"durable_jobs\".\"updated_at\" >= \"app\".\"durable_jobs\".\"created_at\""
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.event_outbox": {
+      "name": "event_outbox",
+      "schema": "app",
+      "columns": {
+        "event_id": {
+          "name": "event_id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "run_id": {
+          "name": "run_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sequence_number": {
+          "name": "sequence_number",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "category": {
+          "name": "category",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "occurred_at": {
+          "name": "occurred_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payload": {
+          "name": "payload",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "event_outbox_replay_idx": {
+          "name": "event_outbox_replay_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "sequence_number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "event_outbox_category_idx": {
+          "name": "event_outbox_category_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "category",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "occurred_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "event_outbox_run_idx": {
+          "name": "event_outbox_run_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "run_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "occurred_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "event_outbox_interview_fk": {
+          "name": "event_outbox_interview_fk",
+          "tableFrom": "event_outbox",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "event_outbox_interview_sequence_unique": {
+          "name": "event_outbox_interview_sequence_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "sequence_number"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "event_outbox_sequence_positive": {
+          "name": "event_outbox_sequence_positive",
+          "value": "\"app\".\"event_outbox\".\"sequence_number\" > 0"
+        },
+        "event_outbox_run_not_blank": {
+          "name": "event_outbox_run_not_blank",
+          "value": "btrim(\"app\".\"event_outbox\".\"run_id\") <> ''"
+        },
+        "event_outbox_category_valid": {
+          "name": "event_outbox_category_valid",
+          "value": "\"app\".\"event_outbox\".\"category\" in ('interview', 'workflow', 'agent', 'transcript', 'voice', 'error', 'retry', 'state_update')"
+        },
+        "event_outbox_type_not_blank": {
+          "name": "event_outbox_type_not_blank",
+          "value": "btrim(\"app\".\"event_outbox\".\"type\") <> ''"
+        },
+        "event_outbox_payload_object": {
+          "name": "event_outbox_payload_object",
+          "value": "jsonb_typeof(\"app\".\"event_outbox\".\"payload\") = 'object'"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.guide_questions": {
+      "name": "guide_questions",
+      "schema": "app",
+      "columns": {
+        "guide_id": {
+          "name": "guide_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "section_id": {
+          "name": "section_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "kind": {
+          "name": "kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "main_question_id": {
+          "name": "main_question_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "position": {
+          "name": "position",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "text": {
+          "name": "text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "guide_questions_main_position_unique": {
+          "name": "guide_questions_main_position_unique",
+          "columns": [
+            {
+              "expression": "guide_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "section_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "position",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"guide_questions\".\"kind\" = 'main_question'",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "guide_questions_follow_up_position_unique": {
+          "name": "guide_questions_follow_up_position_unique",
+          "columns": [
+            {
+              "expression": "guide_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "main_question_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "position",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"guide_questions\".\"kind\" = 'follow_up_question'",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "guide_questions_section_fk": {
+          "name": "guide_questions_section_fk",
+          "tableFrom": "guide_questions",
+          "tableTo": "guide_sections",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "guide_id",
+            "section_id"
+          ],
+          "columnsTo": [
+            "guide_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "guide_questions_main_question_fk": {
+          "name": "guide_questions_main_question_fk",
+          "tableFrom": "guide_questions",
+          "tableTo": "guide_questions",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "guide_id",
+            "main_question_id",
+            "section_id"
+          ],
+          "columnsTo": [
+            "guide_id",
+            "id",
+            "section_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "guide_questions_pk": {
+          "name": "guide_questions_pk",
+          "columns": [
+            "guide_id",
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "guide_questions_scope_unique": {
+          "name": "guide_questions_scope_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "guide_id",
+            "id",
+            "section_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "guide_questions_kind_valid": {
+          "name": "guide_questions_kind_valid",
+          "value": "\"app\".\"guide_questions\".\"kind\" in ('main_question', 'follow_up_question')"
+        },
+        "guide_questions_hierarchy_valid": {
+          "name": "guide_questions_hierarchy_valid",
+          "value": "(\"app\".\"guide_questions\".\"kind\" = 'main_question' and \"app\".\"guide_questions\".\"main_question_id\" = \"app\".\"guide_questions\".\"id\") or (\"app\".\"guide_questions\".\"kind\" = 'follow_up_question' and \"app\".\"guide_questions\".\"main_question_id\" <> \"app\".\"guide_questions\".\"id\")"
+        },
+        "guide_questions_position_nonnegative": {
+          "name": "guide_questions_position_nonnegative",
+          "value": "\"app\".\"guide_questions\".\"position\" >= 0"
+        },
+        "guide_questions_text_not_blank": {
+          "name": "guide_questions_text_not_blank",
+          "value": "btrim(\"app\".\"guide_questions\".\"text\") <> ''"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.guide_sections": {
+      "name": "guide_sections",
+      "schema": "app",
+      "columns": {
+        "guide_id": {
+          "name": "guide_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "position": {
+          "name": "position",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "guide_sections_guide_fk": {
+          "name": "guide_sections_guide_fk",
+          "tableFrom": "guide_sections",
+          "tableTo": "guides",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "guide_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "guide_sections_pk": {
+          "name": "guide_sections_pk",
+          "columns": [
+            "guide_id",
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "guide_sections_position_unique": {
+          "name": "guide_sections_position_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "guide_id",
+            "position"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "guide_sections_id_not_blank": {
+          "name": "guide_sections_id_not_blank",
+          "value": "btrim(\"app\".\"guide_sections\".\"id\") <> ''"
+        },
+        "guide_sections_position_nonnegative": {
+          "name": "guide_sections_position_nonnegative",
+          "value": "\"app\".\"guide_sections\".\"position\" >= 0"
+        },
+        "guide_sections_title_not_blank": {
+          "name": "guide_sections_title_not_blank",
+          "value": "btrim(\"app\".\"guide_sections\".\"title\") <> ''"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.guides": {
+      "name": "guides",
+      "schema": "app",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "source_markdown": {
+          "name": "source_markdown",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "stable_id_version": {
+          "name": "stable_id_version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "guides_id_not_blank": {
+          "name": "guides_id_not_blank",
+          "value": "btrim(\"app\".\"guides\".\"id\") <> ''"
+        },
+        "guides_title_not_blank": {
+          "name": "guides_title_not_blank",
+          "value": "btrim(\"app\".\"guides\".\"title\") <> ''"
+        },
+        "guides_source_not_blank": {
+          "name": "guides_source_not_blank",
+          "value": "btrim(\"app\".\"guides\".\"source_markdown\") <> ''"
+        },
+        "guides_stable_id_version_v1": {
+          "name": "guides_stable_id_version_v1",
+          "value": "\"app\".\"guides\".\"stable_id_version\" = 'v1'"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.interview_counters": {
+      "name": "interview_counters",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "next_transcript_sequence": {
+          "name": "next_transcript_sequence",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        },
+        "next_event_sequence": {
+          "name": "next_event_sequence",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        },
+        "transcript_mutation_version": {
+          "name": "transcript_mutation_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "interview_counters_interview_fk": {
+          "name": "interview_counters_interview_fk",
+          "tableFrom": "interview_counters",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "interview_counters_sequences_positive": {
+          "name": "interview_counters_sequences_positive",
+          "value": "\"app\".\"interview_counters\".\"next_transcript_sequence\" > 0 and \"app\".\"interview_counters\".\"next_event_sequence\" > 0"
+        },
+        "interview_counters_transcript_mutation_nonnegative": {
+          "name": "interview_counters_transcript_mutation_nonnegative",
+          "value": "\"app\".\"interview_counters\".\"transcript_mutation_version\" >= 0"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.interview_state": {
+      "name": "interview_state",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "guide_id": {
+          "name": "guide_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "state_version": {
+          "name": "state_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "coverage_version": {
+          "name": "coverage_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "current_main_question_id": {
+          "name": "current_main_question_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "active_workflow_run_id": {
+          "name": "active_workflow_run_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "started_at": {
+          "name": "started_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "active_since": {
+          "name": "active_since",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "paused_at": {
+          "name": "paused_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ending_at": {
+          "name": "ending_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ending_from": {
+          "name": "ending_from",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ended_at": {
+          "name": "ended_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "failed_at": {
+          "name": "failed_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "failed_from": {
+          "name": "failed_from",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "failure_code": {
+          "name": "failure_code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "failure_message": {
+          "name": "failure_message",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "interview_state_interview_fk": {
+          "name": "interview_state_interview_fk",
+          "tableFrom": "interview_state",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "guide_id"
+          ],
+          "columnsTo": [
+            "id",
+            "guide_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "interview_state_current_question_fk": {
+          "name": "interview_state_current_question_fk",
+          "tableFrom": "interview_state",
+          "tableTo": "guide_questions",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "guide_id",
+            "current_main_question_id"
+          ],
+          "columnsTo": [
+            "guide_id",
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        },
+        "interview_state_active_workflow_fk": {
+          "name": "interview_state_active_workflow_fk",
+          "tableFrom": "interview_state",
+          "tableTo": "workflow_runs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "active_workflow_run_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "interview_state_status_valid": {
+          "name": "interview_state_status_valid",
+          "value": "\"app\".\"interview_state\".\"status\" in ('ready', 'active', 'paused', 'ending', 'completed', 'failed')"
+        },
+        "interview_state_versions_nonnegative": {
+          "name": "interview_state_versions_nonnegative",
+          "value": "\"app\".\"interview_state\".\"state_version\" >= 0 and \"app\".\"interview_state\".\"coverage_version\" >= 0"
+        },
+        "interview_state_time_order": {
+          "name": "interview_state_time_order",
+          "value": "\"app\".\"interview_state\".\"updated_at\" >= \"app\".\"interview_state\".\"created_at\""
+        },
+        "interview_state_lifecycle_shape": {
+          "name": "interview_state_lifecycle_shape",
+          "value": "\n        (\"app\".\"interview_state\".\"status\" = 'ready' and \"app\".\"interview_state\".\"started_at\" is null and \"app\".\"interview_state\".\"active_since\" is null and \"app\".\"interview_state\".\"paused_at\" is null and \"app\".\"interview_state\".\"ending_at\" is null and \"app\".\"interview_state\".\"ending_from\" is null and \"app\".\"interview_state\".\"ended_at\" is null and \"app\".\"interview_state\".\"failed_at\" is null and \"app\".\"interview_state\".\"failed_from\" is null and \"app\".\"interview_state\".\"failure_code\" is null and \"app\".\"interview_state\".\"failure_message\" is null)\n        or (\"app\".\"interview_state\".\"status\" = 'active' and \"app\".\"interview_state\".\"started_at\" is not null and \"app\".\"interview_state\".\"active_since\" is not null and \"app\".\"interview_state\".\"paused_at\" is null and \"app\".\"interview_state\".\"ending_at\" is null and \"app\".\"interview_state\".\"ending_from\" is null and \"app\".\"interview_state\".\"ended_at\" is null and \"app\".\"interview_state\".\"failed_at\" is null and \"app\".\"interview_state\".\"failed_from\" is null and \"app\".\"interview_state\".\"failure_code\" is null and \"app\".\"interview_state\".\"failure_message\" is null)\n        or (\"app\".\"interview_state\".\"status\" = 'paused' and \"app\".\"interview_state\".\"started_at\" is not null and \"app\".\"interview_state\".\"active_since\" is null and \"app\".\"interview_state\".\"paused_at\" is not null and \"app\".\"interview_state\".\"ending_at\" is null and \"app\".\"interview_state\".\"ending_from\" is null and \"app\".\"interview_state\".\"ended_at\" is null and \"app\".\"interview_state\".\"failed_at\" is null and \"app\".\"interview_state\".\"failed_from\" is null and \"app\".\"interview_state\".\"failure_code\" is null and \"app\".\"interview_state\".\"failure_message\" is null)\n        or (\"app\".\"interview_state\".\"status\" = 'ending' and \"app\".\"interview_state\".\"started_at\" is not null and \"app\".\"interview_state\".\"active_since\" is null and \"app\".\"interview_state\".\"paused_at\" is null and \"app\".\"interview_state\".\"ending_at\" is not null and \"app\".\"interview_state\".\"ending_from\" is not null and \"app\".\"interview_state\".\"ending_from\" in ('active', 'paused') and \"app\".\"interview_state\".\"ended_at\" is null and \"app\".\"interview_state\".\"failed_at\" is null and \"app\".\"interview_state\".\"failed_from\" is null and \"app\".\"interview_state\".\"failure_code\" is null and \"app\".\"interview_state\".\"failure_message\" is null)\n        or (\"app\".\"interview_state\".\"status\" = 'completed' and \"app\".\"interview_state\".\"started_at\" is not null and \"app\".\"interview_state\".\"active_since\" is null and \"app\".\"interview_state\".\"paused_at\" is null and \"app\".\"interview_state\".\"ending_at\" is not null and \"app\".\"interview_state\".\"ending_from\" is null and \"app\".\"interview_state\".\"ended_at\" is not null and \"app\".\"interview_state\".\"failed_at\" is null and \"app\".\"interview_state\".\"failed_from\" is null and \"app\".\"interview_state\".\"failure_code\" is null and \"app\".\"interview_state\".\"failure_message\" is null)\n        or (\"app\".\"interview_state\".\"status\" = 'failed' and \"app\".\"interview_state\".\"active_since\" is null and \"app\".\"interview_state\".\"paused_at\" is null and \"app\".\"interview_state\".\"ending_at\" is null and \"app\".\"interview_state\".\"ending_from\" is null and \"app\".\"interview_state\".\"ended_at\" is null and \"app\".\"interview_state\".\"failed_at\" is not null and \"app\".\"interview_state\".\"failed_from\" is not null and \"app\".\"interview_state\".\"failed_from\" in ('ready', 'active', 'paused', 'ending') and \"app\".\"interview_state\".\"failure_code\" is not null and btrim(\"app\".\"interview_state\".\"failure_code\") <> '' and \"app\".\"interview_state\".\"failure_message\" is not null and btrim(\"app\".\"interview_state\".\"failure_message\") <> '')\n      "
+        },
+        "interview_state_lifecycle_time_order": {
+          "name": "interview_state_lifecycle_time_order",
+          "value": "\n        (\"app\".\"interview_state\".\"status\" = 'ready')\n        or (\"app\".\"interview_state\".\"status\" = 'active' and \"app\".\"interview_state\".\"started_at\" >= \"app\".\"interview_state\".\"created_at\" and \"app\".\"interview_state\".\"active_since\" >= \"app\".\"interview_state\".\"started_at\" and \"app\".\"interview_state\".\"updated_at\" >= \"app\".\"interview_state\".\"active_since\")\n        or (\"app\".\"interview_state\".\"status\" = 'paused' and \"app\".\"interview_state\".\"started_at\" >= \"app\".\"interview_state\".\"created_at\" and \"app\".\"interview_state\".\"paused_at\" >= \"app\".\"interview_state\".\"started_at\" and \"app\".\"interview_state\".\"updated_at\" >= \"app\".\"interview_state\".\"paused_at\")\n        or (\"app\".\"interview_state\".\"status\" = 'ending' and \"app\".\"interview_state\".\"started_at\" >= \"app\".\"interview_state\".\"created_at\" and \"app\".\"interview_state\".\"ending_at\" >= \"app\".\"interview_state\".\"started_at\" and \"app\".\"interview_state\".\"updated_at\" >= \"app\".\"interview_state\".\"ending_at\")\n        or (\"app\".\"interview_state\".\"status\" = 'completed' and \"app\".\"interview_state\".\"started_at\" >= \"app\".\"interview_state\".\"created_at\" and \"app\".\"interview_state\".\"ending_at\" >= \"app\".\"interview_state\".\"started_at\" and \"app\".\"interview_state\".\"ended_at\" >= \"app\".\"interview_state\".\"ending_at\" and \"app\".\"interview_state\".\"updated_at\" >= \"app\".\"interview_state\".\"ended_at\")\n        or (\"app\".\"interview_state\".\"status\" = 'failed' and \"app\".\"interview_state\".\"failed_at\" >= \"app\".\"interview_state\".\"created_at\" and \"app\".\"interview_state\".\"updated_at\" >= \"app\".\"interview_state\".\"failed_at\" and ((\"app\".\"interview_state\".\"failed_from\" = 'ready' and \"app\".\"interview_state\".\"started_at\" is null) or (\"app\".\"interview_state\".\"failed_from\" <> 'ready' and \"app\".\"interview_state\".\"started_at\" is not null and \"app\".\"interview_state\".\"started_at\" >= \"app\".\"interview_state\".\"created_at\" and \"app\".\"interview_state\".\"failed_at\" >= \"app\".\"interview_state\".\"started_at\")))\n      "
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.interviews": {
+      "name": "interviews",
+      "schema": "app",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "guide_id": {
+          "name": "guide_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "interviews_guide_fk": {
+          "name": "interviews_guide_fk",
+          "tableFrom": "interviews",
+          "tableTo": "guides",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "guide_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "interviews_id_guide_unique": {
+          "name": "interviews_id_guide_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id",
+            "guide_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "interviews_id_not_blank": {
+          "name": "interviews_id_not_blank",
+          "value": "btrim(\"app\".\"interviews\".\"id\") <> ''"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.question_coverage": {
+      "name": "question_coverage",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "guide_id": {
+          "name": "guide_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "question_id": {
+          "name": "question_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "question_coverage_one_current_per_interview": {
+          "name": "question_coverage_one_current_per_interview",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"question_coverage\".\"status\" = 'current'",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "question_coverage_status_idx": {
+          "name": "question_coverage_status_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "status",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "question_coverage_interview_fk": {
+          "name": "question_coverage_interview_fk",
+          "tableFrom": "question_coverage",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "guide_id"
+          ],
+          "columnsTo": [
+            "id",
+            "guide_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "question_coverage_question_fk": {
+          "name": "question_coverage_question_fk",
+          "tableFrom": "question_coverage",
+          "tableTo": "guide_questions",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "guide_id",
+            "question_id"
+          ],
+          "columnsTo": [
+            "guide_id",
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "question_coverage_pk": {
+          "name": "question_coverage_pk",
+          "columns": [
+            "interview_id",
+            "question_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "question_coverage_status_valid": {
+          "name": "question_coverage_status_valid",
+          "value": "\"app\".\"question_coverage\".\"status\" in ('not_addressed', 'current', 'partially_answered', 'answered', 'skipped_already_answered')"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.schema_metadata": {
+      "name": "schema_metadata",
+      "schema": "app",
+      "columns": {
+        "component": {
+          "name": "component",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "version": {
+          "name": "version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "applied_at": {
+          "name": "applied_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "schema_metadata_component_not_blank": {
+          "name": "schema_metadata_component_not_blank",
+          "value": "btrim(\"app\".\"schema_metadata\".\"component\") <> ''"
+        },
+        "schema_metadata_version_positive": {
+          "name": "schema_metadata_version_positive",
+          "value": "\"app\".\"schema_metadata\".\"version\" > 0"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.transcript_entries": {
+      "name": "transcript_entries",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sequence_number": {
+          "name": "sequence_number",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "entry_id": {
+          "name": "entry_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "kind": {
+          "name": "kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "occurred_at": {
+          "name": "occurred_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "transcript_entries_interview_fk": {
+          "name": "transcript_entries_interview_fk",
+          "tableFrom": "transcript_entries",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "transcript_entries_pk": {
+          "name": "transcript_entries_pk",
+          "columns": [
+            "interview_id",
+            "sequence_number"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "transcript_entries_id_unique": {
+          "name": "transcript_entries_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "entry_id"
+          ]
+        },
+        "transcript_entries_subtype_unique": {
+          "name": "transcript_entries_subtype_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "entry_id",
+            "kind"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "transcript_entries_sequence_positive": {
+          "name": "transcript_entries_sequence_positive",
+          "value": "\"app\".\"transcript_entries\".\"sequence_number\" > 0"
+        },
+        "transcript_entries_kind_valid": {
+          "name": "transcript_entries_kind_valid",
+          "value": "\"app\".\"transcript_entries\".\"kind\" in ('turn', 'technical_gap')"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.transcript_final_segments": {
+      "name": "transcript_final_segments",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider": {
+          "name": "provider",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider_event_id": {
+          "name": "provider_event_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "segment_id": {
+          "name": "segment_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "utterance_id": {
+          "name": "utterance_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "turn_id": {
+          "name": "turn_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "text": {
+          "name": "text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "observed_at": {
+          "name": "observed_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "finalized_at": {
+          "name": "finalized_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "transcript_final_segments_turn_fk": {
+          "name": "transcript_final_segments_turn_fk",
+          "tableFrom": "transcript_final_segments",
+          "tableTo": "transcript_turns",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "turn_id",
+            "provider"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "turn_id",
+            "source_provider"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "transcript_final_segments_pk": {
+          "name": "transcript_final_segments_pk",
+          "columns": [
+            "interview_id",
+            "provider",
+            "provider_event_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "transcript_final_segments_segment_unique": {
+          "name": "transcript_final_segments_segment_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "provider",
+            "segment_id"
+          ]
+        },
+        "transcript_final_segments_turn_unique": {
+          "name": "transcript_final_segments_turn_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "turn_id"
+          ]
+        },
+        "transcript_final_segments_utterance_unique": {
+          "name": "transcript_final_segments_utterance_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "provider",
+            "utterance_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "transcript_final_segments_provider_not_blank": {
+          "name": "transcript_final_segments_provider_not_blank",
+          "value": "btrim(\"app\".\"transcript_final_segments\".\"provider\") <> ''"
+        },
+        "transcript_final_segments_text_not_blank": {
+          "name": "transcript_final_segments_text_not_blank",
+          "value": "btrim(\"app\".\"transcript_final_segments\".\"text\") <> ''"
+        },
+        "transcript_final_segments_time_order": {
+          "name": "transcript_final_segments_time_order",
+          "value": "\"app\".\"transcript_final_segments\".\"finalized_at\" >= \"app\".\"transcript_final_segments\".\"observed_at\""
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.transcript_finalizations": {
+      "name": "transcript_finalizations",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "finalization_id": {
+          "name": "finalization_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "state_version": {
+          "name": "state_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "agent_run_id": {
+          "name": "agent_run_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "validation_status": {
+          "name": "validation_status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "entry_count": {
+          "name": "entry_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "technical_gap_count": {
+          "name": "technical_gap_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "deterministic_issues": {
+          "name": "deterministic_issues",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "agent_report": {
+          "name": "agent_report",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "canonical_digest": {
+          "name": "canonical_digest",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "finalized_at": {
+          "name": "finalized_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "transcript_finalizations_interview_fk": {
+          "name": "transcript_finalizations_interview_fk",
+          "tableFrom": "transcript_finalizations",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "transcript_finalizations_agent_fk": {
+          "name": "transcript_finalizations_agent_fk",
+          "tableFrom": "transcript_finalizations",
+          "tableTo": "agent_runs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "agent_run_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "transcript_finalizations_id_unique": {
+          "name": "transcript_finalizations_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "finalization_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "transcript_finalizations_state_version_nonnegative": {
+          "name": "transcript_finalizations_state_version_nonnegative",
+          "value": "\"app\".\"transcript_finalizations\".\"state_version\" >= 0"
+        },
+        "transcript_finalizations_counts_nonnegative": {
+          "name": "transcript_finalizations_counts_nonnegative",
+          "value": "\"app\".\"transcript_finalizations\".\"entry_count\" >= 0 and \"app\".\"transcript_finalizations\".\"technical_gap_count\" >= 0 and \"app\".\"transcript_finalizations\".\"technical_gap_count\" <= \"app\".\"transcript_finalizations\".\"entry_count\""
+        },
+        "transcript_finalizations_validation_status_valid": {
+          "name": "transcript_finalizations_validation_status_valid",
+          "value": "\"app\".\"transcript_finalizations\".\"validation_status\" in ('valid', 'valid_with_gaps')"
+        },
+        "transcript_finalizations_json_shape": {
+          "name": "transcript_finalizations_json_shape",
+          "value": "jsonb_typeof(\"app\".\"transcript_finalizations\".\"deterministic_issues\") = 'array' and jsonb_typeof(\"app\".\"transcript_finalizations\".\"agent_report\") = 'object'"
+        },
+        "transcript_finalizations_digest_sha256": {
+          "name": "transcript_finalizations_digest_sha256",
+          "value": "\"app\".\"transcript_finalizations\".\"canonical_digest\" ~ '^[0-9a-f]{64}$'"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.transcript_gaps": {
+      "name": "transcript_gaps",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gap_id": {
+          "name": "gap_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "entry_kind": {
+          "name": "entry_kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'technical_gap'"
+        },
+        "source": {
+          "name": "source",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider": {
+          "name": "provider",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "related_segment_id": {
+          "name": "related_segment_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "related_utterance_id": {
+          "name": "related_utterance_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "source_event_id": {
+          "name": "source_event_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "transcript_gaps_stt_source_event_unique": {
+          "name": "transcript_gaps_stt_source_event_unique",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "provider",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "source_event_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"transcript_gaps\".\"source\" = 'speech_to_text'",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "transcript_gaps_non_stt_source_event_unique": {
+          "name": "transcript_gaps_non_stt_source_event_unique",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "source_event_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"transcript_gaps\".\"source\" <> 'speech_to_text'",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "transcript_gaps_stt_utterance_unique": {
+          "name": "transcript_gaps_stt_utterance_unique",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "provider",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "related_utterance_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"transcript_gaps\".\"source\" = 'speech_to_text'",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "transcript_gaps_entry_fk": {
+          "name": "transcript_gaps_entry_fk",
+          "tableFrom": "transcript_gaps",
+          "tableTo": "transcript_entries",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "gap_id",
+            "entry_kind"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "entry_id",
+            "kind"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "transcript_gaps_pk": {
+          "name": "transcript_gaps_pk",
+          "columns": [
+            "interview_id",
+            "gap_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "transcript_gaps_entry_kind_gap": {
+          "name": "transcript_gaps_entry_kind_gap",
+          "value": "\"app\".\"transcript_gaps\".\"entry_kind\" = 'technical_gap'"
+        },
+        "transcript_gaps_source_valid": {
+          "name": "transcript_gaps_source_valid",
+          "value": "\"app\".\"transcript_gaps\".\"source\" in ('speech_to_text', 'audio_output', 'transport')"
+        },
+        "transcript_gaps_provider_shape": {
+          "name": "transcript_gaps_provider_shape",
+          "value": "(\"app\".\"transcript_gaps\".\"source\" = 'speech_to_text' and \"app\".\"transcript_gaps\".\"provider\" is not null and btrim(\"app\".\"transcript_gaps\".\"provider\") <> '' and \"app\".\"transcript_gaps\".\"related_utterance_id\" is not null and btrim(\"app\".\"transcript_gaps\".\"related_utterance_id\") <> '') or (\"app\".\"transcript_gaps\".\"source\" <> 'speech_to_text' and \"app\".\"transcript_gaps\".\"provider\" is null and \"app\".\"transcript_gaps\".\"related_utterance_id\" is null)"
+        },
+        "transcript_gaps_description_not_blank": {
+          "name": "transcript_gaps_description_not_blank",
+          "value": "btrim(\"app\".\"transcript_gaps\".\"description\") <> ''"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.transcript_partial_events": {
+      "name": "transcript_partial_events",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider": {
+          "name": "provider",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider_event_id": {
+          "name": "provider_event_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "segment_id": {
+          "name": "segment_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "utterance_id": {
+          "name": "utterance_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "revision": {
+          "name": "revision",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "text": {
+          "name": "text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "disposition": {
+          "name": "disposition",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "observed_at": {
+          "name": "observed_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "transcript_partial_segment_idx": {
+          "name": "transcript_partial_segment_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "provider",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "segment_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "revision",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "transcript_partial_events_interview_fk": {
+          "name": "transcript_partial_events_interview_fk",
+          "tableFrom": "transcript_partial_events",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "transcript_partial_events_pk": {
+          "name": "transcript_partial_events_pk",
+          "columns": [
+            "interview_id",
+            "provider",
+            "provider_event_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "transcript_partial_segment_revision_unique": {
+          "name": "transcript_partial_segment_revision_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "provider",
+            "segment_id",
+            "revision"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "transcript_partial_provider_not_blank": {
+          "name": "transcript_partial_provider_not_blank",
+          "value": "btrim(\"app\".\"transcript_partial_events\".\"provider\") <> ''"
+        },
+        "transcript_partial_revision_nonnegative": {
+          "name": "transcript_partial_revision_nonnegative",
+          "value": "\"app\".\"transcript_partial_events\".\"revision\" >= 0"
+        },
+        "transcript_partial_disposition_valid": {
+          "name": "transcript_partial_disposition_valid",
+          "value": "\"app\".\"transcript_partial_events\".\"disposition\" in ('accepted', 'updated', 'ignored_stale', 'ignored_finalized')"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.transcript_turns": {
+      "name": "transcript_turns",
+      "schema": "app",
+      "columns": {
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "turn_id": {
+          "name": "turn_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "entry_kind": {
+          "name": "entry_kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'turn'"
+        },
+        "speaker": {
+          "name": "speaker",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "turn_type": {
+          "name": "turn_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "text": {
+          "name": "text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "guide_id": {
+          "name": "guide_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "question_id": {
+          "name": "question_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "source_provider": {
+          "name": "source_provider",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "provider_event_id": {
+          "name": "provider_event_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "source_segment_id": {
+          "name": "source_segment_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "delivery_id": {
+          "name": "delivery_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "delivery_event_id": {
+          "name": "delivery_event_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "delivery_status": {
+          "name": "delivery_status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "interrupted_at": {
+          "name": "interrupted_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "transcript_turns_participant_provider_event_unique": {
+          "name": "transcript_turns_participant_provider_event_unique",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "source_provider",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "provider_event_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"transcript_turns\".\"provider_event_id\" is not null",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "transcript_turns_source_segment_unique": {
+          "name": "transcript_turns_source_segment_unique",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "source_provider",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "source_segment_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"transcript_turns\".\"source_segment_id\" is not null",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "transcript_turns_delivery_event_unique": {
+          "name": "transcript_turns_delivery_event_unique",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "delivery_event_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"transcript_turns\".\"delivery_event_id\" is not null",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "transcript_turns_entry_fk": {
+          "name": "transcript_turns_entry_fk",
+          "tableFrom": "transcript_turns",
+          "tableTo": "transcript_entries",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "turn_id",
+            "entry_kind"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "entry_id",
+            "kind"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "transcript_turns_delivery_fk": {
+          "name": "transcript_turns_delivery_fk",
+          "tableFrom": "transcript_turns",
+          "tableTo": "ai_turn_deliveries",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "delivery_id",
+            "turn_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id",
+            "turn_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        },
+        "transcript_turns_interview_guide_fk": {
+          "name": "transcript_turns_interview_guide_fk",
+          "tableFrom": "transcript_turns",
+          "tableTo": "interviews",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "guide_id"
+          ],
+          "columnsTo": [
+            "id",
+            "guide_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        },
+        "transcript_turns_question_fk": {
+          "name": "transcript_turns_question_fk",
+          "tableFrom": "transcript_turns",
+          "tableTo": "guide_questions",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "guide_id",
+            "question_id"
+          ],
+          "columnsTo": [
+            "guide_id",
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "transcript_turns_pk": {
+          "name": "transcript_turns_pk",
+          "columns": [
+            "interview_id",
+            "turn_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "transcript_turns_source_scope_unique": {
+          "name": "transcript_turns_source_scope_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "turn_id",
+            "source_provider"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "transcript_turns_entry_kind_turn": {
+          "name": "transcript_turns_entry_kind_turn",
+          "value": "\"app\".\"transcript_turns\".\"entry_kind\" = 'turn'"
+        },
+        "transcript_turns_text_not_blank": {
+          "name": "transcript_turns_text_not_blank",
+          "value": "btrim(\"app\".\"transcript_turns\".\"text\") <> ''"
+        },
+        "transcript_turns_turn_type_valid": {
+          "name": "transcript_turns_turn_type_valid",
+          "value": "\"app\".\"transcript_turns\".\"turn_type\" in ('greeting', 'main_question', 'follow_up_question', 'clarification_question', 'participant_answer', 'transition', 'closing')"
+        },
+        "transcript_turns_speaker_shape": {
+          "name": "transcript_turns_speaker_shape",
+          "value": "\n        (\"app\".\"transcript_turns\".\"speaker\" = 'participant' and \"app\".\"transcript_turns\".\"turn_type\" = 'participant_answer' and \"app\".\"transcript_turns\".\"source_provider\" is not null and btrim(\"app\".\"transcript_turns\".\"source_provider\") <> '' and \"app\".\"transcript_turns\".\"provider_event_id\" is not null and \"app\".\"transcript_turns\".\"source_segment_id\" is not null and \"app\".\"transcript_turns\".\"delivery_id\" is null and \"app\".\"transcript_turns\".\"delivery_event_id\" is null and \"app\".\"transcript_turns\".\"delivery_status\" is null and \"app\".\"transcript_turns\".\"interrupted_at\" is null)\n        or (\"app\".\"transcript_turns\".\"speaker\" = 'ai_interviewer' and \"app\".\"transcript_turns\".\"turn_type\" <> 'participant_answer' and \"app\".\"transcript_turns\".\"source_provider\" is null and \"app\".\"transcript_turns\".\"provider_event_id\" is null and \"app\".\"transcript_turns\".\"source_segment_id\" is null and \"app\".\"transcript_turns\".\"delivery_id\" is not null and \"app\".\"transcript_turns\".\"delivery_event_id\" is not null and \"app\".\"transcript_turns\".\"delivery_status\" is not null and \"app\".\"transcript_turns\".\"delivery_status\" in ('complete', 'interrupted'))\n      "
+        },
+        "transcript_turns_interruption_shape": {
+          "name": "transcript_turns_interruption_shape",
+          "value": "(\"app\".\"transcript_turns\".\"delivery_status\" = 'interrupted' and \"app\".\"transcript_turns\".\"interrupted_at\" is not null) or (\"app\".\"transcript_turns\".\"delivery_status\" is distinct from 'interrupted' and \"app\".\"transcript_turns\".\"interrupted_at\" is null)"
+        },
+        "transcript_turns_guide_reference_shape": {
+          "name": "transcript_turns_guide_reference_shape",
+          "value": "\n        (\"app\".\"transcript_turns\".\"turn_type\" in ('greeting', 'closing') and \"app\".\"transcript_turns\".\"guide_id\" is null and \"app\".\"transcript_turns\".\"question_id\" is null)\n        or (\"app\".\"transcript_turns\".\"turn_type\" in ('main_question', 'follow_up_question', 'clarification_question') and \"app\".\"transcript_turns\".\"guide_id\" is not null and \"app\".\"transcript_turns\".\"question_id\" is not null)\n        or (\"app\".\"transcript_turns\".\"turn_type\" in ('participant_answer', 'transition') and ((\"app\".\"transcript_turns\".\"guide_id\" is null and \"app\".\"transcript_turns\".\"question_id\" is null) or (\"app\".\"transcript_turns\".\"guide_id\" is not null and \"app\".\"transcript_turns\".\"question_id\" is not null)))\n      "
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.workflow_runs": {
+      "name": "workflow_runs",
+      "schema": "app",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "job_id": {
+          "name": "job_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mastra_attempt_id": {
+          "name": "mastra_attempt_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "attempt_number": {
+          "name": "attempt_number",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expected_state_version": {
+          "name": "expected_state_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "retry_count": {
+          "name": "retry_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "started_at": {
+          "name": "started_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ended_at": {
+          "name": "ended_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "duration_ms": {
+          "name": "duration_ms",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_code": {
+          "name": "error_code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_message": {
+          "name": "error_message",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_retryable": {
+          "name": "error_retryable",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rejection_reason": {
+          "name": "rejection_reason",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "applied_at": {
+          "name": "applied_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "workflow_runs_one_applied_per_job": {
+          "name": "workflow_runs_one_applied_per_job",
+          "columns": [
+            {
+              "expression": "job_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "where": "\"app\".\"workflow_runs\".\"applied_at\" is not null",
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "workflow_runs_interview_created_idx": {
+          "name": "workflow_runs_interview_created_idx",
+          "columns": [
+            {
+              "expression": "interview_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "created_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "workflow_runs_job_fk": {
+          "name": "workflow_runs_job_fk",
+          "tableFrom": "workflow_runs",
+          "tableTo": "durable_jobs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "job_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "workflow_runs_interview_id_unique": {
+          "name": "workflow_runs_interview_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "id"
+          ]
+        },
+        "workflow_runs_delivery_scope_unique": {
+          "name": "workflow_runs_delivery_scope_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "interview_id",
+            "id",
+            "job_id"
+          ]
+        },
+        "workflow_runs_job_attempt_unique": {
+          "name": "workflow_runs_job_attempt_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "job_id",
+            "attempt_number"
+          ]
+        },
+        "workflow_runs_mastra_attempt_unique": {
+          "name": "workflow_runs_mastra_attempt_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "mastra_attempt_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "workflow_runs_status_valid": {
+          "name": "workflow_runs_status_valid",
+          "value": "\"app\".\"workflow_runs\".\"status\" in ('waiting', 'running', 'succeeded', 'failed', 'retrying', 'skipped')"
+        },
+        "workflow_runs_numbers_valid": {
+          "name": "workflow_runs_numbers_valid",
+          "value": "\"app\".\"workflow_runs\".\"attempt_number\" > 0 and \"app\".\"workflow_runs\".\"expected_state_version\" >= 0 and \"app\".\"workflow_runs\".\"retry_count\" >= 0"
+        },
+        "workflow_runs_timing_valid": {
+          "name": "workflow_runs_timing_valid",
+          "value": "\n        (\"app\".\"workflow_runs\".\"status\" = 'waiting' and \"app\".\"workflow_runs\".\"started_at\" is null and \"app\".\"workflow_runs\".\"ended_at\" is null and \"app\".\"workflow_runs\".\"duration_ms\" is null)\n        or (\"app\".\"workflow_runs\".\"status\" in ('running', 'retrying') and \"app\".\"workflow_runs\".\"started_at\" is not null and \"app\".\"workflow_runs\".\"ended_at\" is null and \"app\".\"workflow_runs\".\"duration_ms\" is null)\n        or (\"app\".\"workflow_runs\".\"status\" in ('succeeded', 'failed', 'skipped') and \"app\".\"workflow_runs\".\"started_at\" is not null and \"app\".\"workflow_runs\".\"ended_at\" is not null and \"app\".\"workflow_runs\".\"duration_ms\" is not null and \"app\".\"workflow_runs\".\"duration_ms\" >= 0)\n      "
+        },
+        "workflow_runs_apply_shape": {
+          "name": "workflow_runs_apply_shape",
+          "value": "\"app\".\"workflow_runs\".\"applied_at\" is null or (\"app\".\"workflow_runs\".\"status\" = 'succeeded' and \"app\".\"workflow_runs\".\"rejection_reason\" is null)"
+        },
+        "workflow_runs_error_shape": {
+          "name": "workflow_runs_error_shape",
+          "value": "(\"app\".\"workflow_runs\".\"status\" = 'failed' and \"app\".\"workflow_runs\".\"error_code\" is not null and \"app\".\"workflow_runs\".\"error_message\" is not null and \"app\".\"workflow_runs\".\"error_retryable\" is not null) or (\"app\".\"workflow_runs\".\"status\" <> 'failed' and \"app\".\"workflow_runs\".\"error_code\" is null and \"app\".\"workflow_runs\".\"error_message\" is null and \"app\".\"workflow_runs\".\"error_retryable\" is null)"
+        },
+        "workflow_runs_time_order": {
+          "name": "workflow_runs_time_order",
+          "value": "\"app\".\"workflow_runs\".\"ended_at\" is null or (\"app\".\"workflow_runs\".\"started_at\" is not null and \"app\".\"workflow_runs\".\"ended_at\" >= \"app\".\"workflow_runs\".\"started_at\")"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "app.workflow_step_runs": {
+      "name": "workflow_step_runs",
+      "schema": "app",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "interview_id": {
+          "name": "interview_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "workflow_run_id": {
+          "name": "workflow_run_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "step": {
+          "name": "step",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "attempt_number": {
+          "name": "attempt_number",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "retry_count": {
+          "name": "retry_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "started_at": {
+          "name": "started_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ended_at": {
+          "name": "ended_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "duration_ms": {
+          "name": "duration_ms",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_code": {
+          "name": "error_code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_message": {
+          "name": "error_message",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "error_retryable": {
+          "name": "error_retryable",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "input": {
+          "name": "input",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "output": {
+          "name": "output",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "workflow_step_runs_workflow_idx": {
+          "name": "workflow_step_runs_workflow_idx",
+          "columns": [
+            {
+              "expression": "workflow_run_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "started_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "workflow_step_runs_workflow_fk": {
+          "name": "workflow_step_runs_workflow_fk",
+          "tableFrom": "workflow_step_runs",
+          "tableTo": "workflow_runs",
+          "schemaTo": "app",
+          "columnsFrom": [
+            "interview_id",
+            "workflow_run_id"
+          ],
+          "columnsTo": [
+            "interview_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "workflow_step_runs_identity_unique": {
+          "name": "workflow_step_runs_identity_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "workflow_run_id",
+            "step",
+            "attempt_number"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "workflow_step_runs_attempt_positive": {
+          "name": "workflow_step_runs_attempt_positive",
+          "value": "\"app\".\"workflow_step_runs\".\"attempt_number\" > 0"
+        },
+        "workflow_step_runs_retry_nonnegative": {
+          "name": "workflow_step_runs_retry_nonnegative",
+          "value": "\"app\".\"workflow_step_runs\".\"retry_count\" >= 0"
+        },
+        "workflow_step_runs_step_valid": {
+          "name": "workflow_step_runs_step_valid",
+          "value": "\"app\".\"workflow_step_runs\".\"step\" in ('receive_user_turn', 'finalize_user_turn', 'load_interview_state', 'coverage_analysis', 'consistency_analysis', 'interview_decision', 'conductor_question_generation', 'validation', 'persistence', 'text_streaming', 'audio_streaming', 'state_update')"
+        },
+        "workflow_step_runs_status_valid": {
+          "name": "workflow_step_runs_status_valid",
+          "value": "\"app\".\"workflow_step_runs\".\"status\" in ('waiting', 'running', 'succeeded', 'failed', 'retrying', 'skipped')"
+        },
+        "workflow_step_runs_timing_valid": {
+          "name": "workflow_step_runs_timing_valid",
+          "value": "\n        (\"app\".\"workflow_step_runs\".\"status\" = 'waiting' and \"app\".\"workflow_step_runs\".\"started_at\" is null and \"app\".\"workflow_step_runs\".\"ended_at\" is null and \"app\".\"workflow_step_runs\".\"duration_ms\" is null)\n        or (\"app\".\"workflow_step_runs\".\"status\" in ('running', 'retrying') and \"app\".\"workflow_step_runs\".\"started_at\" is not null and \"app\".\"workflow_step_runs\".\"ended_at\" is null and \"app\".\"workflow_step_runs\".\"duration_ms\" is null)\n        or (\"app\".\"workflow_step_runs\".\"status\" in ('succeeded', 'failed', 'skipped') and \"app\".\"workflow_step_runs\".\"started_at\" is not null and \"app\".\"workflow_step_runs\".\"ended_at\" is not null and \"app\".\"workflow_step_runs\".\"ended_at\" >= \"app\".\"workflow_step_runs\".\"started_at\" and \"app\".\"workflow_step_runs\".\"duration_ms\" is not null and \"app\".\"workflow_step_runs\".\"duration_ms\" >= 0)\n      "
+        },
+        "workflow_step_runs_error_shape": {
+          "name": "workflow_step_runs_error_shape",
+          "value": "(\"app\".\"workflow_step_runs\".\"status\" = 'failed' and \"app\".\"workflow_step_runs\".\"error_code\" is not null and \"app\".\"workflow_step_runs\".\"error_message\" is not null and \"app\".\"workflow_step_runs\".\"error_retryable\" is not null) or (\"app\".\"workflow_step_runs\".\"status\" <> 'failed' and \"app\".\"workflow_step_runs\".\"error_code\" is null and \"app\".\"workflow_step_runs\".\"error_message\" is null and \"app\".\"workflow_step_runs\".\"error_retryable\" is null)"
+        },
+        "workflow_step_runs_json_objects": {
+          "name": "workflow_step_runs_json_objects",
+          "value": "(\"app\".\"workflow_step_runs\".\"input\" is null or jsonb_typeof(\"app\".\"workflow_step_runs\".\"input\") = 'object') and (\"app\".\"workflow_step_runs\".\"output\" is null or jsonb_typeof(\"app\".\"workflow_step_runs\".\"output\") = 'object')"
+        }
+      },
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {
+    "app": "app"
+  },
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

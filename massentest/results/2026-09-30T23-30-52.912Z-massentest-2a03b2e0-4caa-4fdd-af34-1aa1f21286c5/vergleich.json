@@ -1,0 +1,292 @@
+{
+  "attemptedRuns": 10,
+  "completedRuns": 10,
+  "failedRuns": 0,
+  "providerCalls": 11,
+  "distinctScoreVectors": 2,
+  "exactScoreAgreement": false,
+  "items": [
+    {
+      "itemId": "rob-01",
+      "name": "Was macht Ihre Organisation unter schwierigen Bedingungen, um ihre Position und Stabilität zu bewahren?",
+      "values": [
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5"
+      ],
+      "scoredCount": 10,
+      "mean": 5,
+      "minimum": 5,
+      "maximum": 5,
+      "standardDeviation": 0,
+      "modalValues": [
+        "5"
+      ],
+      "modalCount": 10,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    },
+    {
+      "itemId": "rob-02",
+      "name": "Wie entwickelt Ihre Organisation unterschiedliche Lösungen, wenn sie mit schwierigen Herausforderungen konfrontiert ist?",
+      "values": [
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5"
+      ],
+      "scoredCount": 10,
+      "mean": 5,
+      "minimum": 5,
+      "maximum": 5,
+      "standardDeviation": 0,
+      "modalValues": [
+        "5"
+      ],
+      "modalCount": 10,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    },
+    {
+      "itemId": "rob-03",
+      "name": "Wie verhält sich Ihre Organisation, wenn sie Gefahr läuft, etwas Wesentliches zu verlieren?",
+      "values": [
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5"
+      ],
+      "scoredCount": 10,
+      "mean": 5,
+      "minimum": 5,
+      "maximum": 5,
+      "standardDeviation": 0,
+      "modalValues": [
+        "5"
+      ],
+      "modalCount": 10,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    },
+    {
+      "itemId": "rob-04",
+      "name": "Wie geht Ihre Organisation mit Rückschlägen und Schwierigkeiten um, wenn der bisherige Weg gefährdet ist?",
+      "values": [
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5"
+      ],
+      "scoredCount": 10,
+      "mean": 5,
+      "minimum": 5,
+      "maximum": 5,
+      "standardDeviation": 0,
+      "modalValues": [
+        "5"
+      ],
+      "modalCount": 10,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    },
+    {
+      "itemId": "agi-01",
+      "name": "Wie handelt Ihre Organisation, wenn schnelles Handeln erforderlich ist?",
+      "values": [
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5"
+      ],
+      "scoredCount": 10,
+      "mean": 5,
+      "minimum": 5,
+      "maximum": 5,
+      "standardDeviation": 0,
+      "modalValues": [
+        "5"
+      ],
+      "modalCount": 10,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    },
+    {
+      "itemId": "agi-02",
+      "name": "Wie entwickelt und nutzt Ihre Organisation Alternativen, um aus negativen Umständen handlungsfähig oder stärker hervorzugehen?",
+      "values": [
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5"
+      ],
+      "scoredCount": 10,
+      "mean": 5,
+      "minimum": 5,
+      "maximum": 5,
+      "standardDeviation": 0,
+      "modalValues": [
+        "5"
+      ],
+      "modalCount": 10,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    },
+    {
+      "itemId": "agi-03",
+      "name": "Wie passt Ihre Organisation ihr Handeln an, wenn sich die Situation verändert und konkrete Maßnahmen nötig werden?",
+      "values": [
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5"
+      ],
+      "scoredCount": 10,
+      "mean": 5,
+      "minimum": 5,
+      "maximum": 5,
+      "standardDeviation": 0,
+      "modalValues": [
+        "5"
+      ],
+      "modalCount": 10,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    },
+    {
+      "itemId": "int-01",
+      "name": "Wie setzen sich die Beschäftigten Ihrer Organisation in schwierigen Situationen dafür ein, das Erforderliche zu tun?",
+      "values": [
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4"
+      ],
+      "scoredCount": 10,
+      "mean": 4,
+      "minimum": 4,
+      "maximum": 4,
+      "standardDeviation": 0,
+      "modalValues": [
+        "4"
+      ],
+      "modalCount": 10,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    },
+    {
+      "itemId": "int-02",
+      "name": "Wie handelt Ihre Organisation gemeinsam mit ihren Beschäftigten, wenn abgestimmtes Vorgehen erforderlich ist?",
+      "values": [
+        "5",
+        "4",
+        "4",
+        "4",
+        "5",
+        "5",
+        "4",
+        "4",
+        "5",
+        "4"
+      ],
+      "scoredCount": 10,
+      "mean": 4.4,
+      "minimum": 4,
+      "maximum": 5,
+      "standardDeviation": 0.49,
+      "modalValues": [
+        "4"
+      ],
+      "modalCount": 6,
+      "statusCounts": {
+        "scored": 10
+      },
+      "evidenceChoicesStable": false,
+      "rationaleTextsStable": false
+    }
+  ],
+  "overallScores": [
+    4.89,
+    4.78,
+    4.78,
+    4.78,
+    4.89,
+    4.89,
+    4.78,
+    4.78,
+    4.89,
+    4.78
+  ]
+}
