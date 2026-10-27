@@ -1,4 +1,4 @@
-# Live Interview Research Prototype
+# MVP Interview-to-Evidence: A Configurable AI-Assisted Workflow for Expert Interviews and Evidence-Based Coding
 
 A guide-based interview system with a canonical transcript and a separate,
 explicitly requested evidence-coding evaluation. The application supports English
